@@ -1,0 +1,165 @@
+# Applications `applicationId` Versions<a name="applications-applicationid-versions"></a>
+
+## URI<a name="applications-applicationid-versions-url"></a>
+
+/applications/*applicationId*/versions
+
+## HTTP Methods<a name="applications-applicationid-versions-http-methods"></a>
+
+### GET<a name="applications-applicationid-versionsget"></a>
+
+Operation ID: ListApplicationVersions 
+
+Lists versions for the specified application\.
+
+
+**Path Parameters**  
+
+| Name | Type | Required | Description | 
+| --- |--- |--- |--- |
+|  applicationId  | String | True |  The ID of the application to get\.  | 
+
+
+**Query Parameters**  
+
+| Name | Type | Required | Description | 
+| --- |--- |--- |--- |
+|  maxItems  | String | False |  The total number of items to return\.  | 
+|  nextToken  | String | False |  A token to specify where to start paginating\.  | 
+
+
+**Responses**  
+
+| Status Code | Response Model | Description | 
+| --- |--- |--- |
+|  200  |   [ApplicationVersionPage](#applications-applicationid-versions-response-body-applicationversionpage-example)   |  Success  | 
+|  400  |   [BadRequestException](#applications-applicationid-versions-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
+|  500  |   [InternalServerErrorException](#applications-applicationid-versions-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
+|  403  |   [ForbiddenException](#applications-applicationid-versions-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
+|  404  |   [NotFoundException](#applications-applicationid-versions-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|  429  |   [TooManyRequestsException](#applications-applicationid-versions-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit time\.  | 
+
+## Schemas<a name="applications-applicationid-versions-schemas"></a>
+
+### Response Bodies<a name="applications-applicationid-versions-response-examples"></a>
+
+#### Example ApplicationVersionPage<a name="applications-applicationid-versions-response-body-applicationversionpage-example"></a>
+
+```
+{
+  "versions": [
+    {
+      "applicationId": "string",
+      "semanticVersion": "string",
+      "sourceCodeUrl": "string",
+      "creationTime": "string"
+    }
+  ],
+  "nextToken": "string"
+}
+```
+
+#### Example BadRequestException<a name="applications-applicationid-versions-response-body-badrequestexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+#### Example ForbiddenException<a name="applications-applicationid-versions-response-body-forbiddenexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+#### Example NotFoundException<a name="applications-applicationid-versions-response-body-notfoundexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+#### Example TooManyRequestsException<a name="applications-applicationid-versions-response-body-toomanyrequestsexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+#### Example InternalServerErrorException<a name="applications-applicationid-versions-response-body-internalservererrorexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+## Properties<a name="applications-applicationid-versions-properties"></a>
+
+
+**ApplicationVersionPage**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   versions  |  Array of type  VersionSummary    | True |  Array of version summaries for the application\.  | 
+|   nextToken  |  string  | False |  The token to request the next page of results\.  | 
+
+
+**BadRequestException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  One of the parameters in the request is invalid\.  | 
+|   errorCode  |  string  | False |  400  | 
+
+
+**ForbiddenException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  The client is not authenticated\.  | 
+|   errorCode  |  string  | False |  403  | 
+
+
+**InternalServerErrorException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  The AWS Serverless Application Repository service encountered an internal error\.  | 
+|   errorCode  |  string  | False |  500  | 
+
+
+**NotFoundException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|   errorCode  |  string  | False |  404  | 
+
+
+**TooManyRequestsException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit time\.  | 
+|   errorCode  |  string  | False |  429  | 
+
+
+**VersionSummary**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
+|   semanticVersion  |  string  | True |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
+|   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
+|   creationTime  |  string  | True |  The date/time this resource was created\.  | 
