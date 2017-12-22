@@ -1,12 +1,12 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines simplified syntax for expressing serverless resources\. The specification currently covers APIs, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own toolsets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\.
+The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines simplified syntax for expressing serverless resources\. The specification currently covers APIs, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\.
 
-AWS SAM supports special resource types that simplify how to express functions, APIs, mappings, and DynamoDB tables for serverless applications, in addition to some features for these services like environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application, along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\), package your deployment artifacts, and deploy the template\. 
+AWS SAM supports special resource types that simplify how to express functions, APIs, mappings, and DynamoDB tables for serverless applications, in addition to some features for these services like environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
 
-## Supported AWS Resources in the AWS Serverless ApplicationRepository<a name="supported-resources-for-serverlessrepo"></a>
+## Supported AWS Resources in the AWS Serverless Application Repository<a name="supported-resources-for-serverlessrepo"></a>
 
-Serverless applications that you publish to the AWS Serverless ApplicationRepository can include additional AWS CloudFormation resources\. The following is a complete list of supported resources:
+Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. The following is a complete list of supported resources:
 
 + AWS::Serverless::Function
 
@@ -96,7 +96,7 @@ Serverless applications that you publish to the AWS Serverless ApplicationReposi
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
-When you add a serverless application to the AWS Serverless ApplicationRepository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your Lambda functions are scoped to the resources that are used by your application\. The following lists the permissions that are applied to each policy template in the Policy templates list\. AWS SAM automatically populates the placeholder items \(such as region and accountID\) with the appropriate information\.
+When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your Lambda functions are scoped to the resources that are used by your application\. The following lists the permissions that are applied to each policy template in the policy templates list\. AWS SAM automatically populates the placeholder items \(such as region and account ID\) with the appropriate information\.
 
 The following example shows that the `SQSPollerPolicy` policy expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the "`MyQueue`" SQS queue, which can be created in the same application or requested as a parameter to the application\.
 

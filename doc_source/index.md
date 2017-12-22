@@ -14,7 +14,7 @@ Amazon's trademarks and trade dress may not be used in
 
 -----
 ## Contents
-+ [What Is the AWS Serverless ApplicationRepository? (Preview)](what-is-serverlessrepo.md)
++ [What Is the AWS Serverless Application Repository? (Preview)](what-is-serverlessrepo.md)
 + [Consuming Applications and Publishing Applications](serverless-app-repository.md)
    + [Consuming Applications (Preview)](serverless-app-consuming-applications.md)
    + [Publishing Applications (Preview)](serverless-app-publishing-applications.md)
