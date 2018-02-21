@@ -1,8 +1,8 @@
-# Applications `applicationId` Versions<a name="applications-applicationid-versions"></a>
+# Applications applicationId Versions<a name="applications-applicationid-versions"></a>
 
 ## URI<a name="applications-applicationid-versions-url"></a>
 
-/applications/*applicationId*/versions
+  / applications / *applicationId* / versions 
 
 ## HTTP Methods<a name="applications-applicationid-versions-http-methods"></a>
 
@@ -36,8 +36,8 @@ Lists versions for the specified application\.
 |  400  |   [BadRequestException](#applications-applicationid-versions-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
 |  500  |   [InternalServerErrorException](#applications-applicationid-versions-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-versions-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  404  |   [NotFoundException](#applications-applicationid-versions-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
-|  429  |   [TooManyRequestsException](#applications-applicationid-versions-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit time\.  | 
+|  404  |   [NotFoundException](#applications-applicationid-versions-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
+|  429  |   [TooManyRequestsException](#applications-applicationid-versions-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 
 ## Schemas<a name="applications-applicationid-versions-schemas"></a>
 
@@ -47,15 +47,15 @@ Lists versions for the specified application\.
 
 ```
 {
-  "versions": [
+  "[versions](#applications-applicationid-versions-applicationversionpage-versions)": [
     {
-      "applicationId": "string",
-      "semanticVersion": "string",
-      "sourceCodeUrl": "string",
-      "creationTime": "string"
+      "[applicationId](#applications-applicationid-versions-versionsummary-applicationid)": "string",
+      "[semanticVersion](#applications-applicationid-versions-versionsummary-semanticversion)": "string",
+      "[sourceCodeUrl](#applications-applicationid-versions-versionsummary-sourcecodeurl)": "string",
+      "[creationTime](#applications-applicationid-versions-versionsummary-creationtime)": "string"
     }
   ],
-  "nextToken": "string"
+  "[nextToken](#applications-applicationid-versions-applicationversionpage-nexttoken)": "string"
 }
 ```
 
@@ -63,8 +63,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-versions-badrequestexception-message)": "string",
+  "[errorCode](#applications-applicationid-versions-badrequestexception-errorcode)": "string"
 }
 ```
 
@@ -72,8 +72,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-versions-forbiddenexception-message)": "string",
+  "[errorCode](#applications-applicationid-versions-forbiddenexception-errorcode)": "string"
 }
 ```
 
@@ -81,8 +81,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-versions-notfoundexception-message)": "string",
+  "[errorCode](#applications-applicationid-versions-notfoundexception-errorcode)": "string"
 }
 ```
 
@@ -90,8 +90,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-versions-toomanyrequestsexception-message)": "string",
+  "[errorCode](#applications-applicationid-versions-toomanyrequestsexception-errorcode)": "string"
 }
 ```
 
@@ -99,8 +99,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-versions-internalservererrorexception-message)": "string",
+  "[errorCode](#applications-applicationid-versions-internalservererrorexception-errorcode)": "string"
 }
 ```
 
@@ -111,7 +111,7 @@ Lists versions for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   versions  |  Array of type  VersionSummary    | True |  Array of version summaries for the application\.  | 
+|   versions  |  Array of type  [VersionSummary](#applications-applicationid-versions-versionsummary)    | True |  An array of version summaries for the application\.  | 
 |   nextToken  |  string  | False |  The token to request the next page of results\.  | 
 
 
@@ -143,7 +143,7 @@ Lists versions for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |   errorCode  |  string  | False |  404  | 
 
 
@@ -151,7 +151,7 @@ Lists versions for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit time\.  | 
+|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |   errorCode  |  string  | False |  429  | 
 
 
@@ -162,4 +162,4 @@ Lists versions for the specified application\.
 |   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
 |   semanticVersion  |  string  | True |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
 |   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
-|   creationTime  |  string  | True |  The date/time this resource was created\.  | 
+|   creationTime  |  string  | True |  The date and time this resource was created\.  | 

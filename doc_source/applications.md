@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-url"></a>
 
-/applications
+  / applications 
 
 ## HTTP Methods<a name="applications-http-methods"></a>
 
@@ -29,7 +29,7 @@ Lists applications owned by the requester\.
 |  400  |   [BadRequestException](#applications-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
 |  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  404  |   [NotFoundException](#applications-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|  404  |   [NotFoundException](#applications-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 
 ### POST<a name="applicationspost"></a>
 
@@ -46,7 +46,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 |  400  |   [BadRequestException](#applications-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
 |  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  429  |   [TooManyRequestsException](#applications-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit time\.  | 
+|  429  |   [TooManyRequestsException](#applications-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |  409  |   [ConflictException](#applications-response-body-conflictexception-example)   |  The resource already exists\.  | 
 
 ## Schemas<a name="applications-schemas"></a>
@@ -57,21 +57,22 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "name": "string",
-  "description": "string",
-  "author": "string",
-  "spdxLicenseId": "string",
-  "licenseBody": "string",
-  "licenseUrl": "string",
-  "readmeBody": "string",
-  "readmeUrl": "string",
-  "labels": [
+  "[name](#applications-createapplicationinput-name)": "string",
+  "[description](#applications-createapplicationinput-description)": "string",
+  "[author](#applications-createapplicationinput-author)": "string",
+  "[spdxLicenseId](#applications-createapplicationinput-spdxlicenseid)": "string",
+  "[licenseBody](#applications-createapplicationinput-licensebody)": "string",
+  "[licenseUrl](#applications-createapplicationinput-licenseurl)": "string",
+  "[readmeBody](#applications-createapplicationinput-readmebody)": "string",
+  "[readmeUrl](#applications-createapplicationinput-readmeurl)": "string",
+  "[labels](#applications-createapplicationinput-labels)": [
     "string"
   ],
-  "semanticVersion": "string",
-  "templateBody": "string",
-  "templateUrl": "string",
-  "sourceCodeUrl": "string"
+  "[homePageUrl](#applications-createapplicationinput-homepageurl)": "string",
+  "[semanticVersion](#applications-createapplicationinput-semanticversion)": "string",
+  "[templateBody](#applications-createapplicationinput-templatebody)": "string",
+  "[templateUrl](#applications-createapplicationinput-templateurl)": "string",
+  "[sourceCodeUrl](#applications-createapplicationinput-sourcecodeurl)": "string"
 }
 ```
 
@@ -81,20 +82,21 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "applications": [
+  "[applications](#applications-applicationpage-applications)": [
     {
-      "applicationId": "string",
-      "name": "string",
-      "description": "string",
-      "author": "string",
-      "spdxLicenseId": "string",
-      "labels": [
+      "[applicationId](#applications-applicationsummary-applicationid)": "string",
+      "[name](#applications-applicationsummary-name)": "string",
+      "[description](#applications-applicationsummary-description)": "string",
+      "[author](#applications-applicationsummary-author)": "string",
+      "[spdxLicenseId](#applications-applicationsummary-spdxlicenseid)": "string",
+      "[labels](#applications-applicationsummary-labels)": [
         "string"
       ],
-      "creationTime": "string"
+      "[creationTime](#applications-applicationsummary-creationtime)": "string",
+      "[homePageUrl](#applications-applicationsummary-homepageurl)": "string"
     }
   ],
-  "nextToken": "string"
+  "[nextToken](#applications-applicationpage-nexttoken)": "string"
 }
 ```
 
@@ -102,40 +104,41 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "applicationId": "string",
-  "name": "string",
-  "description": "string",
-  "author": "string",
-  "spdxLicenseId": "string",
-  "licenseUrl": "string",
-  "readmeUrl": "string",
-  "labels": [
+  "[applicationId](#applications-application-applicationid)": "string",
+  "[name](#applications-application-name)": "string",
+  "[description](#applications-application-description)": "string",
+  "[author](#applications-application-author)": "string",
+  "[spdxLicenseId](#applications-application-spdxlicenseid)": "string",
+  "[licenseUrl](#applications-application-licenseurl)": "string",
+  "[readmeUrl](#applications-application-readmeurl)": "string",
+  "[labels](#applications-application-labels)": [
     "string"
   ],
-  "creationTime": "string",
-  "version": {
-    "applicationId": "string",
-    "semanticVersion": "string",
-    "sourceCodeUrl": "string",
-    "templateUrl": "string",
-    "creationTime": "string",
-    "parameterDefinitions": [
+  "[creationTime](#applications-application-creationtime)": "string",
+  "[homePageUrl](#applications-application-homepageurl)": "string",
+  "[version](#applications-application-version)": {
+    "[applicationId](#applications-version-applicationid)": "string",
+    "[semanticVersion](#applications-version-semanticversion)": "string",
+    "[sourceCodeUrl](#applications-version-sourcecodeurl)": "string",
+    "[templateUrl](#applications-version-templateurl)": "string",
+    "[creationTime](#applications-version-creationtime)": "string",
+    "[parameterDefinitions](#applications-version-parameterdefinitions)": [
       {
-        "name": "string",
-        "defaultValue": "string",
-        "description": "string",
-        "type": "string",
-        "noEcho": boolean,
-        "allowedPattern": "string",
-        "constraintDescription": "string",
-        "minValue": integer,
-        "maxValue": integer,
-        "minLength": integer,
-        "maxLength": integer,
-        "allowedValues": [
+        "[name](#applications-parameterdefinition-name)": "string",
+        "[defaultValue](#applications-parameterdefinition-defaultvalue)": "string",
+        "[description](#applications-parameterdefinition-description)": "string",
+        "[type](#applications-parameterdefinition-type)": "string",
+        "[noEcho](#applications-parameterdefinition-noecho)": boolean,
+        "[allowedPattern](#applications-parameterdefinition-allowedpattern)": "string",
+        "[constraintDescription](#applications-parameterdefinition-constraintdescription)": "string",
+        "[minValue](#applications-parameterdefinition-minvalue)": integer,
+        "[maxValue](#applications-parameterdefinition-maxvalue)": integer,
+        "[minLength](#applications-parameterdefinition-minlength)": integer,
+        "[maxLength](#applications-parameterdefinition-maxlength)": integer,
+        "[allowedValues](#applications-parameterdefinition-allowedvalues)": [
           "string"
         ],
-        "referencedByResources": [
+        "[referencedByResources](#applications-parameterdefinition-referencedbyresources)": [
           "string"
         ]
       }
@@ -148,8 +151,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-badrequestexception-message)": "string",
+  "[errorCode](#applications-badrequestexception-errorcode)": "string"
 }
 ```
 
@@ -157,8 +160,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-forbiddenexception-message)": "string",
+  "[errorCode](#applications-forbiddenexception-errorcode)": "string"
 }
 ```
 
@@ -166,8 +169,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-notfoundexception-message)": "string",
+  "[errorCode](#applications-notfoundexception-errorcode)": "string"
 }
 ```
 
@@ -175,8 +178,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-conflictexception-message)": "string",
+  "[errorCode](#applications-conflictexception-errorcode)": "string"
 }
 ```
 
@@ -184,8 +187,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-toomanyrequestsexception-message)": "string",
+  "[errorCode](#applications-toomanyrequestsexception-errorcode)": "string"
 }
 ```
 
@@ -193,8 +196,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-internalservererrorexception-message)": "string",
+  "[errorCode](#applications-internalservererrorexception-errorcode)": "string"
 }
 ```
 
@@ -206,22 +209,23 @@ Creates an application, optionally including an AWS SAM file to create the first
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 |   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
-|   name  |  string  | True |  The name of the application\. Min Length=1\. Max Length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
-|   description  |  string  | True |  The description of the application\. Min Length=1\. Max Length=256  | 
-|   author  |  string  | True |  The name of the author publishing the app\. Min Length=1\. Max Length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
+|   name  |  string  | True |  The name of the application\. Minimum length=1\. Maximum length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
+|   description  |  string  | True |  The description of the application\. Minimum length=1\. Maximum length=256  | 
+|   author  |  string  | True |  The name of the author publishing the app\. Minimum length=1\. Maximum length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
 |   spdxLicenseId  |  string  | False |  A valid identifier from https://spdx\.org/licenses/\.  | 
-|   licenseUrl  |  string  | False |  A link to a license file of the app that matches the spdxLicenseID of your application\. Max size 5 MB  | 
-|   readmeUrl  |  string  | False |  A link to the Readme file that contains a more detailed description of the application and how it works in markdown language\. Max size 5 MB  | 
-|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Min Length=1\. Max Length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
-|   creationTime  |  string  | False |  The date/time this resource was created\.  | 
-|   version  |   Version   | False |  Version information about the application\.  | 
+|   licenseUrl  |  string  | False |  A link to a license file of the app that matches the spdxLicenseID value of your application\. Maximum size 5 MB  | 
+|   readmeUrl  |  string  | False |  A link to the readme file in Markdown language that contains a more detailed description of the application and how it works\. Maximum size 5 MB  | 
+|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Minimum length=1\. Maximum length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
+|   creationTime  |  string  | False |  The date and time this resource was created\.  | 
+|   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
+|   version  |   [Version](#applications-version)   | False |  Version information about the application\.  | 
 
 
 **ApplicationPage**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   applications  |  Array of type  ApplicationSummary    | True |  Array of application summaries\.  | 
+|   applications  |  Array of type  [ApplicationSummary](#applications-applicationsummary)    | True |  An array of application summaries\.  | 
 |   nextToken  |  string  | False |  The token to request the next page of results\.  | 
 
 
@@ -229,13 +233,14 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   applicationId  |  string  | True |  The application ARN\.  | 
-|   name  |  string  | True |  The name of the application\. Min Length=1\. Max Length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
-|   description  |  string  | True |  The description of the application\. Min Length=1\. Max Length=256  | 
-|   author  |  string  | True |  The name of the author publishing the app\. Min Length=1\. Max Length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
+|   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
+|   name  |  string  | True |  The name of the application\. Minimum length=1\. Maximum length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
+|   description  |  string  | True |  The description of the application\. Minimum length=1\. Maximum length=256  | 
+|   author  |  string  | True |  The name of the author publishing the app\. Minimum length=1\. Maximum length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
 |   spdxLicenseId  |  string  | False |  A valid identifier from [https://spdx\.org/licenses/](https://spdx.org/licenses/)\.  | 
-|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Min Length=1\. Max Length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
-|   creationTime  |  string  | False |  The date/time this resource was created\.  | 
+|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Minimum length=1\. Maximum length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
+|   creationTime  |  string  | False |  The date and time this resource was created\.  | 
+|   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 
 
 **BadRequestException**  
@@ -258,18 +263,19 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   name  |  string  | True |  The name of the application you want to publish\. Min Length=1\. Max Length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
-|   description  |  string  | True |  The description of the application\. Min Length=1\. Max Length=256  | 
-|   author  |  string  | True |  The name of the author publishing the app\. Min Length=1\. Max Length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
+|   name  |  string  | True |  The name of the application that you want to publish\. Minimum length=1\. Maximum length=140 Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+";  | 
+|   description  |  string  | True |  The description of the application\. Minimum length=1\. Maximum length=256  | 
+|   author  |  string  | True |  The name of the author publishing the app\. Minimum length=1\. Maximum length=127\. Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$";  | 
 |   spdxLicenseId  |  string  | False |  A valid identifier from [https://spdx\.org/licenses/](https://spdx.org/licenses/)\.  | 
-|   licenseBody  |  string  | False |  A raw text file that contains the license of the app that matches the spdxLicenseID of your application\. Max size 5 MB  | 
-|   licenseUrl  |  string  | False |  A link to a license file of the app that matches the spdxLicenseID of your application\. Max size 5 MB  | 
-|   readmeBody  |  string  | False |  A raw text Readme file that contains a more detailed description of the application and how it works in markdown language\. Max size 5 MB  | 
-|   readmeUrl  |  string  | False |  A link to the Readme file that contains a more detailed description of the application and how it works in markdown language\. Max size 5 MB  | 
-|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Min Length=1\. Max Length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
+|   licenseBody  |  string  | False |  A raw text file that contains the license of the app that matches the spdxLicenseID value of your application\. Maximum size 5 MB  | 
+|   licenseUrl  |  string  | False |  A link to a license file of the app that matches the spdxLicenseID value of your application\. Maximum size 5 MB  | 
+|   readmeBody  |  string  | False |  A text readme file in Markdown language that contains a more detailed description of the application and how it works\. Maximum size 5 MB  | 
+|   readmeUrl  |  string  | False |  A link to the readme file in Markdown language that contains a more detailed description of the application and how it works\. Maximum size 5 MB  | 
+|   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Minimum length=1\. Maximum length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
+|   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 |   semanticVersion  |  string  | False |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
-|   templateBody  |  string  | False |  The raw packaged SAM template of your application\.  | 
-|   templateUrl  |  string  | False |  A link to the packaged SAM template of your application\.  | 
+|   templateBody  |  string  | False |  The raw packaged AWS SAM template of your application\.  | 
+|   templateUrl  |  string  | False |  A link to the packaged AWS SAM template of your application\.  | 
 |   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
 
 
@@ -293,7 +299,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |   errorCode  |  string  | False |  404  | 
 
 
@@ -304,23 +310,23 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   name  |  string  | True |  The name of the parameter\.  | 
 |   defaultValue  |  string  | False |  A value of the appropriate type for the template to use if no value is specified when a stack is created\. If you define constraints for the parameter, you must specify a value that adheres to those constraints\.  | 
 |   description  |  string  | False |  A string of up to 4,000 characters that describes the parameter\.  | 
-|   type  |  string  | False |  The type of the parameter\. Valid values: `String | Number | List<Number> | CommaDelimitedList`   `String`: A literal string\. For example, users could specify `"MyUserName"`\.  `Number`: An integer or float\. AWS CloudFormation validates the parameter value as a number; however, when you use the parameter elsewhere in your template \(for example, by using the `Ref` intrinsic function\), the parameter value becomes a string\. For example, users could specify `"8888"`\.  `List<Number>`: An array of integers or floats that are separated by commas\. AWS CloudFormation validates the parameter value as numbers; however, when you use the parameter elsewhere in your template \(for example, by using the `Ref` intrinsic function\), the parameter value becomes a list of strings\. For example, users could specify "80,20", and a `Ref` results in `["80","20"]`\.  `CommaDelimitedList`: An array of literal strings that are separated by commas\. The total number of strings should be one more than the total number of commas\. Also, each member string is space\-trimmed\. For example, users could specify "test,dev,prod", and a `Ref` results in `["test","dev","prod"]`\.  | 
+|   type  |  string  | False |  The type of the parameter\. Valid values: `String | Number | List<Number> | CommaDelimitedList`   `String`: A literal string\. For example, users can specify `"MyUserName"`\.  `Number`: An integer or float\. AWS CloudFormation validates the parameter value as a number\. However, when you use the parameter elsewhere in your template \(for example, by using the `Ref` intrinsic function\), the parameter value becomes a string\. For example, users might specify `"8888"`\.  `List<Number>`: An array of integers or floats that are separated by commas\. AWS CloudFormation validates the parameter value as numbers\. However, when you use the parameter elsewhere in your template \(for example, by using the `Ref` intrinsic function\), the parameter value becomes a list of strings\. For example, users might specify "80,20", and then `Ref` results in `["80","20"]`\.  `CommaDelimitedList`: An array of literal strings that are separated by commas\. The total number of strings should be one more than the total number of commas\. Also, each member string is space\-trimmed\. For example, users might specify "test,dev,prod", and then `Ref` results in `["test","dev","prod"]`\.  | 
 |   noEcho  |  boolean  | False |  Whether to mask the parameter value whenever anyone makes a call that describes the stack\. If you set the value to true, the parameter value is masked with asterisks \(\*\*\*\*\*\)\.  | 
 |   allowedPattern  |  string  | False |  A regular expression that represents the patterns to allow for `String` types\.  | 
-|   constraintDescription  |  string  | False |  A string that explains a constraint when the constraint is violated\. For example, without a constraint description, a parameter that has an allowed pattern of `[A-Za-z0-9]+` displays the following error message when the user specifies an invalid value:  `Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+`  By adding a constraint description, such as "must contain only uppercase and lowercase letters, and numbers," you can display the following customized error message:  `Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.`   | 
-|   minValue  |  integer  | False |  A numeric value that determines the smallest numeric value you want to allow for `Number` types\.  | 
-|   maxValue  |  integer  | False |  A numeric value that determines the largest numeric value you want to allow for `Number` types\.  | 
-|   minLength  |  integer  | False |  An integer value that determines the smallest number of characters you want to allow for `String` types\.  | 
-|   maxLength  |  integer  | False |  An integer value that determines the largest number of characters you want to allow for `String` types\.  | 
-|   allowedValues  |  Array of type string   | False |  Array containing the list of values allowed for the parameter\.  | 
-|   referencedByResources  |  Array of type string   | True |  A list of SAM resources that use this parameter\.  | 
+|   constraintDescription  |  string  | False |  A string that explains a constraint when the constraint is violated\. For example, without a constraint description, a parameter that has an allowed pattern of `[A-Za-z0-9]+` displays the following error message when the user specifies an invalid value:  `Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+`  By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:  `Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.`   | 
+|   minValue  |  integer  | False |  A numeric value that determines the smallest numeric value that you want to allow for `Number` types\.  | 
+|   maxValue  |  integer  | False |  A numeric value that determines the largest numeric value that you want to allow for `Number` types\.  | 
+|   minLength  |  integer  | False |  An integer value that determines the smallest number of characters that you want to allow for `String` types\.  | 
+|   maxLength  |  integer  | False |  An integer value that determines the largest number of characters that you want to allow for `String` types\.  | 
+|   allowedValues  |  Array of type string   | False |  An array containing the list of values allowed for the parameter\.  | 
+|   referencedByResources  |  Array of type string   | True |  A list of AWS SAM resources that use this parameter\.  | 
 
 
 **TooManyRequestsException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit time\.  | 
+|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |   errorCode  |  string  | False |  429  | 
 
 
@@ -331,6 +337,6 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
 |   semanticVersion  |  string  | True |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
 |   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
-|   templateUrl  |  string  | True |  A link to the packaged SAM template of your application\.  | 
-|   creationTime  |  string  | True |  The date/time this resource was created\.  | 
-|   parameterDefinitions  |  Array of type  ParameterDefinition    | True |  Array of parameter types supported by the application\.  | 
+|   templateUrl  |  string  | True |  A link to the packaged AWS SAM template of your application\.  | 
+|   creationTime  |  string  | True |  The date and time this resource was created\.  | 
+|   parameterDefinitions  |  Array of type  [ParameterDefinition](#applications-parameterdefinition)    | True |  An array of parameter types supported by the application\.  | 

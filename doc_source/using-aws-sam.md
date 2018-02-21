@@ -1,8 +1,12 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines simplified syntax for expressing serverless resources\. The specification currently covers APIs, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\.
+The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines simplified syntax for expressing serverless resources\. The specification currently covers APIs, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. 
 
 AWS SAM supports special resource types that simplify how to express functions, APIs, mappings, and DynamoDB tables for serverless applications, in addition to some features for these services like environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
+
+## Requesting new AWS Resources for AWS Serverless Application Repository<a name="requesting-new-resources-and-policies"></a>
+
+The sections below list AWS Resources and Policy Templates currently supported by AWS Serverless Application Repository\. If you would like to request new AWS Resources and/or Policy Templates to be added, please contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
 
 ## Supported AWS Resources in the AWS Serverless Application Repository<a name="supported-resources-for-serverlessrepo"></a>
 
@@ -96,9 +100,9 @@ Serverless applications that you publish to the AWS Serverless Application Repos
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
-When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your Lambda functions are scoped to the resources that are used by your application\. The following lists the permissions that are applied to each policy template in the policy templates list\. AWS SAM automatically populates the placeholder items \(such as region and account ID\) with the appropriate information\.
+When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your AWS Lambda functions are scoped to the resources that are used by your application\. The following lists the permissions that are applied to each policy template in the policy templates list\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
 
-The following example shows that the `SQSPollerPolicy` policy expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the "`MyQueue`" SQS queue, which can be created in the same application or requested as a parameter to the application\.
+The following example shows that the `SQSPollerPolicy` policy expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the "`MyQueue`" Amazon SQS queue, which can be created in the same application or requested as a parameter to the application\.
 
 ```
  1. MyFunction:
@@ -113,7 +117,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
 10.               Fn::GetAtt: ["MyQueue", "QueueName"]
 ```
 
-## SQSPollerPolicy: Gives Permissions to Poll an SQS Queue<a name="sqs-poller-policy"></a>
+## SQSPollerPolicy: Gives Permissions to Poll an Amazon SQS Queue<a name="sqs-poller-policy"></a>
 
 ```
         "Statement": [
@@ -268,7 +272,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## ElasticsearchHttpPostPolicy: Gives POST Permissions to Elasticsearch<a name="elastic-search-http-post-policy"></a>
+## ElasticsearchHttpPostPolicy: Gives POST Permissions to Amazon Elasticsearch Service<a name="elastic-search-http-post-policy"></a>
 
 ```
         "Statement": [
@@ -291,7 +295,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## S3ReadPolicy: Gives Read Permissions to Objects in the S3 Bucket<a name="s3-read-policy"></a>
+## S3ReadPolicy: Gives Read Permissions to Objects in the Amazon S3 Bucket<a name="s3-read-policy"></a>
 
 ```
         "Statement": [
@@ -330,7 +334,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## S3CrudPolicy: Gives CRUD Permissions to Objects in the S3 Bucket<a name="s3-crud-policy"></a>
+## S3CrudPolicy: Gives CRUD Permissions to Objects in the Amazon S3 Bucket<a name="s3-crud-policy"></a>
 
 ```
         "Statement": [
@@ -371,7 +375,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## AMIDescribePolicy: Gives Permissions to Describe AMIs<a name="ami-describe-policy"></a>
+## AMIDescribePolicy: Gives Permissions to Describe Amazon Machine Images \(AMIs\)<a name="ami-describe-policy"></a>
 
 ```
         "Statement": [
@@ -479,7 +483,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## SQSSendMessagePolicy: Gives Permission to Send Message to SQS Queue<a name="sqs-send-message-policy"></a>
+## SQSSendMessagePolicy: Gives Permission to Send Message to Amazon SQS Queue<a name="sqs-send-message-policy"></a>
 
 ```
         "Statement": [
@@ -502,7 +506,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## SNSPublishMessagePolicy: Gives Permission to Publish a Message to an SNS Topic<a name="sqs-publish-message-policy"></a>
+## SNSPublishMessagePolicy: Gives Permission to Publish a Message to an Amazon SNS Topic<a name="sqs-publish-message-policy"></a>
 
 ```
         "Statement": [
@@ -525,7 +529,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## VPCAccessPolicy: Gives Access to Create, Delete, Describe, and Detach ENIs<a name="vpc-access-policy"></a>
+## VPCAccessPolicy: Gives Access to Create, Delete, Describe, and Detach Elastic Network Interfaces<a name="vpc-access-policy"></a>
 
 ```
         "Statement": [
@@ -633,7 +637,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## SNSCrudPolicy: Gives Permissions to Create, Publish, and Subscribe to SNS Topics<a name="sns-crud-policy"></a>
+## SNSCrudPolicy: Gives Permissions to Create, Publish, and Subscribe to Amazon SNS Topics<a name="sns-crud-policy"></a>
 
 ```
         "Statement": [
@@ -660,7 +664,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## KinesisCrudPolicy: Gives Permission to Create, Publish, and Delete a Kinesis Stream<a name="kinesis-crud-policy"></a>
+## KinesisCrudPolicy: Gives Permission to Create, Publish, and Delete an Amazon Kinesis Stream<a name="kinesis-crud-policy"></a>
 
 ```
         "Statement": [

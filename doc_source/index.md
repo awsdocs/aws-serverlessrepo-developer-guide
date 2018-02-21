@@ -1,7 +1,7 @@
 # AWS Serverless Application Repository Developer Guide
 
 -----
-*****Copyright &copy; 2017 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -14,11 +14,13 @@ Amazon's trademarks and trade dress may not be used in
 
 -----
 ## Contents
-+ [What Is the AWS Serverless Application Repository? (Preview)](what-is-serverlessrepo.md)
++ [What Is the AWS Serverless Application Repository?](what-is-serverlessrepo.md)
 + [Consuming Applications and Publishing Applications](serverless-app-repository.md)
-   + [Consuming Applications (Preview)](serverless-app-consuming-applications.md)
-   + [Publishing Applications (Preview)](serverless-app-publishing-applications.md)
+   + [Consuming Applications](serverless-app-consuming-applications.md)
+   + [Publishing Applications](serverless-app-publishing-applications.md)
       + [Using the AWS Serverless Application Model (AWS SAM)](using-aws-sam.md)
++ [AWS Serverless Application Repository Limits](limits.md)
++ [Troubleshooting the AWS Serverless Application Repository](troubleshooting.md)
 + [Resources](resources.md)
    + [Applications](applications.md)
    + [Applications applicationId](applications-applicationid.md)

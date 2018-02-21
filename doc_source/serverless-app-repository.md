@@ -3,5 +3,5 @@
 Following, you can find information on how to consume and publish serverless applications through the AWS Serverless Application Repository\.
 
 
-+ [Consuming Applications \(Preview\)](serverless-app-consuming-applications.md)
-+ [Publishing Applications \(Preview\)](serverless-app-publishing-applications.md)
++ [Consuming Applications](serverless-app-consuming-applications.md)
++ [Publishing Applications](serverless-app-publishing-applications.md)

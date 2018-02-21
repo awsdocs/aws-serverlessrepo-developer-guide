@@ -1,8 +1,8 @@
-# Applications `applicationId` Policy<a name="applications-applicationid-policy"></a>
+# Applications applicationId Policy<a name="applications-applicationid-policy"></a>
 
 ## URI<a name="applications-applicationid-policy-url"></a>
 
-/applications/*applicationId*/policy
+  / applications / *applicationId* / policy 
 
 ## HTTP Methods<a name="applications-applicationid-policy-http-methods"></a>
 
@@ -28,8 +28,8 @@ Gets the policy for the specified application\.
 |  400  |   [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
 |  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
-|  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit time\.  | 
+|  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
+|  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 
 ### PUT<a name="applications-applicationid-policyput"></a>
 
@@ -53,8 +53,8 @@ Puts the policy for the specified application\.
 |  400  |   [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
 |  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
-|  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit time\.  | 
+|  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
+|  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 
 ## Schemas<a name="applications-applicationid-policy-schemas"></a>
 
@@ -64,13 +64,13 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "statements": [
+  "[statements](#applications-applicationid-policy-applicationpolicy-statements)": [
     {
-      "statementId": "string",
-      "principals": [
+      "[statementId](#applications-applicationid-policy-applicationpolicystatement-statementid)": "string",
+      "[principals](#applications-applicationid-policy-applicationpolicystatement-principals)": [
         "string"
       ],
-      "actions": [
+      "[actions](#applications-applicationid-policy-applicationpolicystatement-actions)": [
         "string"
       ]
     }
@@ -84,13 +84,13 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "statements": [
+  "[statements](#applications-applicationid-policy-applicationpolicy-statements)": [
     {
-      "statementId": "string",
-      "principals": [
+      "[statementId](#applications-applicationid-policy-applicationpolicystatement-statementid)": "string",
+      "[principals](#applications-applicationid-policy-applicationpolicystatement-principals)": [
         "string"
       ],
-      "actions": [
+      "[actions](#applications-applicationid-policy-applicationpolicystatement-actions)": [
         "string"
       ]
     }
@@ -102,8 +102,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-policy-badrequestexception-message)": "string",
+  "[errorCode](#applications-applicationid-policy-badrequestexception-errorcode)": "string"
 }
 ```
 
@@ -111,8 +111,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-policy-forbiddenexception-message)": "string",
+  "[errorCode](#applications-applicationid-policy-forbiddenexception-errorcode)": "string"
 }
 ```
 
@@ -120,8 +120,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-policy-notfoundexception-message)": "string",
+  "[errorCode](#applications-applicationid-policy-notfoundexception-errorcode)": "string"
 }
 ```
 
@@ -129,8 +129,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-policy-toomanyrequestsexception-message)": "string",
+  "[errorCode](#applications-applicationid-policy-toomanyrequestsexception-errorcode)": "string"
 }
 ```
 
@@ -138,8 +138,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "message": "string",
-  "errorCode": "string"
+  "[message](#applications-applicationid-policy-internalservererrorexception-message)": "string",
+  "[errorCode](#applications-applicationid-policy-internalservererrorexception-errorcode)": "string"
 }
 ```
 
@@ -150,7 +150,7 @@ Puts the policy for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   statements  |  Array of type  ApplicationPolicyStatement    | True |  Array of policy statements applied to the application\.  | 
+|   statements  |  Array of type  [ApplicationPolicyStatement](#applications-applicationid-policy-applicationpolicystatement)    | True |  An array of policy statements applied to the application\.  | 
 
 
 **ApplicationPolicyStatement**  
@@ -159,7 +159,7 @@ Puts the policy for the specified application\.
 | --- |--- |--- |--- |
 |   statementId  |  string  | False |  A unique ID for the statement\.  | 
 |   principals  |  Array of type string   | True |  An AWS account ID, or \* to make the application public\.  | 
-|   actions  |  Array of type string   | True |  A list of supported actions:  `GetApplication`   `CreateCloudFormationChangeSet`   `ListApplicationVersions`   `SearchApplications`   `Deploy` \(Note: This action enables all other actions above\.\)  | 
+|   actions  |  Array of type string   | True |  A list of supported actions:  `GetApplication`   `CreateCloudFormationChangeSet`   `ListApplicationVersions`   `SearchApplications`   `Deploy` \(Note: This action enables all other actions preceding\.\)  | 
 
 
 **BadRequestException**  
@@ -190,7 +190,7 @@ Puts the policy for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request does not exist\.  | 
+|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |   errorCode  |  string  | False |  404  | 
 
 
@@ -198,5 +198,5 @@ Puts the policy for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit time\.  | 
+|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |   errorCode  |  string  | False |  429  | 
