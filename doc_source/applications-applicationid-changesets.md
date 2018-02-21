@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-applicationid-changesets-url"></a>
 
-  / applications / *applicationId* / changesets 
+ /applications/ *applicationId* /changesets 
 
 ## HTTP Methods<a name="applications-applicationid-changesets-http-methods"></a>
 
@@ -38,12 +38,12 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[stackName](#applications-applicationid-changesets-createcloudformationchangesetinput-stackname)": "string",
-  "[semanticVersion](#applications-applicationid-changesets-createcloudformationchangesetinput-semanticversion)": "string",
-  "[parameterOverrides](#applications-applicationid-changesets-createcloudformationchangesetinput-parameteroverrides)": [
+  "stackName": "string",
+  "semanticVersion": "string",
+  "parameterOverrides": [
     {
-      "[name](#applications-applicationid-changesets-parametervalue-name)": "string",
-      "[value](#applications-applicationid-changesets-parametervalue-value)": "string"
+      "name": "string",
+      "value": "string"
     }
   ]
 }
@@ -55,10 +55,10 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[applicationId](#applications-applicationid-changesets-changesetdetails-applicationid)": "string",
-  "[semanticVersion](#applications-applicationid-changesets-changesetdetails-semanticversion)": "string",
-  "[changeSetId](#applications-applicationid-changesets-changesetdetails-changesetid)": "string",
-  "[stackId](#applications-applicationid-changesets-changesetdetails-stackid)": "string"
+  "applicationId": "string",
+  "semanticVersion": "string",
+  "changeSetId": "string",
+  "stackId": "string"
 }
 ```
 
@@ -66,8 +66,8 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[message](#applications-applicationid-changesets-badrequestexception-message)": "string",
-  "[errorCode](#applications-applicationid-changesets-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -75,8 +75,8 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[message](#applications-applicationid-changesets-forbiddenexception-message)": "string",
-  "[errorCode](#applications-applicationid-changesets-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -84,8 +84,8 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[message](#applications-applicationid-changesets-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-applicationid-changesets-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -93,8 +93,8 @@ Creates an AWS CloudFormation change set for the given application\.
 
 ```
 {
-  "[message](#applications-applicationid-changesets-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-applicationid-changesets-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

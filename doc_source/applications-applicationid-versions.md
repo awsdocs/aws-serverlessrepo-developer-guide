@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-applicationid-versions-url"></a>
 
-  / applications / *applicationId* / versions 
+ /applications/ *applicationId* /versions 
 
 ## HTTP Methods<a name="applications-applicationid-versions-http-methods"></a>
 
@@ -47,15 +47,15 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[versions](#applications-applicationid-versions-applicationversionpage-versions)": [
+  "versions": [
     {
-      "[applicationId](#applications-applicationid-versions-versionsummary-applicationid)": "string",
-      "[semanticVersion](#applications-applicationid-versions-versionsummary-semanticversion)": "string",
-      "[sourceCodeUrl](#applications-applicationid-versions-versionsummary-sourcecodeurl)": "string",
-      "[creationTime](#applications-applicationid-versions-versionsummary-creationtime)": "string"
+      "applicationId": "string",
+      "semanticVersion": "string",
+      "sourceCodeUrl": "string",
+      "creationTime": "string"
     }
   ],
-  "[nextToken](#applications-applicationid-versions-applicationversionpage-nexttoken)": "string"
+  "nextToken": "string"
 }
 ```
 
@@ -63,8 +63,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-badrequestexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -72,8 +72,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-forbiddenexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -81,8 +81,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-notfoundexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-notfoundexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -90,8 +90,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -99,8 +99,8 @@ Lists versions for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-url"></a>
 
-  / applications 
+ /applications 
 
 ## HTTP Methods<a name="applications-http-methods"></a>
 
@@ -57,22 +57,22 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[name](#applications-createapplicationinput-name)": "string",
-  "[description](#applications-createapplicationinput-description)": "string",
-  "[author](#applications-createapplicationinput-author)": "string",
-  "[spdxLicenseId](#applications-createapplicationinput-spdxlicenseid)": "string",
-  "[licenseBody](#applications-createapplicationinput-licensebody)": "string",
-  "[licenseUrl](#applications-createapplicationinput-licenseurl)": "string",
-  "[readmeBody](#applications-createapplicationinput-readmebody)": "string",
-  "[readmeUrl](#applications-createapplicationinput-readmeurl)": "string",
-  "[labels](#applications-createapplicationinput-labels)": [
+  "name": "string",
+  "description": "string",
+  "author": "string",
+  "spdxLicenseId": "string",
+  "licenseBody": "string",
+  "licenseUrl": "string",
+  "readmeBody": "string",
+  "readmeUrl": "string",
+  "labels": [
     "string"
   ],
-  "[homePageUrl](#applications-createapplicationinput-homepageurl)": "string",
-  "[semanticVersion](#applications-createapplicationinput-semanticversion)": "string",
-  "[templateBody](#applications-createapplicationinput-templatebody)": "string",
-  "[templateUrl](#applications-createapplicationinput-templateurl)": "string",
-  "[sourceCodeUrl](#applications-createapplicationinput-sourcecodeurl)": "string"
+  "homePageUrl": "string",
+  "semanticVersion": "string",
+  "templateBody": "string",
+  "templateUrl": "string",
+  "sourceCodeUrl": "string"
 }
 ```
 
@@ -82,21 +82,21 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[applications](#applications-applicationpage-applications)": [
+  "applications": [
     {
-      "[applicationId](#applications-applicationsummary-applicationid)": "string",
-      "[name](#applications-applicationsummary-name)": "string",
-      "[description](#applications-applicationsummary-description)": "string",
-      "[author](#applications-applicationsummary-author)": "string",
-      "[spdxLicenseId](#applications-applicationsummary-spdxlicenseid)": "string",
-      "[labels](#applications-applicationsummary-labels)": [
+      "applicationId": "string",
+      "name": "string",
+      "description": "string",
+      "author": "string",
+      "spdxLicenseId": "string",
+      "labels": [
         "string"
       ],
-      "[creationTime](#applications-applicationsummary-creationtime)": "string",
-      "[homePageUrl](#applications-applicationsummary-homepageurl)": "string"
+      "creationTime": "string",
+      "homePageUrl": "string"
     }
   ],
-  "[nextToken](#applications-applicationpage-nexttoken)": "string"
+  "nextToken": "string"
 }
 ```
 
@@ -104,41 +104,41 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[applicationId](#applications-application-applicationid)": "string",
-  "[name](#applications-application-name)": "string",
-  "[description](#applications-application-description)": "string",
-  "[author](#applications-application-author)": "string",
-  "[spdxLicenseId](#applications-application-spdxlicenseid)": "string",
-  "[licenseUrl](#applications-application-licenseurl)": "string",
-  "[readmeUrl](#applications-application-readmeurl)": "string",
-  "[labels](#applications-application-labels)": [
+  "applicationId": "string",
+  "name": "string",
+  "description": "string",
+  "author": "string",
+  "spdxLicenseId": "string",
+  "licenseUrl": "string",
+  "readmeUrl": "string",
+  "labels": [
     "string"
   ],
-  "[creationTime](#applications-application-creationtime)": "string",
-  "[homePageUrl](#applications-application-homepageurl)": "string",
-  "[version](#applications-application-version)": {
-    "[applicationId](#applications-version-applicationid)": "string",
-    "[semanticVersion](#applications-version-semanticversion)": "string",
-    "[sourceCodeUrl](#applications-version-sourcecodeurl)": "string",
-    "[templateUrl](#applications-version-templateurl)": "string",
-    "[creationTime](#applications-version-creationtime)": "string",
-    "[parameterDefinitions](#applications-version-parameterdefinitions)": [
+  "creationTime": "string",
+  "homePageUrl": "string",
+  "version": {
+    "applicationId": "string",
+    "semanticVersion": "string",
+    "sourceCodeUrl": "string",
+    "templateUrl": "string",
+    "creationTime": "string",
+    "parameterDefinitions": [
       {
-        "[name](#applications-parameterdefinition-name)": "string",
-        "[defaultValue](#applications-parameterdefinition-defaultvalue)": "string",
-        "[description](#applications-parameterdefinition-description)": "string",
-        "[type](#applications-parameterdefinition-type)": "string",
-        "[noEcho](#applications-parameterdefinition-noecho)": boolean,
-        "[allowedPattern](#applications-parameterdefinition-allowedpattern)": "string",
-        "[constraintDescription](#applications-parameterdefinition-constraintdescription)": "string",
-        "[minValue](#applications-parameterdefinition-minvalue)": integer,
-        "[maxValue](#applications-parameterdefinition-maxvalue)": integer,
-        "[minLength](#applications-parameterdefinition-minlength)": integer,
-        "[maxLength](#applications-parameterdefinition-maxlength)": integer,
-        "[allowedValues](#applications-parameterdefinition-allowedvalues)": [
+        "name": "string",
+        "defaultValue": "string",
+        "description": "string",
+        "type": "string",
+        "noEcho": boolean,
+        "allowedPattern": "string",
+        "constraintDescription": "string",
+        "minValue": integer,
+        "maxValue": integer,
+        "minLength": integer,
+        "maxLength": integer,
+        "allowedValues": [
           "string"
         ],
-        "[referencedByResources](#applications-parameterdefinition-referencedbyresources)": [
+        "referencedByResources": [
           "string"
         ]
       }
@@ -151,8 +151,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-badrequestexception-message)": "string",
-  "[errorCode](#applications-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -160,8 +160,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-forbiddenexception-message)": "string",
-  "[errorCode](#applications-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -169,8 +169,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-notfoundexception-message)": "string",
-  "[errorCode](#applications-notfoundexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -178,8 +178,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-conflictexception-message)": "string",
-  "[errorCode](#applications-conflictexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -187,8 +187,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -196,8 +196,8 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 ```
 {
-  "[message](#applications-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

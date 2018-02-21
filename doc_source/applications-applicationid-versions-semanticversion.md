@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-applicationid-versions-semanticversion-url"></a>
 
-  / applications / *applicationId* / versions / *semanticVersion* 
+ /applications/ *applicationId* /versions/ *semanticVersion* 
 
 ## HTTP Methods<a name="applications-applicationid-versions-semanticversion-http-methods"></a>
 
@@ -40,9 +40,9 @@ Creates an application version\.
 
 ```
 {
-  "[templateBody](#applications-applicationid-versions-semanticversion-createapplicationversioninput-templatebody)": "string",
-  "[templateUrl](#applications-applicationid-versions-semanticversion-createapplicationversioninput-templateurl)": "string",
-  "[sourceCodeUrl](#applications-applicationid-versions-semanticversion-createapplicationversioninput-sourcecodeurl)": "string"
+  "templateBody": "string",
+  "templateUrl": "string",
+  "sourceCodeUrl": "string"
 }
 ```
 
@@ -52,28 +52,28 @@ Creates an application version\.
 
 ```
 {
-  "[applicationId](#applications-applicationid-versions-semanticversion-version-applicationid)": "string",
-  "[semanticVersion](#applications-applicationid-versions-semanticversion-version-semanticversion)": "string",
-  "[sourceCodeUrl](#applications-applicationid-versions-semanticversion-version-sourcecodeurl)": "string",
-  "[templateUrl](#applications-applicationid-versions-semanticversion-version-templateurl)": "string",
-  "[creationTime](#applications-applicationid-versions-semanticversion-version-creationtime)": "string",
-  "[parameterDefinitions](#applications-applicationid-versions-semanticversion-version-parameterdefinitions)": [
+  "applicationId": "string",
+  "semanticVersion": "string",
+  "sourceCodeUrl": "string",
+  "templateUrl": "string",
+  "creationTime": "string",
+  "parameterDefinitions": [
     {
-      "[name](#applications-applicationid-versions-semanticversion-parameterdefinition-name)": "string",
-      "[defaultValue](#applications-applicationid-versions-semanticversion-parameterdefinition-defaultvalue)": "string",
-      "[description](#applications-applicationid-versions-semanticversion-parameterdefinition-description)": "string",
-      "[type](#applications-applicationid-versions-semanticversion-parameterdefinition-type)": "string",
-      "[noEcho](#applications-applicationid-versions-semanticversion-parameterdefinition-noecho)": boolean,
-      "[allowedPattern](#applications-applicationid-versions-semanticversion-parameterdefinition-allowedpattern)": "string",
-      "[constraintDescription](#applications-applicationid-versions-semanticversion-parameterdefinition-constraintdescription)": "string",
-      "[minValue](#applications-applicationid-versions-semanticversion-parameterdefinition-minvalue)": integer,
-      "[maxValue](#applications-applicationid-versions-semanticversion-parameterdefinition-maxvalue)": integer,
-      "[minLength](#applications-applicationid-versions-semanticversion-parameterdefinition-minlength)": integer,
-      "[maxLength](#applications-applicationid-versions-semanticversion-parameterdefinition-maxlength)": integer,
-      "[allowedValues](#applications-applicationid-versions-semanticversion-parameterdefinition-allowedvalues)": [
+      "name": "string",
+      "defaultValue": "string",
+      "description": "string",
+      "type": "string",
+      "noEcho": boolean,
+      "allowedPattern": "string",
+      "constraintDescription": "string",
+      "minValue": integer,
+      "maxValue": integer,
+      "minLength": integer,
+      "maxLength": integer,
+      "allowedValues": [
         "string"
       ],
-      "[referencedByResources](#applications-applicationid-versions-semanticversion-parameterdefinition-referencedbyresources)": [
+      "referencedByResources": [
         "string"
       ]
     }
@@ -85,8 +85,8 @@ Creates an application version\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-semanticversion-badrequestexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-semanticversion-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -94,8 +94,8 @@ Creates an application version\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-semanticversion-forbiddenexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-semanticversion-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -103,8 +103,8 @@ Creates an application version\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-semanticversion-conflictexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-semanticversion-conflictexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -112,8 +112,8 @@ Creates an application version\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-semanticversion-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-semanticversion-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -121,8 +121,8 @@ Creates an application version\.
 
 ```
 {
-  "[message](#applications-applicationid-versions-semanticversion-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-applicationid-versions-semanticversion-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

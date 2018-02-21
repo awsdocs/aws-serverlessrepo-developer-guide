@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-applicationid-policy-url"></a>
 
-  / applications / *applicationId* / policy 
+ /applications/ *applicationId* /policy 
 
 ## HTTP Methods<a name="applications-applicationid-policy-http-methods"></a>
 
@@ -64,13 +64,13 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[statements](#applications-applicationid-policy-applicationpolicy-statements)": [
+  "statements": [
     {
-      "[statementId](#applications-applicationid-policy-applicationpolicystatement-statementid)": "string",
-      "[principals](#applications-applicationid-policy-applicationpolicystatement-principals)": [
+      "statementId": "string",
+      "principals": [
         "string"
       ],
-      "[actions](#applications-applicationid-policy-applicationpolicystatement-actions)": [
+      "actions": [
         "string"
       ]
     }
@@ -84,13 +84,13 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[statements](#applications-applicationid-policy-applicationpolicy-statements)": [
+  "statements": [
     {
-      "[statementId](#applications-applicationid-policy-applicationpolicystatement-statementid)": "string",
-      "[principals](#applications-applicationid-policy-applicationpolicystatement-principals)": [
+      "statementId": "string",
+      "principals": [
         "string"
       ],
-      "[actions](#applications-applicationid-policy-applicationpolicystatement-actions)": [
+      "actions": [
         "string"
       ]
     }
@@ -102,8 +102,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-policy-badrequestexception-message)": "string",
-  "[errorCode](#applications-applicationid-policy-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -111,8 +111,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-policy-forbiddenexception-message)": "string",
-  "[errorCode](#applications-applicationid-policy-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -120,8 +120,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-policy-notfoundexception-message)": "string",
-  "[errorCode](#applications-applicationid-policy-notfoundexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -129,8 +129,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-policy-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-applicationid-policy-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -138,8 +138,8 @@ Puts the policy for the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-policy-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-applicationid-policy-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

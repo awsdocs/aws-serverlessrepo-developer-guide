@@ -2,7 +2,7 @@
 
 ## URI<a name="applications-applicationid-url"></a>
 
-  / applications / *applicationId* 
+ /applications/ *applicationId* 
 
 ## HTTP Methods<a name="applications-applicationid-http-methods"></a>
 
@@ -98,14 +98,14 @@ Updates the specified application\.
 
 ```
 {
-  "[description](#applications-applicationid-updateapplicationinput-description)": "string",
-  "[author](#applications-applicationid-updateapplicationinput-author)": "string",
-  "[readmeBody](#applications-applicationid-updateapplicationinput-readmebody)": "string",
-  "[readmeUrl](#applications-applicationid-updateapplicationinput-readmeurl)": "string",
-  "[labels](#applications-applicationid-updateapplicationinput-labels)": [
+  "description": "string",
+  "author": "string",
+  "readmeBody": "string",
+  "readmeUrl": "string",
+  "labels": [
     "string"
   ],
-  "[homePageUrl](#applications-applicationid-updateapplicationinput-homepageurl)": "string"
+  "homePageUrl": "string"
 }
 ```
 
@@ -115,41 +115,41 @@ Updates the specified application\.
 
 ```
 {
-  "[applicationId](#applications-applicationid-application-applicationid)": "string",
-  "[name](#applications-applicationid-application-name)": "string",
-  "[description](#applications-applicationid-application-description)": "string",
-  "[author](#applications-applicationid-application-author)": "string",
-  "[spdxLicenseId](#applications-applicationid-application-spdxlicenseid)": "string",
-  "[licenseUrl](#applications-applicationid-application-licenseurl)": "string",
-  "[readmeUrl](#applications-applicationid-application-readmeurl)": "string",
-  "[labels](#applications-applicationid-application-labels)": [
+  "applicationId": "string",
+  "name": "string",
+  "description": "string",
+  "author": "string",
+  "spdxLicenseId": "string",
+  "licenseUrl": "string",
+  "readmeUrl": "string",
+  "labels": [
     "string"
   ],
-  "[creationTime](#applications-applicationid-application-creationtime)": "string",
-  "[homePageUrl](#applications-applicationid-application-homepageurl)": "string",
-  "[version](#applications-applicationid-application-version)": {
-    "[applicationId](#applications-applicationid-version-applicationid)": "string",
-    "[semanticVersion](#applications-applicationid-version-semanticversion)": "string",
-    "[sourceCodeUrl](#applications-applicationid-version-sourcecodeurl)": "string",
-    "[templateUrl](#applications-applicationid-version-templateurl)": "string",
-    "[creationTime](#applications-applicationid-version-creationtime)": "string",
-    "[parameterDefinitions](#applications-applicationid-version-parameterdefinitions)": [
+  "creationTime": "string",
+  "homePageUrl": "string",
+  "version": {
+    "applicationId": "string",
+    "semanticVersion": "string",
+    "sourceCodeUrl": "string",
+    "templateUrl": "string",
+    "creationTime": "string",
+    "parameterDefinitions": [
       {
-        "[name](#applications-applicationid-parameterdefinition-name)": "string",
-        "[defaultValue](#applications-applicationid-parameterdefinition-defaultvalue)": "string",
-        "[description](#applications-applicationid-parameterdefinition-description)": "string",
-        "[type](#applications-applicationid-parameterdefinition-type)": "string",
-        "[noEcho](#applications-applicationid-parameterdefinition-noecho)": boolean,
-        "[allowedPattern](#applications-applicationid-parameterdefinition-allowedpattern)": "string",
-        "[constraintDescription](#applications-applicationid-parameterdefinition-constraintdescription)": "string",
-        "[minValue](#applications-applicationid-parameterdefinition-minvalue)": integer,
-        "[maxValue](#applications-applicationid-parameterdefinition-maxvalue)": integer,
-        "[minLength](#applications-applicationid-parameterdefinition-minlength)": integer,
-        "[maxLength](#applications-applicationid-parameterdefinition-maxlength)": integer,
-        "[allowedValues](#applications-applicationid-parameterdefinition-allowedvalues)": [
+        "name": "string",
+        "defaultValue": "string",
+        "description": "string",
+        "type": "string",
+        "noEcho": boolean,
+        "allowedPattern": "string",
+        "constraintDescription": "string",
+        "minValue": integer,
+        "maxValue": integer,
+        "minLength": integer,
+        "maxLength": integer,
+        "allowedValues": [
           "string"
         ],
-        "[referencedByResources](#applications-applicationid-parameterdefinition-referencedbyresources)": [
+        "referencedByResources": [
           "string"
         ]
       }
@@ -162,8 +162,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-badrequestexception-message)": "string",
-  "[errorCode](#applications-applicationid-badrequestexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -171,8 +171,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-forbiddenexception-message)": "string",
-  "[errorCode](#applications-applicationid-forbiddenexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -180,8 +180,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-notfoundexception-message)": "string",
-  "[errorCode](#applications-applicationid-notfoundexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -189,8 +189,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-conflictexception-message)": "string",
-  "[errorCode](#applications-applicationid-conflictexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -198,8 +198,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-toomanyrequestsexception-message)": "string",
-  "[errorCode](#applications-applicationid-toomanyrequestsexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 
@@ -207,8 +207,8 @@ Updates the specified application\.
 
 ```
 {
-  "[message](#applications-applicationid-internalservererrorexception-message)": "string",
-  "[errorCode](#applications-applicationid-internalservererrorexception-errorcode)": "string"
+  "message": "string",
+  "errorCode": "string"
 }
 ```
 

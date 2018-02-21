@@ -20,6 +20,6 @@ Find, configure, and deploy an application in the AWS Serverless Application Rep
 
 1. Choose **Deploy**\. Doing this takes you to the **Deployment status** page\.
 
-1. >On the **Deployment status** page you can view the progress of your deployment\. While waiting for your deployment to complete, you can search and browse for other applications, and return to this page through the Lambda console\.
+1. On the **Deployment status** page you can view the progress of your deployment\. While waiting for your deployment to complete, you can search and browse for other applications, and return to this page through the Lambda console\.
 
 After your application has been successfully deployed, you can review and manage the resources that have been created using existing AWS tools\. 
