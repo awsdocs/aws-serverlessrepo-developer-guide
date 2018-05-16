@@ -12,7 +12,7 @@ Find, configure, and deploy an application in the AWS Serverless Application Rep
 
 1. Browse or search for an application\.
 
-1. Choose an application to view more details about it, such as its capabilities and the number of times it has been deployed by AWS customers\. \(Note: The deployment counts are shown for the region in which you are trying to deployment application\)
+1. Choose an application to view details such as its capabilities and the number of times it has been deployed by AWS customers\. \(Note: The deployment counts are shown for the region in which you are trying to deployment application\)
 
 1. On the application detail page, you can view the application's permissions, application resources via the SAM template, license, and readme file\. You can also find the **Source code URL** link for applications that are publicly shared\.
 
