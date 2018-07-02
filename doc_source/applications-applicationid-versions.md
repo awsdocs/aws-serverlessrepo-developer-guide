@@ -17,7 +17,7 @@ Lists versions for the specified application\.
 
 | Name | Type | Required | Description | 
 | --- |--- |--- |--- |
-|  applicationId  | String | True |  The ID of the application to get\.  | 
+|  applicationId  | String | True |  The Amazon Resource Name \(ARN\) of the application\.  | 
 
 
 **Query Parameters**  

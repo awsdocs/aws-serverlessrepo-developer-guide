@@ -10,14 +10,14 @@
 
 Operation ID: GetApplicationPolicy 
 
-Gets the policy for the specified application\.
+Retrieves the policy for the application\.
 
 
 **Path Parameters**  
 
 | Name | Type | Required | Description | 
 | --- |--- |--- |--- |
-|  applicationId  | String | True |  The ID of the application to get\.  | 
+|  applicationId  | String | True |  The Amazon Resource Name \(ARN\) of the application\.  | 
 
 
 **Responses**  
@@ -35,14 +35,14 @@ Gets the policy for the specified application\.
 
 Operation ID: PutApplicationPolicy 
 
-Puts the policy for the specified application\.
+Sets the permission policy for an application\. For the list of actions supported for this operation, see [Application Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions) \.
 
 
 **Path Parameters**  
 
 | Name | Type | Required | Description | 
 | --- |--- |--- |--- |
-|  applicationId  | String | True |  The ID of the application to get\.  | 
+|  applicationId  | String | True |  The Amazon Resource Name \(ARN\) of the application\.  | 
 
 
 **Responses**  
@@ -159,7 +159,7 @@ Puts the policy for the specified application\.
 | --- |--- |--- |--- |
 |   statementId  |  string  | False |  A unique ID for the statement\.  | 
 |   principals  |  Array of type string   | True |  An AWS account ID, or \* to make the application public\.  | 
-|   actions  |  Array of type string   | True |  A list of supported actions:  `GetApplication`   `CreateCloudFormationChangeSet`   `ListApplicationVersions`   `SearchApplications`   `Deploy` \(Note: This action enables all other actions preceding\.\)  | 
+|   actions  |  Array of type string   | True |  For the list of actions supported for this operation, see [Application Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions)\.  | 
 
 
 **BadRequestException**  

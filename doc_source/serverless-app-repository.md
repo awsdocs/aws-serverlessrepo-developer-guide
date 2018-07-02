@@ -2,6 +2,6 @@
 
 Following, you can find information on how to consume and publish serverless applications through the AWS Serverless Application Repository\.
 
-
+**Topics**
 + [Consuming Applications](serverless-app-consuming-applications.md)
 + [Publishing Applications](serverless-app-publishing-applications.md)

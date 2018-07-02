@@ -1,8 +1,8 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines simplified syntax for expressing serverless resources\. The specification currently covers APIs, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. 
+The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines a simplified syntax for expressing serverless resources\. The specification currently covers API operations, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. 
 
-AWS SAM supports special resource types that simplify how to express functions, APIs, mappings, and DynamoDB tables for serverless applications, in addition to some features for these services like environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
+AWS SAM supports special resource types that simplify how to express functions, API operations, mappings, and DynamoDB tables for serverless applications\. AWS SAM also supports certain other features for these services, such as environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
 
 ## Requesting new AWS Resources for AWS Serverless Application Repository<a name="requesting-new-resources-and-policies"></a>
 
@@ -11,92 +11,49 @@ The sections below list AWS Resources and Policy Templates currently supported b
 ## Supported AWS Resources in the AWS Serverless Application Repository<a name="supported-resources-for-serverlessrepo"></a>
 
 Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. The following is a complete list of supported resources:
-
-+ AWS::Serverless::Function
-
-+ AWS::Serverless::Api
-
-+ AWS::Serverless::SimpleTable
-
-+ AWS::Lambda::Alias
-
-+ AWS::Lambda::Version
-
-+ AWS::Lambda::EventSourceMapping
-
-+ AWS::ApiGateway::Account
-
-+ AWS::ApiGateway::ApiKey
-
-+ AWS::ApiGateway::Authorizer
-
-+ AWS::ApiGateway::BasePathMapping
-
-+ AWS::ApiGateway::ClientCertificate
-
-+ AWS::ApiGateway::Deployment
-
-+ AWS::ApiGateway::DocumentationPart
-
-+ AWS::ApiGateway::DocumentationVersion
-
-+ AWS::ApiGateway::DomainName
-
-+ AWS::ApiGateway::GatewayResponse
-
-+ AWS::ApiGateway::Method
-
-+ AWS::ApiGateway::Model
-
-+ AWS::ApiGateway::RequestValidator
-
-+ AWS::ApiGateway::Resource
-
-+ AWS::ApiGateway::RestApi
-
-+ AWS::ApiGateway::Stage
-
-+ AWS::ApiGateway::UsagePlan
-
-+ AWS::ApiGateway::UsagePlanKey
-
-+ AWS::Cognito::IdentityPool
-
-+ AWS::Cognito::UserPool
-
-+ AWS::Cognito::UserPoolClient
-
-+ AWS::Cognito::UserPoolGroup
-
-+ AWS::Cognito::UserPoolUser
-
-+ AWS::Cognito::UserPoolUserToGroupAttachment
-
-+ AWS::DynamoDB::Table
-
-+ AWS::Logs::Destination
-
-+ AWS::Logs::LogGroup
-
-+ AWS::Logs::LogStream
-
-+ AWS::Logs::MetricFilter
-
-+ AWS::Logs::SubscriptionFilter
-
-+ AWS::Kinesis::Streams
-
-+ AWS::S3::Bucket
-
-+ AWS::SNS::Subscription
-
-+ AWS::SNS::Topic
-
-+ AWS::SQS::Queue
-
-+ AWS::CloudWatch::Alarm
-
-+ AWS::CloudWatch::Dashboard
++ `AWS::Serverless::Function`
++ `AWS::Serverless::Api`
++ `AWS::Serverless::SimpleTable`
++ `AWS::Lambda::Alias`
++ `AWS::Lambda::Version`
++ `AWS::Lambda::EventSourceMapping`
++ `AWS::ApiGateway::Account`
++ `AWS::ApiGateway::ApiKey`
++ `AWS::ApiGateway::Authorizer`
++ `AWS::ApiGateway::BasePathMapping`
++ `AWS::ApiGateway::ClientCertificate`
++ `AWS::ApiGateway::Deployment`
++ `AWS::ApiGateway::DocumentationPart`
++ `AWS::ApiGateway::DocumentationVersion`
++ `AWS::ApiGateway::DomainName`
++ `AWS::ApiGateway::GatewayResponse`
++ `AWS::ApiGateway::Method`
++ `AWS::ApiGateway::Model`
++ `AWS::ApiGateway::RequestValidator`
++ `AWS::ApiGateway::Resource`
++ `AWS::ApiGateway::RestApi`
++ `AWS::ApiGateway::Stage`
++ `AWS::ApiGateway::UsagePlan`
++ `AWS::ApiGateway::UsagePlanKey`
++ `AWS::Cognito::IdentityPool`
++ `AWS::Cognito::UserPool`
++ `AWS::Cognito::UserPoolClient`
++ `AWS::Cognito::UserPoolGroup`
++ `AWS::Cognito::UserPoolUser`
++ `AWS::Cognito::UserPoolUserToGroupAttachment`
++ `AWS::DynamoDB::Table`
++ `AWS::Logs::Destination`
++ `AWS::Logs::LogGroup`
++ `AWS::Logs::LogStream`
++ `AWS::Logs::MetricFilter`
++ `AWS::Logs::SubscriptionFilter`
++ `AWS::Kinesis::Streams`
++ `AWS::S3::Bucket`
++ `AWS::SNS::Subscription`
++ `AWS::SNS::Topic`
++ `AWS::SQS::Queue`
++ `AWS::CloudWatch::Alarm`
++ `AWS::CloudWatch::Dashboard`
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 

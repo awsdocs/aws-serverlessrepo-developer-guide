@@ -5,11 +5,12 @@ When you use the AWS Serverless Application Repository, you might encounter issu
 **Note**  
 Applications in the AWS Serverless Application Repository are deployed by using AWS CloudFormation\. For information on troubleshooting AWS CloudFormation issues, see the* [AWS CloudFormation Troubleshooting Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html)\.*
 
-
+**Topics**
 + [You Can't Make an Application Public](#issue-cant-make-app-public)
 + [A Limit Was Exceeded](#issue-limit-exceeded)
-+ [Updating an Application's Readme File Doesn't Immediately Reflect on the Public Site](#issue-updating-readme-delay)
-+ [You Can’t Deploy the Same Application Twice](#issue-cant-deploy-same-app-twice)
++ [An Updated Readme File Doesn't Appear Immediately](#issue-updating-readme-delay)
++ [You Can't Deploy an Application Due to Insufficient IAM Permissions](#issue-cant-deploy-app-due-to-insufficient-iam-permissions)
++ [You Can't Deploy the Same Application Twice](#issue-cant-deploy-same-app-twice)
 + [Why Is My Application Not Publicly Available](#issue-why-not-publicly-available)
 + [Contacting Support](#issue-contacting-support)
 
@@ -25,11 +26,17 @@ If you can't make your application public because you are missing a license file
 
 If you receive an error message indicating that a limit was exceeded, check to see if you reached a resource limit\. For AWS Serverless Application Repository limits, see [AWS Serverless Application Repository Limits](limits.md)\.
 
-## Updating an Application's Readme File Doesn't Immediately Reflect on the Public Site<a name="issue-updating-readme-delay"></a>
+## An Updated Readme File Doesn't Appear Immediately<a name="issue-updating-readme-delay"></a>
 
 When you make your application public, the contents of your application can take up to 24 hours to update\. If you experience delays longer than 24 hours, try contacting AWS Support for help\. For details, see following\. 
 
-## You Can’t Deploy the Same Application Twice<a name="issue-cant-deploy-same-app-twice"></a>
+## You Can't Deploy an Application Due to Insufficient IAM Permissions<a name="issue-cant-deploy-app-due-to-insufficient-iam-permissions"></a>
+
+To deploy an AWS Serverless Application Repository application, you need permissions to AWS Serverless Application Repository resources and AWS CloudFormation stacks\. You might also need permission to use the underlying services described in the application\. For example, if you're creating an Amazon S3 bucket or an Amazon DynamoDB table, you need permissions to Amazon S3 or DynamoDB\. 
+
+If you run into this type of issue, review your AWS Identity and Access Management \(IAM\) policy and verify that you have the necessary permissions\. For more information, see [Controlling Access with AWS Identity and Access Management](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)\. 
+
+## You Can't Deploy the Same Application Twice<a name="issue-cant-deploy-same-app-twice"></a>
 
 The application name that you provide is used as the name of the AWS CloudFormation stack\. If you have problems deploying an application, make sure that you don't have an existing AWS CloudFormation stack with the same name\. If you do, provide a different application name or delete the existing stack to deploy the application with the same name\.
 
@@ -39,6 +46,6 @@ Applications are private by default\. In order to make your application public, 
 
 ## Contacting Support<a name="issue-contacting-support"></a>
 
-If you can't find troubleshooting solutions in this section or through the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com//forum.jspa?forumID=287) and you have AWS Premium Support, you can create a technical support case at [AWS Support](https://console.aws.amazon.com/support/home#/)\. 
+In some cases, you might not be able to find troubleshooting solutions in this section or through the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com//forum.jspa?forumID=287)\. If you have AWS Premium Support, you can create a technical support case at [AWS Support](https://console.aws.amazon.com/support/home#/)\. 
 
-Before you contact AWS Support, make sure to get the Amazon Resource Name \(ARN\) for the application that you have questions about\. You can find the application ARN in the [AWS Serverless Application Repository Management Console](https://console.aws.amazon.com//serverlessrepo/)\.
+Before you contact AWS Support, make sure to get the Amazon Resource Name \(ARN\) for the application that you have questions about\. You can find the application ARN in the [AWS Serverless Application Repository console](https://console.aws.amazon.com//serverlessrepo/)\.

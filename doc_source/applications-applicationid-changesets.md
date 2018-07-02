@@ -17,7 +17,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 | Name | Type | Required | Description | 
 | --- |--- |--- |--- |
-|  applicationId  | String | True |  The ID of the application to get\.  | 
+|  applicationId  | String | True |  The Amazon Resource Name \(ARN\) of the application\.  | 
 
 
 **Responses**  
@@ -123,7 +123,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   stackName  |  string  | True |  The name or the unique ID of the stack for which you are creating a change set\. AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values\.  Constraints: Minimum length of 1\. Pattern: \(\[a\-zA\-Z\]\[\-a\-zA\-Z0\-9\]\*\)|\(arn:\\b\(aws|aws\-us\-gov|aws\-cn\)\\b:\[\-a\-zA\-Z0\-9:/\.\_\+\]\*\)  | 
+|   stackName  |  string  | True |  The name or the unique ID of the stack for which you are creating a change set\. AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values\.  Constraints: Minimum length of 1\. Pattern: \(\[a\-zA\-Z\]\[\-a\-zA\-Z0\-9\]\*\)\|\(arn:\\b\(aws\|aws\-us\-gov\|aws\-cn\)\\b:\[\-a\-zA\-Z0\-9:/\.\_\+\]\*\)  | 
 |   semanticVersion  |  string  | False |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
 |   parameterOverrides  |  Array of type  [ParameterValue](#applications-applicationid-changesets-parametervalue)    | False |  A list of parameter values for the parameters of the application\.  | 
 
