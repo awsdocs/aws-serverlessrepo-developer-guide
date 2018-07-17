@@ -291,7 +291,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## S3CrudPolicy: Gives CRUD Permissions to Objects in the Amazon S3 Bucket<a name="s3-crud-policy"></a>
+## S3CrudPolicy: Gives Create/Read/Update Permissions to Objects in the Amazon S3 Bucket<a name="s3-crud-policy"></a>
 
 ```
         "Statement": [
@@ -320,6 +320,57 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
               {
                 "Fn::Sub": [
                   "arn:${AWS::Partition}:s3:::${bucketName}/*",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## S3FullAccessPolicy: Gives Full Access Permissions to Objects in the Amazon S3 Bucket<a name="s3-full-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:GetObject",
+              "s3:GetObjectAcl",
+              "s3:GetObjectVersion",
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:DeleteObject"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:ListBucket",
+              "s3:GetBucketLocation",
+              "s3:GetLifecycleConfiguration",
+              "s3:PutLifecycleConfiguration"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}",
                   {
                     "bucketName": {
                       "Ref": "BucketName"
