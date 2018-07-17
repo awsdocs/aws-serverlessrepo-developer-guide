@@ -81,7 +81,11 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
           {
             "Effect": "Allow",
             "Action": [
+              "sqs:ChangeMessageVisibility",
+              "sqs:ChangeMessageVisibilityBatch",
               "sqs:DeleteMessage",
+              "sqs:DeleteMessageBatch",
+              "sqs:GetQueueAttributes",
               "sqs:ReceiveMessage"
             ],
             "Resource": {
@@ -150,7 +154,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## DynamoDBCrudPolicy: Gives CRUD Access to a DynamoDB Table<a name="dynamo-db-crud-policy"></a>
+## DynamoDBCrudPolicy: Gives Create/Read/Update/Delete Permissions to a DynamoDB Table<a name="dynamo-db-crud-policy"></a>
 
 ```
         "Statement": [
@@ -332,57 +336,6 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
         ]
 ```
 
-## S3FullAccessPolicy: Gives Full Access Permissions to Objects in the Amazon S3 Bucket<a name="s3-full-access-policy"></a>
-
-```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:GetObjectAcl",
-              "s3:GetObjectVersion",
-              "s3:PutObject",
-              "s3:PutObjectAcl",
-              "s3:DeleteObject"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "s3:ListBucket",
-              "s3:GetBucketLocation",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-```
-
 ## AMIDescribePolicy: Gives Permissions to Describe Amazon Machine Images \(AMIs\)<a name="ami-describe-policy"></a>
 
 ```
@@ -549,9 +502,7 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
               "ec2:DescribeNetworkInterfaces",
               "ec2:DetachNetworkInterface"
             ],
-            "Resource": {
-              "Fn::Sub": "arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:network-interface/*"
-            }
+            "Resource": "*"
           }
         ]
 ```
@@ -720,6 +671,450 @@ The following example shows that the `SQSPollerPolicy` policy expects a `QueueNa
                 {
                   "keyId": {
                     "Ref": "KeyId"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## PollyFullAccessPolicy: Gives full access permissions to Amazon Polly lexicon resources<a name="polly-full-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "polly:GetLexicon",
+              "polly:DeleteLexicon"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/${lexiconName}",
+                  {
+                    "lexiconName": {
+                      "Ref": "LexiconName"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "polly:DescribeVoices",
+              "polly:ListLexicons",
+              "polly:PutLexicon",
+              "polly:SynthesizeSpeech"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/*"
+              }
+            ]
+          }
+        ]
+```
+
+## S3FullAccessPolicy: Gives full access permissions to objects in the Amazon S3 Bucket<a name="s3-full-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:GetObject",
+              "s3:GetObjectAcl",
+              "s3:GetObjectVersion",
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:DeleteObject"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:ListBucket",
+              "s3:GetBucketLocation",
+              "s3:GetLifecycleConfiguration",
+              "s3:PutLifecycleConfiguration"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## CodePipelineLambdaExecutionPolicy: Gives permission for a Lambda function invoked by AWS CodePipeline to report back status of the job<a name="code-pipeline-lambda-execution-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "codepipeline:PutJobSuccessResult",
+              "codepipeline:PutJobFailureResult"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:*"
+              }
+            ]
+          }
+        ]
+```
+
+## ServerlessRepoReadWriteAccessPolicy: Gives access permissions to create and list applications in the AWS Serverless Application Repository service<a name="serverlessrepo-read-write-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "serverlessrepo:CreateApplication",
+              "serverlessrepo:CreateApplicationVersion",
+              "serverlessrepo:GetApplication",
+              "serverlessrepo:ListApplications",
+              "serverlessrepo:ListApplicationVersions"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": "arn:${AWS::Partition}:serverlessrepo:${AWS::Region}:${AWS::AccountId}:applications/*"
+              }
+            ]
+          }
+        ]
+```
+
+## EC2CopyImagePolicy: Gives permission to copy Amazon EC2 Images<a name="ec2-copy-image-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ec2:CopyImage"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:image/${imageId}",
+                {
+                  "imageId": {
+                    "Ref": "ImageId"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## AWSSecretsManagerRotationPolicy: Grants permissions to APIs required to rotate a secret in AWS Secrets Manager<a name="secrets-manager-rotation-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:DescribeSecret",
+              "secretsmanager:GetSecretValue",
+              "secretsmanager:PutSecretValue",
+              "secretsmanager:UpdateSecretVersionStage"
+            ],
+            "Resource": {
+              "Fn::Sub": "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"
+            },
+            "Condition": {
+              "StringEquals": {
+                "secretsmanager:resource/AllowRotationLambdaArn": {
+                  "Fn::Sub": [
+                    "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}",
+                    {
+                      "functionName": {
+                        "Ref": "FunctionName"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:GetRandomPassword"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## CodePipelineReadOnlyPolicy: Gives read permissions to get details about a CodePipeline pipeline<a name="code-pipeline-readonly-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cloudwatch:GetDashboard",
+              "cloudwatch:ListDashboards",
+              "cloudwatch:PutDashboard",
+              "cloudwatch:ListMetrics"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## RekognitionFacesPolicy: Gives permission to compare and detect faces and labels<a name="rekognition-faces-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "rekognition:CompareFaces",
+            "rekognition:DetectFaces"
+          ],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+              {
+                "collectionId": {
+                  "Ref": "CollectionId"
+                }
+              }
+            ]
+          }
+        ]
+```
+
+## RekognitionLabelsPolicy: Gives permission to compare and detect faces and labels<a name="rekognition-labels-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "rekognition:DetectLabels",
+            "rekognition:DetectModerationLabels"
+          ],
+          "Resource": "*"
+         }
+        ]
+```
+
+## DynamoDBBackupFullAccessPolicy: Gives read/write permissions to DynamoDB on\-demand backups for a table<a name="ddb-back-full-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "dynamodb:CreateBackup",
+            "dynamodb:DescribeContinuousBackups"
+          ],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+              {
+                "tableName": {
+                  "Ref": "TableName"
+                }
+              }
+            ]
+          }
+        },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:DeleteBackup",
+              "dynamodb:DescribeBackup",
+              "dynamodb:ListBackups"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
+                {
+                  "tableName": {
+                    "Ref": "TableName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## DynamoDBRestoreFromBackupPolicy: Gives permissions to restore a table from backup<a name="ddb-restore-from-backup-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "dynamodb:RestoreTableFromBackup"
+          ],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
+              {
+                "tableName": {
+                  "Ref": "TableName"
+                }
+              }
+            ]
+          }
+        },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem",
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:Scan",
+              "dynamodb:BatchWriteItem"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                {
+                  "tableName": {
+                    "Ref": "TableName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## ComprehendBasicAccessPolicy: Gives access to Amazon Comprehend APIs for detecting entities, key phrases, languages and sentiments<a name="comprehend-basic-access-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "comprehend:BatchDetectKeyPhrases",
+            "comprehend:DetectDominantLanguage",
+            "comprehend:DetectEntities",
+            "comprehend:BatchDetectEntities",
+            "comprehend:DetectKeyPhrases",
+            "comprehend:DetectSentiment",
+            "comprehend:BatchDetectDominantLanguage",
+            "comprehend:BatchDetectSentiment"
+          ],
+          "Resource": "*"
+          }
+        ]
+```
+
+## MobileAnalyticsWriteOnlyAccessPolicy: Gives write only permissions to put event data for all application resources<a name="mobile-analytics-write-only-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "mobileanalytics:PutEvents"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## PinpointEndpointAccessPolicy: Gives permissions to get and update endpoints for a Pinpoint application<a name="pinpoint-endpoint-access-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "mobiletargeting:GetEndpoint",
+              "mobiletargeting:UpdateEndpoint",
+              "mobiletargeting:UpdateEndpointsBatch"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:mobiletargeting:${AWS::Region}:${AWS::AccountId}:apps/${pinpointApplicationId}/endpoints/*",
+                {
+                  "pinpointApplicationId": {
+                    "Ref": "PinpointApplicationId"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## FirehoseWritePolicy: Gives permission to write to a Kinesis Firehose Delivery Stream<a name="firehose-write-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "firehose:PutRecord",
+              "firehose:PutRecordBatch"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
+                {
+                  "deliveryStreamName": {
+                    "Ref": "DeliveryStreamName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## FirehoseCrudPolicy: Gives permission to create, write to, update, and delete a Kinesis Firehose Delivery Stream<a name="firehose-crud-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "firehose:CreateDeliveryStream",
+              "firehose:DeleteDeliveryStream",
+              "firehose:DescribeDeliveryStream",
+              "firehose:PutRecord",
+              "firehose:PutRecordBatch",
+              "firehose:UpdateDestination"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
+                {
+                  "deliveryStreamName": {
+                    "Ref": "DeliveryStreamName"
                   }
                 }
               ]
