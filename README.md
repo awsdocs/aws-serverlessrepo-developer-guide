@@ -7,3 +7,7 @@ The open source version of Developer Guide for AWS Serverless Application Reposi
 The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
 
 The sample code within this documentation is made available under a modified MIT license. See the LICENSE-SAMPLECODE file.
+
+## Link to Developer Guide Index
+
+[AWS Serverless Application Repository Developer Guide](doc_source/index.md)
