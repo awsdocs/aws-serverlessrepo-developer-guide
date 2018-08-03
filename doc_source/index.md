@@ -24,6 +24,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Using Identity-Based Policies (IAM Policies) for AWS Serverless Application Repository](access-control-identity-based.md)
    + [Using Resource-Based Policies for AWS Serverless Application Repository (Application Policies)](access-control-resource-based.md)
    + [AWS Serverless Application Repository API Permissions: Actions and Resources Reference](serverlessrepo-api-permissions-ref.md)
++ [Logging AWS Serverless Application Repository API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
 + [AWS Serverless Application Repository Limits](limits.md)
 + [Troubleshooting the AWS Serverless Application Repository](troubleshooting.md)
 + [Resources](resources.md)
