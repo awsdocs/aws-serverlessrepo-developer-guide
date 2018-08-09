@@ -4,13 +4,13 @@ The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverl
 
 AWS SAM supports special resource types that simplify how to express functions, API operations, mappings, and DynamoDB tables for serverless applications\. AWS SAM also supports certain other features for these services, such as environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
 
-## Requesting new AWS Resources for AWS Serverless Application Repository<a name="requesting-new-resources-and-policies"></a>
-
-The sections below list AWS Resources and Policy Templates currently supported by AWS Serverless Application Repository\. If you would like to request new AWS Resources and/or Policy Templates to be added, please contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
+The sections below list the **AWS Resources** and **Policy Templates** currently supported by AWS Serverless Application Repository\. 
 
 ## Supported AWS Resources in the AWS Serverless Application Repository<a name="supported-resources-for-serverlessrepo"></a>
 
-Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. The following is a complete list of supported resources:
+Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. Below is a complete list of supported AWS Resources\.
+
+If you would like to request an additional AWS Resource to be supported, please contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
 + `AWS::Serverless::Function`
 + `AWS::Serverless::Api`
 + `AWS::Serverless::SimpleTable`
@@ -57,21 +57,53 @@ Serverless applications that you publish to the AWS Serverless Application Repos
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
-When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your AWS Lambda functions are scoped to the resources that are used by your application\. The following lists the permissions that are applied to each policy template in the policy templates list\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
+When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your AWS Lambda functions are scoped to the resources that are used by your application\.
 
-The following example shows that the `SQSPollerPolicy` policy expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the "`MyQueue`" Amazon SQS queue, which can be created in the same application or requested as a parameter to the application\.
+Below is the list of available policy templates, along with the permissions that are applied to each one\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
+
+**Important**  
+For applications published to the AWS Serverless Application Repository, you're only allowed to use the supported policy templates to extend the permissions for `AWS::Serverless::Function` resources\. Custom policies and AWS managed policies aren't allowed, and are rejected when the application is published to the AWS Serverless Application Repository\.
+
+If you want to request a new policy template to be added, do the following:
+
+1. Submit a pull request against the policy\_templates\.json source file in the develop branch of the AWS SAM GitHub project\. You can find the source file here: [policy\_templates\.json](https://github.com/awslabs/serverless-application-model/blob/develop/samtranslator/policy_templates_data/policy_templates.json)\.
+
+1. Submit an issue in the AWS SAM GitHub project that includes the reasons for your pull request and a link to the request\. Use this link to submit a new issue: [AWS Serverless Application Model: Issues](https://github.com/awslabs/serverless-application-model/issues/new)\.
+
+## Examples<a name="policy-template-examples"></a>
+
+There are two AWS SAM template examples in this section, one with a policy template that includes placeholder values, and one that does not include placeholder values\.
+
+### Example 1: Policy template with placeholder values<a name="policy-template-example-1"></a>
+
+The following example shows that the `SQSPollerPolicy` policy template expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the"`MyQueue`" Amazon SQS queue, which can be created in the same application or requested as a parameter to the application\.
 
 ```
  1. MyFunction:
- 2.     Type: 'AWS::Serverless::Function'
- 3.     Properties:
- 4.       CodeUri: ${codeuri}
- 5.       Handler: hello.handler
- 6.       Runtime: python2.7
- 7.       Policies:
+ 2.   Type: 'AWS::Serverless::Function'
+ 3.   Properties:
+ 4.     CodeUri: ${codeuri}
+ 5.     Handler: hello.handler
+ 6.     Runtime: python2.7
+ 7.     Policies:
  8.       - SQSPollerPolicy:
- 9.             QueueName:
-10.               Fn::GetAtt: ["MyQueue", "QueueName"]
+ 9.           QueueName:
+10.             !GetAtt MyQueue.QueueName
+```
+
+### Example 2: Policy template with no placeholder values<a name="policy-template-example-2"></a>
+
+The following example contains the `CloudWatchPutMetricPolicy` policy template, which has no placeholder values\.
+
+```
+1. MyFunction:
+2.   Type: 'AWS::Serverless::Function'
+3.   Properties:
+4.     CodeUri: ${codeuri}
+5.     Handler: hello.handler
+6.     Runtime: python2.7
+7.     Policies:
+8.       - CloudWatchPutMetricPolicy: {}
 ```
 
 ## SQSPollerPolicy: Gives Permissions to Poll an Amazon SQS Queue<a name="sqs-poller-policy"></a>
