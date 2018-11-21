@@ -3,7 +3,7 @@
 Every AWS resource is owned by an AWS account, and permissions to create or access an AWS resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\)\. Also, some services \(such as AWS Serverless Application Repository\) support attaching permissions policies to AWS resources\.
 
 **Note**  
-An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
+An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
 
 When granting permissions, you decide who is getting the permissions, the AWS resources they get permissions for, and the specific actions that you want to allow on those AWS resources\.
 
@@ -40,7 +40,7 @@ An *AWS resource owner* is the AWS account that created the AWS resource\. That 
 A *permissions policy* describes who has access to what\. The following section explains the available options for creating permissions policies\.
 
 **Note**  
-This section discusses using IAM in the context of AWS Serverless Application Repository\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+This section discusses using IAM in the context of AWS Serverless Application Repository\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM polices\) and policies attached to an AWS resource are referred to as *resource\-based* policies\. AWS Serverless Application Repository supports both identity\-based \(IAM policies\) and resource\-based policies\.
 
@@ -60,7 +60,7 @@ You can attach policies to IAM identities\. For example, you can do the followin
 
   1. Account B administrator can then delegate permissions to assume the role to any users in Account B\. Doing this allows users in Account B to create or access AWS resources in Account A\. The principal in the trust policy can also be an AWS service principal if you want to grant an AWS service permissions to assume the role\.
 
-   For more information about using IAM to delegate permissions, see [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
+   For more information about using IAM to delegate permissions, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
 
 The following is an example policy that grants permissions for the `serverlessrepo:ListApplications` action on all AWS resources\. In the current implementation, AWS Serverless Application Repository doesn't support identifying specific AWS resources using the AWS resource ARNs \(also referred to as resource\-level permissions\) for some of the API actions\. In these cases, you must specify a wildcard character \(\*\)\.
 
@@ -80,13 +80,13 @@ The following is an example policy that grants permissions for the `serverlessre
 }
 ```
 
-For more information about using identity\-based policies with AWS Serverless Application Repository, see [Using Identity\-Based Policies \(IAM Policies\) for AWS Serverless Application Repository](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with AWS Serverless Application Repository, see [Using Identity\-Based Policies \(IAM Policies\) for AWS Serverless Application Repository](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
 ### Resource\-Based Policies \(AWS Serverless Application Repository Application Policies\)<a name="access-control-manage-access-resource-based"></a>
 
 Each AWS Serverless Application Repository application can have resource\-based permissions policies associated with it\. For AWS Serverless Application Repository, an application is the primary AWS resource and these policies are referred to as *AWS Serverless Application Repository application policies* or simply *application policies*\. For AWS Serverless Application Repository, you can use an application policy to allow another account to deploy applications you have published\. You can either allow deployments by a specific list of accounts \(private\), or you can allow deployments to all other accounts \(public\)\.
 
-For more information about using resource\-based policies with AWS Serverless Application Repository, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For additional information about using IAM roles \(identity\-based policies\) as opposed to resource\-based policies, see [How IAM Roles Differ from Resource\-based Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html) in the *IAM User Guide*\.
+For more information about using resource\-based policies with AWS Serverless Application Repository, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For additional information about using IAM roles \(identity\-based policies\) as opposed to resource\-based policies, see [How IAM Roles Differ from Resource\-based Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html) in the *IAM User Guide*\.
 
 ## Specifying Policy Elements: Actions, Effects, AWS Resources, and Principals<a name="access-control-specify-lambda-actions"></a>
 
@@ -98,6 +98,6 @@ The following are the most basic policy elements\. In AWS Serverless Application
 + **Effect** – You specify the effect when the user requests the specific action—this can be either allow or deny\. If you don't explicitly grant access to \(allow\) an AWS resource, access is implicitly denied\. You can also explicitly deny access to an AWS resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. For resource\-based policies, you specify the user, account, service, or other entity that you want to receive permissions \(applies to resource\-based policies only\)\. 
 
-To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 For a table showing all of the AWS Serverless Application Repository API actions and the AWS resources that they apply to, see [AWS Serverless Application Repository API Permissions: Actions and Resources Reference](serverlessrepo-api-permissions-ref.md)\. 

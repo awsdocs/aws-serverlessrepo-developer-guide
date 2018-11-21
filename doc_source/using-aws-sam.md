@@ -1,8 +1,8 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines a simplified syntax for expressing serverless resources\. The specification currently covers API operations, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. 
+The [AWS Serverless Application Model \(AWS SAM\)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines a simplified syntax for expressing serverless resources\. The specification currently covers API operations, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/)\. 
 
-AWS SAM supports special resource types that simplify how to express functions, API operations, mappings, and DynamoDB tables for serverless applications\. AWS SAM also supports certain other features for these services, such as environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
+AWS SAM supports special resource types that simplify how to express functions, API operations, mappings, and DynamoDB tables for serverless applications\. AWS SAM also supports certain other features for these services, such as environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
 
 The sections below list the **AWS Resources** and **Policy Templates** currently supported by AWS Serverless Application Repository\. 
 
@@ -11,12 +11,14 @@ The sections below list the **AWS Resources** and **Policy Templates** currently
 Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. Below is a complete list of supported AWS Resources\.
 
 If you would like to request an additional AWS Resource to be supported, please contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
-+ `AWS::Serverless::Function`
-+ `AWS::Serverless::Api`
-+ `AWS::Serverless::SimpleTable`
-+ `AWS::Lambda::Alias`
-+ `AWS::Lambda::Version`
-+ `AWS::Lambda::EventSourceMapping`
+
+**Important**  
+If your application template contains one of the following custom IAM roles or resource policies, your application will not show up by default in search results\. Also, customers will need to acknowledge the application's custom IAM roles or resource policies before they can deploy the application\. For more information see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.   
+The list of resources that this applies to are:  
+**IAM roles: **[AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\.
+**Resource policies: ** [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.
+
+**Supported AWS Resources:**
 + `AWS::ApiGateway::Account`
 + `AWS::ApiGateway::ApiKey`
 + `AWS::ApiGateway::Authorizer`
@@ -35,25 +37,103 @@ If you would like to request an additional AWS Resource to be supported, please 
 + `AWS::ApiGateway::Stage`
 + `AWS::ApiGateway::UsagePlan`
 + `AWS::ApiGateway::UsagePlanKey`
++ `AWS::ApiGateway::VpcLink`
++ `AWS::AppSync::ApiKey`
++ `AWS::AppSync::DataSource`
++ `AWS::AppSync::GraphQLApi`
++ `AWS::AppSync::GraphQLSchema`
++ `AWS::AppSync::Resolver`
++ `AWS::ApplicationAutoScaling::ScalableTarget`
++ `AWS::ApplicationAutoScaling::ScalingPolicy`
++ `AWS::Athena::NamedQuery`
++ `AWS::CertificateManager::Certificate`
++ `AWS::CloudFormation::CustomResource`
++ `AWS::CloudFormation::WaitConditionHandle`
++ `AWS::CloudFront::CloudFrontOriginAccessIdentity`
++ `AWS::CloudFront::Distribution`
++ `AWS::CloudFront::StreamingDistribution`
++ `AWS::CloudWatch::Alarm`
++ `AWS::CloudWatch::Dashboard`
++ `AWS::CodeBuild::Project`
++ `AWS::CodePipeline::CustomActionType`
++ `AWS::CodePipeline::Pipeline`
++ `AWS::CodePipeline::Webhook`
 + `AWS::Cognito::IdentityPool`
++ `AWS::Cognito::IdentityPoolRoleAttachment`
 + `AWS::Cognito::UserPool`
 + `AWS::Cognito::UserPoolClient`
 + `AWS::Cognito::UserPoolGroup`
 + `AWS::Cognito::UserPoolUser`
 + `AWS::Cognito::UserPoolUserToGroupAttachment`
++ `AWS::Config::AggregationAuthorization`
++ `AWS::Config::ConfigRule`
++ `AWS::Config::ConfigurationAggregator`
++ `AWS::Config::ConfigurationRecorder`
++ `AWS::Config::DeliveryChannel`
++ `AWS::DataPipeline::Pipeline`
 + `AWS::DynamoDB::Table`
++ `AWS::ECR::Repository`
++ `AWS::Elasticsearch::Domain`
++ `AWS::Events::Rule`
++ `AWS::Glue::Classifier`
++ `AWS::Glue::Connection`
++ `AWS::Glue::Crawler`
++ `AWS::Glue::Database`
++ `AWS::Glue::DevEndpoint`
++ `AWS::Glue::Job`
++ `AWS::Glue::Partition`
++ `AWS::Glue::Table`
++ `AWS::Glue::Trigger`
++ `AWS::IAM::Group`
++ `AWS::IAM::InstanceProfile`
++ `AWS::IAM::ManagedPolicy`
++ `AWS::IAM::Policy`
++ `AWS::IAM::Role`
++ `AWS::IoT::Certificate`
++ `AWS::IoT::Policy`
++ `AWS::IoT::PolicyPrincipalAttachment`
++ `AWS::IoT::Thing`
++ `AWS::IoT::ThingPrincipalAttachment`
++ `AWS::IoT::TopicRule`
++ `AWS::KMS::Alias`
++ `AWS::KMS::Key`
++ `AWS::Kinesis::Stream`
++ `AWS::Kinesis::Streams`
++ `AWS::KinesisAnalytics::Application`
++ `AWS::KinesisAnalytics::ApplicationOutput`
++ `AWS::KinesisFirehose::DeliveryStream`
++ `AWS::Lambda::Alias`
++ `AWS::Lambda::EventSourceMapping`
++ `AWS::Lambda::Function`
++ `AWS::Lambda::Permission`
++ `AWS::Lambda::Version`
 + `AWS::Logs::Destination`
 + `AWS::Logs::LogGroup`
 + `AWS::Logs::LogStream`
 + `AWS::Logs::MetricFilter`
 + `AWS::Logs::SubscriptionFilter`
-+ `AWS::Kinesis::Streams`
++ `AWS::Route53::HealthCheck`
++ `AWS::Route53::HostedZone`
++ `AWS::Route53::RecordSet`
++ `AWS::Route53::RecordSetGroup`
 + `AWS::S3::Bucket`
++ `AWS::S3::BucketPolicy`
 + `AWS::SNS::Subscription`
 + `AWS::SNS::Topic`
++ `AWS::SNS::TopicPolicy`
 + `AWS::SQS::Queue`
-+ `AWS::CloudWatch::Alarm`
-+ `AWS::CloudWatch::Dashboard`
++ `AWS::SQS::QueuePolicy`
++ `AWS::SSM::Association`
++ `AWS::SSM::Document`
++ `AWS::SSM::MaintenanceWindowTask`
++ `AWS::SSM::Parameter`
++ `AWS::SSM::PatchBaseline`
++ `AWS::SSM::ResourceDataSync`
++ `AWS::Serverless::Api`
++ `AWS::Serverless::Function`
++ `AWS::Serverless::SimpleTable`
++ `AWS::StepFunctions::Activity`
++ `AWS::StepFunctions::StateMachine`
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
@@ -340,7 +420,8 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "s3:GetObjectVersion",
               "s3:PutObject",
               "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration"
+              "s3:PutLifecycleConfiguration",
+              "s3:DeleteObject"
             ],
             "Resource": [
               {
@@ -396,6 +477,23 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
             "Resource": {
               "Fn::Sub": "arn:${AWS::Partition}:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/*"
             }
+          }
+        ]
+```
+
+## RekognitionDetectOnlyPolicy: Gives permission to detect faces, labels and text<a name="rekognition-detect-only-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "rekognition:DetectFaces",
+              "rekognition:DetectLabels",
+              "rekognition:DetectModerationLabels",
+              "rekognition:DetectText"
+            ],
+            "Resource": "*"
           }
         ]
 ```
@@ -812,11 +910,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "codepipeline:PutJobSuccessResult",
               "codepipeline:PutJobFailureResult"
             ],
-            "Resource": [
-              {
-                "Fn::Sub": "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:*"
-              }
-            ]
+            "Resource": "*"
           }
         ]
 ```
@@ -902,6 +996,29 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "secretsmanager:GetRandomPassword"
             ],
             "Resource": "*"
+          }
+        ]
+```
+
+## AWSSecretsManagerGetSecretValuePolicy: Grants permissions to GetSecretValue for the specified AWS Secrets Manager secret<a name="secrets-manager-get-secret-value-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:GetSecretValue"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "${secretArn}",
+                {
+                  "secretArn": {
+                    "Ref": "SecretArn"
+                  }
+                }
+              ]
+            }
           }
         ]
 ```

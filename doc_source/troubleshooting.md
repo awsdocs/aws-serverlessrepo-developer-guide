@@ -3,7 +3,7 @@
 When you use the AWS Serverless Application Repository, you might encounter issues when you create, update, or delete your applications\. Use this section to help troubleshoot common issues that you might encounter\. You can also search for answers and post questions in the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com//forum.jspa?forumID=287)\.
 
 **Note**  
-Applications in the AWS Serverless Application Repository are deployed by using AWS CloudFormation\. For information on troubleshooting AWS CloudFormation issues, see the* [AWS CloudFormation Troubleshooting Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html)\.*
+Applications in the AWS Serverless Application Repository are deployed by using AWS CloudFormation\. For information on troubleshooting AWS CloudFormation issues, see the* [AWS CloudFormation Troubleshooting Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html)\.*
 
 **Topics**
 + [You Can't Make an Application Public](#issue-cant-make-app-public)
@@ -34,7 +34,7 @@ When you make your application public, the contents of your application can take
 
 To deploy an AWS Serverless Application Repository application, you need permissions to AWS Serverless Application Repository resources and AWS CloudFormation stacks\. You might also need permission to use the underlying services described in the application\. For example, if you're creating an Amazon S3 bucket or an Amazon DynamoDB table, you need permissions to Amazon S3 or DynamoDB\. 
 
-If you run into this type of issue, review your AWS Identity and Access Management \(IAM\) policy and verify that you have the necessary permissions\. For more information, see [Controlling Access with AWS Identity and Access Management](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)\. 
+If you run into this type of issue, review your AWS Identity and Access Management \(IAM\) policy and verify that you have the necessary permissions\. For more information, see [Controlling Access with AWS Identity and Access Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)\. 
 
 ## You Can't Deploy the Same Application Twice<a name="issue-cant-deploy-same-app-twice"></a>
 
@@ -42,7 +42,7 @@ The application name that you provide is used as the name of the AWS CloudFormat
 
 ## Why Is My Application Not Publicly Available<a name="issue-why-not-publicly-available"></a>
 
-Applications are private by default\. In order to make your application public, follow the steps [here](http://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-publishing-applications.html#share-application)\.
+Applications are private by default\. In order to make your application public, follow the steps [here](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-publishing-applications.html#share-application)\.
 
 ## Contacting Support<a name="issue-contacting-support"></a>
 

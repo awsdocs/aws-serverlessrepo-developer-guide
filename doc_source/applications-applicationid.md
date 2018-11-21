@@ -38,6 +38,17 @@ Gets the specified application\.
 |  404  |   [NotFoundException](#applications-applicationid-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 
+ **See Also** 
++  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/GetApplication) 
++  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/GetApplication) 
+
 ### DELETE<a name="applications-applicationiddelete"></a>
 
 Operation ID: DeleteApplication 
@@ -64,6 +75,17 @@ Deletes the specified application\.
 |  429  |   [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |  409  |   [ConflictException](#applications-applicationid-response-body-conflictexception-example)   |  The resource already exists\.  | 
 
+ **See Also** 
++  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/DeleteApplication) 
++  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/DeleteApplication) 
+
 ### PATCH<a name="applications-applicationidpatch"></a>
 
 Operation ID: UpdateApplication 
@@ -89,6 +111,17 @@ Updates the specified application\.
 |  404  |   [NotFoundException](#applications-applicationid-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |  409  |   [ConflictException](#applications-applicationid-response-body-conflictexception-example)   |  The resource already exists\.  | 
+
+ **See Also** 
++  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/UpdateApplication) 
++  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/UpdateApplication) 
 
 ## Schemas<a name="applications-applicationid-schemas"></a>
 
@@ -153,7 +186,11 @@ Updates the specified application\.
           "string"
         ]
       }
-    ]
+    ],
+    "requiredCapabilities": [
+      enum
+    ],
+    "resourcesSupported": boolean
   }
 }
 ```
@@ -231,6 +268,12 @@ Updates the specified application\.
 |   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 |   version  |   [Version](#applications-applicationid-version)   | False |  Version information about the application\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Application) 
+
 
 **BadRequestException**  
 
@@ -238,6 +281,16 @@ Updates the specified application\.
 | --- |--- |--- |--- |
 |   message  |  string  | False |  One of the parameters in the request is invalid\.  | 
 |   errorCode  |  string  | False |  400  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException) 
+
+**Capability \(enum\)**
+
+Values that must be specified in order to deploy some applications\.
++ CAPABILITY\_IAM
++ CAPABILITY\_NAMED\_IAM
++ CAPABILITY\_RESOURCE\_POLICY
 
 
 **ConflictException**  
@@ -247,6 +300,9 @@ Updates the specified application\.
 |   message  |  string  | False |  The resource already exists\.  | 
 |   errorCode  |  string  | False |  409  | 
 
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ConflictException) 
+
 
 **ForbiddenException**  
 
@@ -254,6 +310,9 @@ Updates the specified application\.
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The client is not authenticated\.  | 
 |   errorCode  |  string  | False |  403  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException) 
 
 
 **InternalServerErrorException**  
@@ -263,6 +322,9 @@ Updates the specified application\.
 |   message  |  string  | False |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |   errorCode  |  string  | False |  500  | 
 
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException) 
+
 
 **NotFoundException**  
 
@@ -270,6 +332,9 @@ Updates the specified application\.
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |   errorCode  |  string  | False |  404  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/NotFoundException) 
 
 
 **ParameterDefinition**  
@@ -290,6 +355,12 @@ Updates the specified application\.
 |   allowedValues  |  Array of type string   | False |  An array containing the list of values allowed for the parameter\.  | 
 |   referencedByResources  |  Array of type string   | True |  A list of AWS SAM resources that use this parameter\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterDefinition) 
+
 
 **TooManyRequestsException**  
 
@@ -297,6 +368,9 @@ Updates the specified application\.
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |   errorCode  |  string  | False |  429  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException) 
 
 
 **UpdateApplicationInput**  
@@ -310,6 +384,12 @@ Updates the specified application\.
 |   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Minimum length=1\. Maximum length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
 |   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/UpdateApplicationInput) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/UpdateApplicationInput) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/UpdateApplicationInput) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/UpdateApplicationInput) 
+
 
 **Version**  
 
@@ -321,3 +401,11 @@ Updates the specified application\.
 |   templateUrl  |  string  | True |  A link to the packaged AWS SAM template of your application\.  | 
 |   creationTime  |  string  | True |  The date and time this resource was created\.  | 
 |   parameterDefinitions  |  Array of type  [ParameterDefinition](#applications-applicationid-parameterdefinition)    | True |  An array of parameter types supported by the application\.  | 
+|   requiredCapabilities  |  Array of type string   | True |  A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\. The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, and `CAPABILITY_RESOURCE_POLICY`\. The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\. If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. Valid values: `CAPABILITY_IAM \| CAPABILITY_NAMED_IAM \| CAPABILITY_RESOURCE_POLICY`   | 
+|   resourcesSupported  |  boolean  | True |  Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved\.  | 
+
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Version) 

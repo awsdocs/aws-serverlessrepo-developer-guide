@@ -5,16 +5,33 @@ Following, you can find how to make your serverless applications available for o
 To publish an application, you first upload the application code\. You also upload a simple manifest file, also known as an *AWS Serverless Application Model \(AWS SAM\) template\.* For more information about using AWS SAM, see [Using the AWS Serverless Application Model \(AWS SAM\)](using-aws-sam.md)\.
 
 **Note**  
-To make the serverless applications that you publish available to developers in other AWS Regions, publish your applications to either US East \(N\. Virginia\) \(us\-east\-1\) or US East \(Ohio\) \(us\-east\-2\)\. Publishing your application in any other AWS Region restricts its availability to that AWS Region\. For more information about AWS Serverless Application Repository regions and endpoints, see [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#serverlessrepo_region) in the *AWS General Reference*\.
+To make the serverless applications that you publish available to developers in other AWS Regions, publish your applications to either US East \(N\. Virginia\) \(us\-east\-1\) or US East \(Ohio\) \(us\-east\-2\)\. Publishing your application in any other AWS Region restricts its availability to that AWS Region\. For more information about AWS Serverless Application Repository regions and endpoints, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#serverlessrepo_region) in the *AWS General Reference*\.
+
+**Important**  
+The information that you enter when publishing an application is not encrypted\. This information includes such data as the author name, location, and contact information\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
+
+## Prerequisites<a name="publishing-application-prerequisites"></a>
 
 Before you publish an application to the AWS Serverless Application Repository, you need the following:
 + A valid AWS account\.
-+ A valid AWS Serverless Application Model \(AWS SAM\) template that defines the AWS resources used\. For more information about AWS SAM, see [AWS Serverless Application Model \(AWS SAM\)](https://github.com/awslabs/serverless-application-model)\. 
++ A valid AWS Serverless Application Model \(AWS SAM\) template that defines the AWS resources used\. For more information about AWS SAM templates, see the [AWS SAM Template Basics](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html)\. 
 + A package for your application that you created using the AWS CloudFormation `package` command for the AWS CLI\. This command packages the local artifacts \(local paths\) that your AWS SAM template references\. For more details, see [package](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) in the AWS CloudFormation documentation\. 
 + A URL pointing to your application's source code, in case you want to publish your application publicly\.
 + A readme\.txt file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
 + A license\.txt file\.
-+ A valid Amazon S3 bucket policy that grants the service read permissions for artifacts uploaded to Amazon S3 when you packaged your application\. Following is an example of such a policy\.
++ A valid Amazon S3 bucket policy that grants the service read permissions for artifacts uploaded to Amazon S3 when you packaged your application\. To do this, follow these steps:
+
+  1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
+
+  1. Choose the Amazon S3 bucket you used to package your application\.
+
+  1. Choose the **Permissions** tab\.
+
+  1. Choose the **Bucket Policy** button\.
+
+  1. Paste the example policy statement below, making sure to substitute your bucket name in the Resource property value\.
+
+  1. Choose the **Save** button\.
 
   ```
    1. {
@@ -31,9 +48,6 @@ Before you publish an application to the AWS Serverless Application Repository, 
   12.     ]
   13. }
   ```
-
-**Note**  
-The information that you enter when publishing an application is not encrypted\. This information includes such data as the author name, location, and contact information\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
 
 ## Publishing an Application Through the AWS Management Console<a name="publishing-application-through-aws-console"></a>
 
@@ -130,7 +144,7 @@ To delete a published application through the AWS Management Console, do the fol
 
 ## Deleting an Application Through the AWS CLI<a name="deleting-application-through-cli"></a>
 
-To delete a published application using the AWS CLI, you run the `[aws serverlessrepo delete\-application](http://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\. In the command, specify the application ID of the application that you want to delete\.
+To delete a published application using the AWS CLI, you run the `[aws serverlessrepo delete\-application](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\. In the command, specify the application ID of the application that you want to delete\.
 
 The following command deletes an application, where `<value>` is the application ID:
 

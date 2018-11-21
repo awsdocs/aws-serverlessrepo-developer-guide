@@ -31,6 +31,17 @@ Lists applications owned by the requester\.
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  404  |   [NotFoundException](#applications-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 
+ **See Also** 
++  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/ListApplications) 
++  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/ListApplications) 
+
 ### POST<a name="applicationspost"></a>
 
 Operation ID: CreateApplication 
@@ -48,6 +59,17 @@ Creates an application, optionally including an AWS SAM file to create the first
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  429  |   [TooManyRequestsException](#applications-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |  409  |   [ConflictException](#applications-response-body-conflictexception-example)   |  The resource already exists\.  | 
+
+ **See Also** 
++  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/CreateApplication) 
++  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/CreateApplication) 
 
 ## Schemas<a name="applications-schemas"></a>
 
@@ -142,7 +164,11 @@ Creates an application, optionally including an AWS SAM file to create the first
           "string"
         ]
       }
-    ]
+    ],
+    "requiredCapabilities": [
+      enum
+    ],
+    "resourcesSupported": boolean
   }
 }
 ```
@@ -220,6 +246,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 |   version  |   [Version](#applications-version)   | False |  Version information about the application\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Application) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Application) 
+
 
 **ApplicationPage**  
 
@@ -227,6 +259,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |--- |
 |   applications  |  Array of type  [ApplicationSummary](#applications-applicationsummary)    | True |  An array of application summaries\.  | 
 |   nextToken  |  string  | False |  The token to request the next page of results\.  | 
+
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationPage) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationPage) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationPage) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationPage) 
 
 
 **ApplicationSummary**  
@@ -242,6 +280,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   creationTime  |  string  | False |  The date and time this resource was created\.  | 
 |   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationSummary) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationSummary) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationSummary) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationSummary) 
+
 
 **BadRequestException**  
 
@@ -250,6 +294,16 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   message  |  string  | False |  One of the parameters in the request is invalid\.  | 
 |   errorCode  |  string  | False |  400  | 
 
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException) 
+
+**Capability \(enum\)**
+
+Values that must be specified in order to deploy some applications\.
++ CAPABILITY\_IAM
++ CAPABILITY\_NAMED\_IAM
++ CAPABILITY\_RESOURCE\_POLICY
+
 
 **ConflictException**  
 
@@ -257,6 +311,9 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The resource already exists\.  | 
 |   errorCode  |  string  | False |  409  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ConflictException) 
 
 
 **CreateApplicationInput**  
@@ -278,6 +335,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   templateUrl  |  string  | False |  A link to the S3 object containing the packaged AWS SAM template of your application\. You can specify only one of `templateBody` and `templateUrl`; otherwise an error results\.  | 
 |   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplicationInput) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplicationInput) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplicationInput) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateApplicationInput) 
+
 
 **ForbiddenException**  
 
@@ -285,6 +348,9 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The client is not authenticated\.  | 
 |   errorCode  |  string  | False |  403  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException) 
 
 
 **InternalServerErrorException**  
@@ -294,6 +360,9 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   message  |  string  | False |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |   errorCode  |  string  | False |  500  | 
 
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException) 
+
 
 **NotFoundException**  
 
@@ -301,6 +370,9 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |   errorCode  |  string  | False |  404  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/NotFoundException) 
 
 
 **ParameterDefinition**  
@@ -321,6 +393,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   allowedValues  |  Array of type string   | False |  An array containing the list of values allowed for the parameter\.  | 
 |   referencedByResources  |  Array of type string   | True |  A list of AWS SAM resources that use this parameter\.  | 
 
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterDefinition) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterDefinition) 
+
 
 **TooManyRequestsException**  
 
@@ -328,6 +406,9 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |--- |
 |   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |   errorCode  |  string  | False |  429  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException) 
 
 
 **Version**  
@@ -340,3 +421,11 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   templateUrl  |  string  | True |  A link to the packaged AWS SAM template of your application\.  | 
 |   creationTime  |  string  | True |  The date and time this resource was created\.  | 
 |   parameterDefinitions  |  Array of type  [ParameterDefinition](#applications-parameterdefinition)    | True |  An array of parameter types supported by the application\.  | 
+|   requiredCapabilities  |  Array of type string   | True |  A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\. The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, and `CAPABILITY_RESOURCE_POLICY`\. The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\. If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. Valid values: `CAPABILITY_IAM \| CAPABILITY_NAMED_IAM \| CAPABILITY_RESOURCE_POLICY`   | 
+|   resourcesSupported  |  boolean  | True |  Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved\.  | 
+
+ **See Also** 
++  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Version) 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Version) 
