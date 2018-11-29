@@ -18,7 +18,7 @@ To show applications that contain custom IAM roles or resource policies, select 
 
    The deployment counts are shown for the AWS Region in which you are trying to deploy the application\.
 
-1. On the application detail page, view the application's permissions and application resources by viewing the SAM template, license, and readme file\. On this page, you can also find the **Source code URL** link for applications that are publicly shared\.
+1. On the application detail page, view the application's permissions and application resources by viewing the SAM template, license, and readme file\. On this page, you can also find the **Source code URL** link for applications that are publicly shared\. If the application includes any nested applications, you can also view details of the nested applications on this page\.
 
 1. Configure the application in the **Application settings** section\. For guidance on configuring a particular application, see that application’s readme file\. 
 

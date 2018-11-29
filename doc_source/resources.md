@@ -6,6 +6,7 @@ The AWS Serverless Application Repository REST API includes the following resour
 + [Applications](applications.md)
 + [Applications applicationId](applications-applicationid.md)
 + [Applications applicationId Changesets](applications-applicationid-changesets.md)
++ [Applications applicationId Dependencies](applications-applicationid-dependencies.md)
 + [Applications applicationId Policy](applications-applicationid-policy.md)
 + [Applications applicationId Templates](applications-applicationid-templates.md)
 + [Applications applicationId Templates templateId](applications-applicationid-templates-templateid.md)

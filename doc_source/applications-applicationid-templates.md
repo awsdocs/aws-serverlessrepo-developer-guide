@@ -26,9 +26,10 @@ Creates an AWS CloudFormation template\.
 | --- |--- |--- |
 |  201  |   [TemplateDetails](#applications-applicationid-templates-response-body-templatedetails-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-applicationid-templates-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-applicationid-templates-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-templates-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
+|  404  |   [NotFoundException](#applications-applicationid-templates-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-templates-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
+|  500  |   [InternalServerErrorException](#applications-applicationid-templates-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationTemplate) 
@@ -79,6 +80,15 @@ Creates an AWS CloudFormation template\.
 ```
 
 #### Example ForbiddenException<a name="applications-applicationid-templates-response-body-forbiddenexception-example"></a>
+
+```
+{
+  "message": "string",
+  "errorCode": "string"
+}
+```
+
+#### Example NotFoundException<a name="applications-applicationid-templates-response-body-notfoundexception-example"></a>
 
 ```
 {
@@ -152,6 +162,17 @@ Creates an AWS CloudFormation template\.
 
  **See Also** 
 +  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException) 
+
+
+**NotFoundException**  
+
+| Property | Type | Required | Description | 
+| --- |--- |--- |--- |
+|   message  |  string  | False |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
+|   errorCode  |  string  | False |  404  | 
+
+ **See Also** 
++  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/NotFoundException) 
 
 
 **TemplateDetails**  

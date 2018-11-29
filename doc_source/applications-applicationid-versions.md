@@ -34,10 +34,10 @@ Lists versions for the specified application\.
 | --- |--- |--- |
 |  200  |   [ApplicationVersionPage](#applications-applicationid-versions-response-body-applicationversionpage-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-applicationid-versions-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-applicationid-versions-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-versions-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  404  |   [NotFoundException](#applications-applicationid-versions-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-versions-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
+|  500  |   [InternalServerErrorException](#applications-applicationid-versions-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplicationVersions) 
@@ -122,7 +122,7 @@ Lists versions for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   versions  |  Array of type  [VersionSummary](#applications-applicationid-versions-versionsummary)    | True |  An array of version summaries for the application\.  | 
+|   versions  |  Array of type  [VersionSummary](#applications-applicationid-versions-model-versionsummary)    | True |  An array of version summaries for the application\.  | 
 |   nextToken  |  string  | False |  The token to request the next page of results\.  | 
 
  **See Also** 

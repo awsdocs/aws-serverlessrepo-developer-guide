@@ -20,6 +20,7 @@ This table contains the list of supported actions for setting permissions for AW
 | CreateCloudFormationChangeSet |  Grants permission for the application to be deployed\. Note: This action does *not* grant any other permission other than to deploy\.  | 
 | CreateCloudFormationTemplate |  Grants permission to create an AWS CloudFormation template for the application\.  | 
 | ListApplicationVersions | Grants permission to list the versions of the application\. | 
+| ListApplicationDependencies | Grants permission to list the list applications nested in the containing application\. | 
 | SearchApplications | Grants permission for the application to be searched for\. | 
 | Deploy |  This action enables all actions listed above, that is, it grants permission for the application to be viewed, deployed, versions to be listed, and to be searched for\.  | 
 
@@ -81,4 +82,15 @@ To view an application's currently policy, for example to see whether it is curr
 aws serverlessrepo get-application-policy \
 --region region \
 --application-id application-arn
+```
+
+## Example 6: Allow Application to be Nested by Specific Accounts<a name="access-control-resource-based-example-nest-app-policy"></a>
+
+Public applications are allowed to be nested by anyone\. If you want to only allow your application to be nested by specific accounts, you must set the following minimal permissions, as in the following example\.
+
+```
+aws serverlessrepo put-application-policy \
+--region region \
+--application-id application-arn \
+--statements Principals=account-id-1,account-id-2,Actions=GetApplication,CreateCloudFormationTemplate
 ```

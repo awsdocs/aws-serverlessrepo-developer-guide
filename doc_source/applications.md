@@ -27,9 +27,9 @@ Lists applications owned by the requester\.
 | --- |--- |--- |
 |  200  |   [ApplicationPage](#applications-response-body-applicationpage-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  404  |   [NotFoundException](#applications-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
+|  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplications) 
@@ -55,10 +55,10 @@ Creates an application, optionally including an AWS SAM file to create the first
 | --- |--- |--- |
 |  201  |   [Application](#applications-response-body-application-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  429  |   [TooManyRequestsException](#applications-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
 |  409  |   [ConflictException](#applications-response-body-conflictexception-example)   |  The resource already exists\.  | 
+|  429  |   [TooManyRequestsException](#applications-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
+|  500  |   [InternalServerErrorException](#applications-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateApplication) 
@@ -244,7 +244,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 |   labels  |  Array of type string   | False |  Labels to improve discovery of apps in search results\. Minimum length=1\. Maximum length=127\. Maximum number of labels: 10 Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$";  | 
 |   creationTime  |  string  | False |  The date and time this resource was created\.  | 
 |   homePageUrl  |  string  | False |  A URL with more information about the application, for example the location of your GitHub repository for the application\.  | 
-|   version  |   [Version](#applications-version)   | False |  Version information about the application\.  | 
+|   version  |   [Version](#applications-model-version)   | False |  Version information about the application\.  | 
 
  **See Also** 
 +  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Application) 
@@ -257,7 +257,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   applications  |  Array of type  [ApplicationSummary](#applications-applicationsummary)    | True |  An array of application summaries\.  | 
+|   applications  |  Array of type  [ApplicationSummary](#applications-model-applicationsummary)    | True |  An array of application summaries\.  | 
 |   nextToken  |  string  | False |  The token to request the next page of results\.  | 
 
  **See Also** 
@@ -302,6 +302,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 Values that must be specified in order to deploy some applications\.
 + CAPABILITY\_IAM
 + CAPABILITY\_NAMED\_IAM
++ CAPABILITY\_AUTO\_EXPAND
 + CAPABILITY\_RESOURCE\_POLICY
 
 
@@ -420,8 +421,8 @@ Values that must be specified in order to deploy some applications\.
 |   sourceCodeUrl  |  string  | False |  A link to a public repository for the source code of your application\.  | 
 |   templateUrl  |  string  | True |  A link to the packaged AWS SAM template of your application\.  | 
 |   creationTime  |  string  | True |  The date and time this resource was created\.  | 
-|   parameterDefinitions  |  Array of type  [ParameterDefinition](#applications-parameterdefinition)    | True |  An array of parameter types supported by the application\.  | 
-|   requiredCapabilities  |  Array of type string   | True |  A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\. The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, and `CAPABILITY_RESOURCE_POLICY`\. The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\. If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. Valid values: `CAPABILITY_IAM \| CAPABILITY_NAMED_IAM \| CAPABILITY_RESOURCE_POLICY`   | 
+|   parameterDefinitions  |  Array of type  [ParameterDefinition](#applications-model-parameterdefinition)    | True |  An array of parameter types supported by the application\.  | 
+|   requiredCapabilities  |  Array of type string   | True |  A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\. The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, and `CAPABILITY_AUTO_EXPAND`\. The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\. Applications that contain one or more nested applications require you to specify `CAPABILITY_AUTO_EXPAND`\. If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\.  | 
 |   resourcesSupported  |  boolean  | True |  Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved\.  | 
 
  **See Also** 

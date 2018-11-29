@@ -26,10 +26,10 @@ Retrieves the policy for the application\.
 | --- |--- |--- |
 |  200  |   [ApplicationPolicy](#applications-applicationid-policy-response-body-applicationpolicy-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
+|  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetApplicationPolicy) 
@@ -62,10 +62,10 @@ Sets the permission policy for an application\. For the list of actions supporte
 | --- |--- |--- |
 |  200  |   [ApplicationPolicy](#applications-applicationid-policy-response-body-applicationpolicy-example)   |  Success  | 
 |  400  |   [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 |  403  |   [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
 |  404  |   [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example)   |  The resource \(for example, an access policy statement\) specified in the request doesn't exist\.  | 
 |  429  |   [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
+|  500  |   [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
 
  **See Also** 
 +  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/PutApplicationPolicy) 
@@ -172,7 +172,7 @@ Sets the permission policy for an application\. For the list of actions supporte
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   statements  |  Array of type  [ApplicationPolicyStatement](#applications-applicationid-policy-applicationpolicystatement)    | True |  An array of policy statements applied to the application\.  | 
+|   statements  |  Array of type  [ApplicationPolicyStatement](#applications-applicationid-policy-model-applicationpolicystatement)    | True |  An array of policy statements applied to the application\.  | 
 
  **See Also** 
 +  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationPolicy) 

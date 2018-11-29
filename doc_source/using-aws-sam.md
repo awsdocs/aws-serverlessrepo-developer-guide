@@ -1,8 +1,8 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The [AWS Serverless Application Model \(AWS SAM\)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/) is a model that defines serverless applications\. AWS SAM is natively supported by AWS CloudFormation and defines a simplified syntax for expressing serverless resources\. The specification currently covers API operations, AWS Lambda functions, and Amazon DynamoDB tables\. The specification is available under Apache 2\.0 for AWS partners and customers to adopt and extend within their own tool sets\. For details on the specification, see the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/)\. 
+The AWS Serverless Application Model \(AWS SAM\) is an open\-source framework you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
 
-AWS SAM supports special resource types that simplify how to express functions, API operations, mappings, and DynamoDB tables for serverless applications\. AWS SAM also supports certain other features for these services, such as environment variables\. The AWS CloudFormation description of these resources conforms to the [AWS Serverless Application Model Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md)\. To deploy your application, specify the resources that you need as part of your application\. You specify these along with their associated permissions policies in an AWS CloudFormation template file \(written in either JSON or YAML\)\. You then package your deployment artifacts, and deploy the template\. 
+A **serverless application** is a combination of Lambda functions, event sources, and other resources that work together to perform tasks\. Note that a serverless application is more than just a Lambda function; it can include additional resources such as APIs, databases and event source mappings\. For more information about using AWS SAM to build your serverless application, see the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/)\.
 
 The sections below list the **AWS Resources** and **Policy Templates** currently supported by AWS Serverless Application Repository\. 
 
@@ -17,6 +17,7 @@ If your application template contains one of the following custom IAM roles or r
 The list of resources that this applies to are:  
 **IAM roles: **[AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\.
 **Resource policies: ** [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.
+If your application contains the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource, customers will need to acknowledge the application contains a **nested application** before they can deploy the application\. For more information about nested applications see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\. For more information about acknowledging capabilities see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.
 
 **Supported AWS Resources:**
 + `AWS::ApiGateway::Account`
@@ -105,6 +106,7 @@ The list of resources that this applies to are:
 + `AWS::Lambda::Alias`
 + `AWS::Lambda::EventSourceMapping`
 + `AWS::Lambda::Function`
++ `AWS::Lambda::LayerVersion`
 + `AWS::Lambda::Permission`
 + `AWS::Lambda::Version`
 + `AWS::Logs::Destination`
@@ -130,6 +132,7 @@ The list of resources that this applies to are:
 + `AWS::SSM::PatchBaseline`
 + `AWS::SSM::ResourceDataSync`
 + `AWS::Serverless::Api`
++ `AWS::Serverless::Application`
 + `AWS::Serverless::Function`
 + `AWS::Serverless::SimpleTable`
 + `AWS::StepFunctions::Activity`
@@ -137,12 +140,9 @@ The list of resources that this applies to are:
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
-When you add a serverless application to the AWS Serverless Application Repository, AWS SAM allows you to choose from a list of policy templates\. When you choose one of these templates, your AWS Lambda functions are scoped to the resources that are used by your application\.
+AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\. Policy templates do not require additional customer acknowledgements to deploy the application\.
 
 Below is the list of available policy templates, along with the permissions that are applied to each one\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
-
-**Important**  
-For applications published to the AWS Serverless Application Repository, you're only allowed to use the supported policy templates to extend the permissions for `AWS::Serverless::Function` resources\. Custom policies and AWS managed policies aren't allowed, and are rejected when the application is published to the AWS Serverless Application Repository\.
 
 If you want to request a new policy template to be added, do the following:
 
