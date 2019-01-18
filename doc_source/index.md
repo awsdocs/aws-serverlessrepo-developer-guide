@@ -1,7 +1,7 @@
 # AWS Serverless Application Repository Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -15,9 +15,10 @@ Amazon's trademarks and trade dress may not be used in
 -----
 ## Contents
 + [What Is the AWS Serverless Application Repository?](what-is-serverlessrepo.md)
++ [Quick Start: Publishing Applications](serverlessrepo-quick-start.md)
 + [Consuming Applications and Publishing Applications](serverless-app-repository.md)
    + [Consuming Applications](serverless-app-consuming-applications.md)
-      + [Acknowledging IAM Roles, Resource Policies, and Nested Applications when Deploying Applications](acknowledging-application-capabilities.md)
+      + [Acknowledging IAM Roles, Resource Policies, and Nested Applications When You Deploy Applications](acknowledging-application-capabilities.md)
    + [Publishing Applications](serverless-app-publishing-applications.md)
       + [Using the AWS Serverless Application Model (AWS SAM)](using-aws-sam.md)
 + [Authentication and Access Control for AWS Serverless Application Repository](serverlessrepo-auth-and-access-control.md)

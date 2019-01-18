@@ -12,13 +12,13 @@ Find, configure, and deploy an application in the AWS Serverless Application Rep
 
 1. Browse or search for an application\.
 **Note**  
-To show applications that contain custom IAM roles or resource policies, select the **Show apps that create custom IAM roles or resource policies** checkbox\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
+To show applications that contain custom IAM roles or resource policies, select the **Show apps that create custom IAM roles or resource policies** check box\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
 
-1. Choose an application to view details such as its permissions, capabilities and the number of times it has been deployed by AWS customers\. 
+1. Choose an application to view details such as its permissions, capabilities, and the number of times it has been deployed by AWS customers\. 
 
    The deployment counts are shown for the AWS Region in which you are trying to deploy the application\.
 
-1. On the application detail page, view the application's permissions and application resources by viewing the SAM template, license, and readme file\. On this page, you can also find the **Source code URL** link for applications that are publicly shared\. If the application includes any nested applications, you can also view details of the nested applications on this page\.
+1. On the application detail page, view the application's permissions and application resources by viewing the AWS SAM template, license, and readme file\. On this page, you can also find the **Source code URL** link for applications that are publicly shared\. If the application includes any nested applications, you can also view details of the nested applications on this page\.
 
 1. Configure the application in the **Application settings** section\. For guidance on configuring a particular application, see that application’s readme file\. 
 
@@ -26,7 +26,7 @@ To show applications that contain custom IAM roles or resource policies, select 
 
 1. Choose **Deploy**\. Doing this takes you to the **Deployment status** page\.
 **Note**  
-If necessary, you must select the **I acknowledge this application creates custom IAM roles or resource polices** checkbox before deploying the application, otherwise an error will result\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
+If necessary, you must select the **I acknowledge this application creates custom IAM roles or resource polices** check box before deploying the application\. Otherwise an error will result\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
 
 1. On the **Deployment status** page, you can view the progress of your deployment\. While waiting for your deployment to complete, you can search and browse for other applications, and return to this page through the Lambda console\.
 

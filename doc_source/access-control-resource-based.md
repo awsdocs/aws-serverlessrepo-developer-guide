@@ -32,7 +32,7 @@ The examples below show how to grant permissions using the AWS CLI\. For informa
 
 ## Example 1: Share an Application with Another Specific Account<a name="access-control-resource-based-example-share-with-specific-account"></a>
 
-To share an application with another specific account, but keep it from being shared with others, you specify the AWS account ID you want to share with as the principal\. Following is the AWS CLI command to do this\.
+To share an application with another specific account, but keep it from being shared with others, you specify the AWS account ID you want to share with as the principal\. This is also known as setting the application to *privately shared*\. Following is the AWS CLI command to do this\.
 
 ```
 aws serverlessrepo put-application-policy \
@@ -41,9 +41,12 @@ aws serverlessrepo put-application-policy \
 --statements Principals=account-id,Actions=Deploy
 ```
 
+**Note**  
+*Privately shared* applications can only be used in the same AWS region where the application is created\.
+
 ## Example 2: Share an Application Publicly<a name="access-control-resource-based-example-share-publicly"></a>
 
-To make an application public, you share it with everyone by specifying "\*" as the principal, as in the following example\.
+To make an application public, you share it with everyone by specifying "\*" as the principal, as in the following example\. Applications that are shared publicly are available in all regions\.
 
 ```
 aws serverlessrepo put-application-policy \
@@ -51,6 +54,9 @@ aws serverlessrepo put-application-policy \
 --application-id application-arn \
 --statements Principals=*,Actions=Deploy
 ```
+
+**Note**  
+In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, and 2\) It must have the `SemanticVersion` property set\. 
 
 ## Example 3: Make an Application Private<a name="access-control-resource-based-example-make-private"></a>
 
@@ -62,6 +68,9 @@ aws serverlessrepo put-application-policy \
 --application-id application-arn \
 --statements '[]'
 ```
+
+**Note**  
+*Private* applications can only be used in the same AWS region where the application is created\.
 
 ## Example 4: Specifying Multiple Accounts and Permissions<a name="access-control-resource-based-example-multiple-permissions"></a>
 

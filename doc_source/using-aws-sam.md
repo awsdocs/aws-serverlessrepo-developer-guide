@@ -1,25 +1,25 @@
 # Using the AWS Serverless Application Model \(AWS SAM\)<a name="using-aws-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is an open\-source framework you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
+The AWS Serverless Application Model \(AWS SAM\) is an open\-source framework that you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
 
-A **serverless application** is a combination of Lambda functions, event sources, and other resources that work together to perform tasks\. Note that a serverless application is more than just a Lambda function; it can include additional resources such as APIs, databases and event source mappings\. For more information about using AWS SAM to build your serverless application, see the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/)\.
+A **serverless application** is a combination of Lambda functions, event sources, and other resources that work together to perform tasks\. Note that a serverless application is more than just a Lambda function—it can include additional resources such as APIs, databases, and event source mappings\. For more information about using AWS SAM to build your serverless application, see the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/)\.
 
-The sections below list the **AWS Resources** and **Policy Templates** currently supported by AWS Serverless Application Repository\. 
+The sections below list the **AWS Resources** and **Policy Templates** that are currently supported by AWS Serverless Application Repository\. 
 
 ## Supported AWS Resources in the AWS Serverless Application Repository<a name="supported-resources-for-serverlessrepo"></a>
 
-Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. Below is a complete list of supported AWS Resources\.
+Serverless applications that you publish to the AWS Serverless Application Repository can include additional AWS CloudFormation resources\. The following list is a complete list of supported AWS resources\.
 
-If you would like to request an additional AWS Resource to be supported, please contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
+If you would like to request an additional AWS resource to be supported, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
 
 **Important**  
-If your application template contains one of the following custom IAM roles or resource policies, your application will not show up by default in search results\. Also, customers will need to acknowledge the application's custom IAM roles or resource policies before they can deploy the application\. For more information see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.   
+If your application template contains one of the following custom IAM roles or resource policies, your application will not show up by default in search results\. Also, customers need to acknowledge the application's custom IAM roles or resource policies before they can deploy the application\. For more information, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.   
 The list of resources that this applies to are:  
 **IAM roles: **[AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\.
-**Resource policies: ** [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.
-If your application contains the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource, customers will need to acknowledge the application contains a **nested application** before they can deploy the application\. For more information about nested applications see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\. For more information about acknowledging capabilities see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.
+**Resource policies: ** [AWS::Lambda::LayerVersionPermission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html), [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::Events::EventBusPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.
+If your application contains the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource, customers need to acknowledge the application contains a **nested application** before they can deploy the application\. For more information about nested applications, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\. For more information about acknowledging capabilities, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.
 
-**Supported AWS Resources:**
+**Supported AWS resources:**
 + `AWS::ApiGateway::Account`
 + `AWS::ApiGateway::ApiKey`
 + `AWS::ApiGateway::Authorizer`
@@ -75,6 +75,7 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::DynamoDB::Table`
 + `AWS::ECR::Repository`
 + `AWS::Elasticsearch::Domain`
++ `AWS::Events::EventBusPolicy`
 + `AWS::Events::Rule`
 + `AWS::Glue::Classifier`
 + `AWS::Glue::Connection`
@@ -99,6 +100,7 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::KMS::Alias`
 + `AWS::KMS::Key`
 + `AWS::Kinesis::Stream`
++ `AWS::Kinesis::StreamConsumer`
 + `AWS::Kinesis::Streams`
 + `AWS::KinesisAnalytics::Application`
 + `AWS::KinesisAnalytics::ApplicationOutput`
@@ -107,6 +109,7 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::Lambda::EventSourceMapping`
 + `AWS::Lambda::Function`
 + `AWS::Lambda::LayerVersion`
++ `AWS::Lambda::LayerVersionPermission`
 + `AWS::Lambda::Permission`
 + `AWS::Lambda::Version`
 + `AWS::Logs::Destination`
@@ -134,13 +137,14 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::Serverless::Api`
 + `AWS::Serverless::Application`
 + `AWS::Serverless::Function`
++ `AWS::Serverless::LayerVersion`
 + `AWS::Serverless::SimpleTable`
 + `AWS::StepFunctions::Activity`
 + `AWS::StepFunctions::StateMachine`
 
 ## Policy Templates<a name="serverlessrepo-policy-templates"></a>
 
-AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\. Policy templates do not require additional customer acknowledgements to deploy the application\.
+AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\. Policy templates don't require additional customer acknowledgements to deploy the application\.
 
 Below is the list of available policy templates, along with the permissions that are applied to each one\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
 
@@ -154,7 +158,7 @@ If you want to request a new policy template to be added, do the following:
 
 There are two AWS SAM template examples in this section, one with a policy template that includes placeholder values, and one that does not include placeholder values\.
 
-### Example 1: Policy template with placeholder values<a name="policy-template-example-1"></a>
+### Example 1: Policy Template with Placeholder Values<a name="policy-template-example-1"></a>
 
 The following example shows that the `SQSPollerPolicy` policy template expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the"`MyQueue`" Amazon SQS queue, which can be created in the same application or requested as a parameter to the application\.
 
@@ -171,7 +175,7 @@ The following example shows that the `SQSPollerPolicy` policy template expects a
 10.             !GetAtt MyQueue.QueueName
 ```
 
-### Example 2: Policy template with no placeholder values<a name="policy-template-example-2"></a>
+### Example 2: Policy Template with No Placeholder Values<a name="policy-template-example-2"></a>
 
 The following example contains the `CloudWatchPutMetricPolicy` policy template, which has no placeholder values\.
 
@@ -481,7 +485,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## RekognitionDetectOnlyPolicy: Gives permission to detect faces, labels and text<a name="rekognition-detect-only-policy"></a>
+## RekognitionDetectOnlyPolicy: Gives Permission to Detect Faces, Labels, and Text<a name="rekognition-detect-only-policy"></a>
 
 ```
         "Statement": [
@@ -849,7 +853,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## S3FullAccessPolicy: Gives full access permissions to objects in the Amazon S3 Bucket<a name="s3-full-access-policy"></a>
+## S3FullAccessPolicy: Gives full access permissions to objects in the Amazon S3 bucket<a name="s3-full-access-policy"></a>
 
 ```
         "Statement": [
@@ -1161,7 +1165,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## ComprehendBasicAccessPolicy: Gives access to Amazon Comprehend APIs for detecting entities, key phrases, languages and sentiments<a name="comprehend-basic-access-policy"></a>
+## ComprehendBasicAccessPolicy: Gives access to Amazon Comprehend APIs for detecting entities, key phrases, languages, and sentiments<a name="comprehend-basic-access-policy"></a>
 
 ```
         "Statement": [{
@@ -1195,7 +1199,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## PinpointEndpointAccessPolicy: Gives permissions to get and update endpoints for a Pinpoint application<a name="pinpoint-endpoint-access-policy"></a>
+## PinpointEndpointAccessPolicy: Gives permissions to get and update endpoints for an Amazon Pinpoint application<a name="pinpoint-endpoint-access-policy"></a>
 
 ```
         "Statement": [
@@ -1220,7 +1224,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## FirehoseWritePolicy: Gives permission to write to a Kinesis Firehose Delivery Stream<a name="firehose-write-policy"></a>
+## FirehoseWritePolicy: Gives permission to write to a Kinesis Data Firehose Delivery Stream<a name="firehose-write-policy"></a>
 
 ```
         "Statement": [
@@ -1244,7 +1248,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## FirehoseCrudPolicy: Gives permission to create, write to, update, and delete a Kinesis Firehose Delivery Stream<a name="firehose-crud-policy"></a>
+## FirehoseCrudPolicy: Gives permission to create, write to, update, and delete a Kinesis Data Firehose Delivery Stream<a name="firehose-crud-policy"></a>
 
 ```
         "Statement": [

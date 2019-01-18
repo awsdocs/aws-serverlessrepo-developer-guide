@@ -1,16 +1,24 @@
 # Publishing Applications<a name="serverless-app-publishing-applications"></a>
 
-Following, you can find how to make your serverless applications available for others to find and deploy\. You can publish serverless applications by using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or an AWS SDK\. 
-
-To publish an application, you first upload the application code\. You also upload a simple manifest file, also known as an *AWS Serverless Application Model \(AWS SAM\) template\.* For more information about using AWS SAM, see [Using the AWS Serverless Application Model \(AWS SAM\)](using-aws-sam.md)\.
-
-**Note**  
-To make the serverless applications that you publish available to developers in other AWS Regions, publish your applications to either US East \(N\. Virginia\) \(us\-east\-1\) or US East \(Ohio\) \(us\-east\-2\)\. Publishing your application in any other AWS Region restricts its availability to that AWS Region\. For more information about AWS Serverless Application Repository regions and endpoints, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#serverlessrepo_region) in the *AWS General Reference*\.
+Following, you can find how to make your serverless applications available for others to find and deploy\. You can publish serverless applications by using the AWS Management Console, the AWS SAM command line interface \(AWS SAM CLI\), or an AWS SDK\. 
 
 **Important**  
 The information that you enter when publishing an application is not encrypted\. This information includes such data as the author name, location, and contact information\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
 
-## Prerequisites<a name="publishing-application-prerequisites"></a>
+To publish an application, you first upload the application code\. You also upload a simple manifest file, also known as an *AWS Serverless Application Model \(AWS SAM\) template\.* For more information about using AWS SAM, see [Using the AWS Serverless Application Model \(AWS SAM\)](using-aws-sam.md)\.
+
+When you upload your application, it is initially set to *private*, meaning it is only available to the AWS account that created it\. In order to share your application others, you must either set it to *privately shared*, which is shared only with a specific set of AWS accounts, or *publicly shared*, which is shared with everyone\.
+
+**Note**  
+*Private* and *privately shared* applications are only available in the AWS region in which they are created\. *Publicly shared* applications are available in all AWS regions\. To learn more about sharing applications, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+
+## Publishing an Application Through the AWS SAM CLI<a name="publishing-application-through-cli"></a>
+
+The easiest way to publish and share an application to the AWS Serverless Application Repository is using a set of AWS SAM CLI commands\. For more inforomation, see [Publishing an Application through the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications.html) in the *AWS Serverless Application Model \(AWS SAM\) Developer Guide*\.
+
+## Publishing an Application Through the AWS Management Console<a name="publishing-application-through-aws-console"></a>
+
+### Prerequisites<a name="publishing-application-prerequisites"></a>
 
 Before you publish an application to the AWS Serverless Application Repository, you need the following:
 + A valid AWS account\.
@@ -49,11 +57,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
   13. }
   ```
 
-## Publishing an Application Through the AWS Management Console<a name="publishing-application-through-aws-console"></a>
-
-You can create and publish an application through the AWS Management Console as described following\.
-
-### Creating a New Application Through the Console<a name="create-new-application"></a>
+### Creating a New Application Through the AWS Management Console<a name="create-new-application"></a>
 
 Create a new application in the AWS Serverless Application Repository by using the following procedure\.
 
@@ -61,15 +65,15 @@ Create a new application in the AWS Serverless Application Repository by using t
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home) and choose **Publish applications**\.
 
-1. On the **Publish an application** page, type the indicated application information into the following boxes:
+1. On the **Publish an application** page, enter the indicated application information into the following boxes:
    + **Application Name**
    + **Author**
    + **Description**
    + **Search labels \(space delimited\)**
    + **SPDX license**
    + **Readme\.txt file**
-   + **Semantic version**
-   + **Source code URL** \(required only for publicly shared applications\)
+   + **Semantic version** \(required only for publicly shared applications\)
+   + **Source code URL**
    + **AWS SAM template file**
 
 1. Choose **Publish application**\.
@@ -88,6 +92,9 @@ Make your application publicly available using the following procedure\.
 
 1. In the **Application Details** section, move the **Visibility** slider to **Application is public**\.
 
+**Note**  
+Using the console, you can only set applications to *private* or *publicly shared*\. If you want to set your application to *privately shared* so it is available only to a specific list of AWS accounts, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+
 ### Publishing a New Version of an Existing Application Through the Console<a name="publish-new-version-of-application"></a>
 
 Publish a new version of an application that you already created using the following procedure\.
@@ -96,37 +103,15 @@ Publish a new version of an application that you already created using the follo
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
 
-1. On the navigation pane, choose **My Applications** to bring up the list of applications that you have created\.
+1. On the navigation pane, choose **My Applications** to bring up the list of applications that you've created\.
 
 1. Choose the application that you want to publish a new version for\.
 
 1. Choose **Publish new version**\.
 
-1. For **AWS SAM template file**, type the name of the new AWS SAM template file for this version\.
+1. For **AWS SAM template file**, enter the name of the new AWS SAM template file for this version\.
 
 1. Choose **Publish**\.
-
-## Publishing an Application Through the AWS CLI<a name="publishing-application-through-cli"></a>
-
-You can create and publish an application through the AWS CLI as described following\.
-
-### Creating a New Application Through the AWS CLI<a name="create-new-application-through-cli"></a>
-
-To create a new application using the AWS CLI, first gather the same items required for publishing through the AWS Management Console, described preceding\. Then use the `aws serverlessrepo create-application` function, passing it each of these items as parameters\.
-
- For more information about the parameters to be passed to this function, type `aws serverlessrepo create-application help` at the AWS CLI\.
-
-### Sharing an Application Through the AWS CLI<a name="share-application-through-cli"></a>
-
-To make your application publicly available using the AWS CLI, you can use the `aws serverlessrepo put-application-policy` function, passing the application ID and policy statement as parameters\.
-
-For more information about the parameters to be passed to this function, type `aws serverlessrepo put-application-policy help` at the AWS CLI\.
-
-### Publishing a New Version of an Existing Application Through the AWS CLI<a name="publish-new-version-of-application-through-cli"></a>
-
-To create a new version of an application using the AWS CLI, you can use the `aws serverlessrepo create-application-version` function\. You pass as parameters the application ID, semantic version, new SAM template, and source code URL\.
-
-For more information about the parameters to be passed to this function, type `aws serverlessrepo create-application-version help` at the AWS CLI\.
 
 ## Deleting an Application Through the AWS Management Console<a name="deleting-application-through-aws-console"></a>
 

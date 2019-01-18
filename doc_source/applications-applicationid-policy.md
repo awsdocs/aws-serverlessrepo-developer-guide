@@ -186,7 +186,7 @@ Sets the permission policy for an application\. For the list of actions supporte
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 |   statementId  |  string  | False |  A unique ID for the statement\.  | 
-|   principals  |  Array of type string   | True |  An AWS account ID, or \* to make the application public\.  | 
+|   principals  |  Array of type string   | True |  An array of AWS account IDs, or \* to make the application public\.  | 
 |   actions  |  Array of type string   | True |  For the list of actions supported for this operation, see [Application Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions)\.  | 
 
  **See Also** 
