@@ -2,13 +2,13 @@
 
 ## URI<a name="applications-applicationid-changesets-url"></a>
 
- /applications/ *applicationId* /changesets 
+/applications/*applicationId*/changesets
 
 ## HTTP Methods<a name="applications-applicationid-changesets-http-methods"></a>
 
 ### POST<a name="applications-applicationid-changesetspost"></a>
 
-Operation ID: CreateCloudFormationChangeSet 
+Operation ID: CreateCloudFormationChangeSet
 
 Creates an AWS CloudFormation change set for the given application\.
 
@@ -17,29 +17,29 @@ Creates an AWS CloudFormation change set for the given application\.
 
 | Name | Type | Required | Description | 
 | --- |--- |--- |--- |
-|  applicationId  | String | True |  The Amazon Resource Name \(ARN\) of the application\.  | 
+| applicationId | String | True | The Amazon Resource Name \(ARN\) of the application\. | 
 
 
 **Responses**  
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-|  201  |   [ChangeSetDetails](#applications-applicationid-changesets-response-body-changesetdetails-example)   |  Success  | 
-|  400  |   [BadRequestException](#applications-applicationid-changesets-response-body-badrequestexception-example)   |  One of the parameters in the request is invalid\.  | 
-|  403  |   [ForbiddenException](#applications-applicationid-changesets-response-body-forbiddenexception-example)   |  The client is not authenticated\.  | 
-|  429  |   [TooManyRequestsException](#applications-applicationid-changesets-response-body-toomanyrequestsexception-example)   |  The client is sending more than the allowed number of requests per unit of time\.  | 
-|  500  |   [InternalServerErrorException](#applications-applicationid-changesets-response-body-internalservererrorexception-example)   |  The AWS Serverless Application Repository service encountered an internal error\.  | 
+| 201 | [ChangeSetDetails](#applications-applicationid-changesets-response-body-changesetdetails-example) | Success | 
+| 400 | [BadRequestException](#applications-applicationid-changesets-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
+| 403 | [ForbiddenException](#applications-applicationid-changesets-response-body-forbiddenexception-example) | The client is not authenticated\. | 
+| 429 | [TooManyRequestsException](#applications-applicationid-changesets-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 | [InternalServerErrorException](#applications-applicationid-changesets-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
 
- **See Also** 
-+  [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
-+  [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) 
+**See Also**
++ [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 
 ## Schemas<a name="applications-applicationid-changesets-schemas"></a>
 
@@ -144,137 +144,137 @@ Creates an AWS CloudFormation change set for the given application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  One of the parameters in the request is invalid\.  | 
-|   errorCode  |  string  | False |  400  | 
+| message | string | False | One of the parameters in the request is invalid\. | 
+| errorCode | string | False | 400 | 
 
- **See Also** 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException) 
+**See Also**
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException)
 
 
 **ChangeSetDetails**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   applicationId  |  string  | True |  The application Amazon Resource Name \(ARN\)\.  | 
-|   semanticVersion  |  string  | True |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
-|   changeSetId  |  string  | True |  The Amazon Resource Name \(ARN\) of the change set\. Length constraints: Minimum length of 1\. Pattern: ARN:\[\-a\-zA\-Z0\-9:/\]\*  | 
-|   stackId  |  string  | True |  The unique ID of the stack\.  | 
+| applicationId | string | True | The application Amazon Resource Name \(ARN\)\. | 
+| semanticVersion | string | True | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
+| changeSetId | string | True | The Amazon Resource Name \(ARN\) of the change set\.Length constraints: Minimum length of 1\.Pattern: ARN:\[\-a\-zA\-Z0\-9:/\]\* | 
+| stackId | string | True | The unique ID of the stack\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ChangeSetDetails) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ChangeSetDetails) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ChangeSetDetails) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ChangeSetDetails) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ChangeSetDetails)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ChangeSetDetails)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ChangeSetDetails)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ChangeSetDetails)
 
 
 **CreateCloudFormationChangeSetInput**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   stackName  |  string  | True |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   semanticVersion  |  string  | False |  The semantic version of the application:  [https://semver\.org/](https://semver.org/)   | 
-|   templateId  |  string  | False |  The UUID returned by CreateCloudFormationTemplate\. Pattern: \[0\-9a\-fA\-F\]\{8\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{12\}  | 
-|   parameterOverrides  |  Array of type  [ParameterValue](#applications-applicationid-changesets-model-parametervalue)    | False |  A list of parameter values for the parameters of the application\.  | 
-|   capabilities  |  Array of type string   | False |  A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\. The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, and `CAPABILITY_AUTO_EXPAND`\. The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\. Applications that contain one or more nested applications require you to specify `CAPABILITY_AUTO_EXPAND`\. If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\.  | 
-|   changeSetName  |  string  | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   clientToken  |  string  | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   description  |  string  | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   notificationArns  |  Array of type string   | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   resourceTypes  |  Array of type string   | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   rollbackConfiguration  |   [RollbackConfiguration](#applications-applicationid-changesets-model-rollbackconfiguration)   | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
-|   tags  |  Array of type  [Tag](#applications-applicationid-changesets-model-tag)    | False |  This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet) * API\.  | 
+| stackName | string | True | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| semanticVersion | string | False | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
+| templateId | string | False | The UUID returned by CreateCloudFormationTemplate\.Pattern: \[0\-9a\-fA\-F\]\{8\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{4\}\\\-\[0\-9a\-fA\-F\]\{12\} | 
+| parameterOverrides | Array of type [ParameterValue](#applications-applicationid-changesets-model-parametervalue) | False | A list of parameter values for the parameters of the application\. | 
+| capabilities | Array of type string | False | A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\.The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, and `CAPABILITY_AUTO_EXPAND`\.The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\.The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.Applications that contain one or more nested applications require you to specify `CAPABILITY_AUTO_EXPAND`\.If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. | 
+| changeSetName | string | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| clientToken | string | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| description | string | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| notificationArns | Array of type string | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| resourceTypes | Array of type string | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| rollbackConfiguration | [RollbackConfiguration](#applications-applicationid-changesets-model-rollbackconfiguration) | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
+| tags | Array of type [Tag](#applications-applicationid-changesets-model-tag) | False | This property corresponds to the parameter of the same name for the *AWS CloudFormation [CreateChangeSet](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet)* API\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
 
 
 **ForbiddenException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The client is not authenticated\.  | 
-|   errorCode  |  string  | False |  403  | 
+| message | string | False | The client is not authenticated\. | 
+| errorCode | string | False | 403 | 
 
- **See Also** 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException) 
+**See Also**
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException)
 
 
 **InternalServerErrorException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The AWS Serverless Application Repository service encountered an internal error\.  | 
-|   errorCode  |  string  | False |  500  | 
+| message | string | False | The AWS Serverless Application Repository service encountered an internal error\. | 
+| errorCode | string | False | 500 | 
 
- **See Also** 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException) 
+**See Also**
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException)
 
 
 **ParameterValue**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   name  |  string  | True |  The key associated with the parameter\. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template\.  | 
-|   value  |  string  | True |  The input value associated with the parameter\.  | 
+| name | string | True | The key associated with the parameter\. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template\. | 
+| value | string | True | The input value associated with the parameter\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterValue) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterValue) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterValue) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterValue) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterValue)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterValue)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterValue)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterValue)
 
 
 **RollbackConfiguration**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   rollbackTriggers  |  Array of type  [RollbackTrigger](#applications-applicationid-changesets-model-rollbacktrigger)    | False |  This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackConfiguration](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration) * Data Type\.  | 
-|   monitoringTimeInMinutes  |  integer  | False |  This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackConfiguration](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration) * Data Type\.  | 
+| rollbackTriggers | Array of type [RollbackTrigger](#applications-applicationid-changesets-model-rollbacktrigger) | False | This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackConfiguration](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration)* Data Type\. | 
+| monitoringTimeInMinutes | integer | False | This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackConfiguration](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration)* Data Type\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackConfiguration) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackConfiguration) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackConfiguration) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackConfiguration) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackConfiguration)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackConfiguration)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackConfiguration)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackConfiguration)
 
 
 **RollbackTrigger**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   arn  |  string  | True |  This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackTrigger](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger) * Data Type\.  | 
-|   type  |  string  | True |  This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackTrigger](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger) * Data Type\.  | 
+| arn | string | True | This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackTrigger](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger)* Data Type\. | 
+| type | string | True | This property corresponds to the content of the same name for the *AWS CloudFormation [RollbackTrigger](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger)* Data Type\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackTrigger) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackTrigger) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackTrigger) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackTrigger) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackTrigger)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackTrigger)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackTrigger)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackTrigger)
 
 
 **Tag**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   key  |  string  | True |  This property corresponds to the content of the same name for the *AWS CloudFormation [Tag](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag) * Data Type\.  | 
-|   value  |  string  | True |  This property corresponds to the content of the same name for the *AWS CloudFormation [ Tag](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag) * Data Type\.  | 
+| key | string | True | This property corresponds to the content of the same name for the *AWS CloudFormation [Tag](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag)* Data Type\. | 
+| value | string | True | This property corresponds to the content of the same name for the *AWS CloudFormation [ Tag](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag) * Data Type\. | 
 
- **See Also** 
-+  [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Tag) 
-+  [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Tag) 
-+  [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Tag) 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Tag) 
+**See Also**
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Tag)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Tag)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Tag)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Tag)
 
 
 **TooManyRequestsException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-|   message  |  string  | False |  The client is sending more than the allowed number of requests per unit of time\.  | 
-|   errorCode  |  string  | False |  429  | 
+| message | string | False | The client is sending more than the allowed number of requests per unit of time\. | 
+| errorCode | string | False | 429 | 
 
- **See Also** 
-+  [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException) 
+**See Also**
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException)

@@ -26,11 +26,23 @@ To show applications that contain custom IAM roles or resource policies, select 
 
 1. Choose **Deploy**\. Doing this takes you to the **Deployment status** page\.
 **Note**  
-If necessary, you must select the **I acknowledge this application creates custom IAM roles or resource polices** check box before deploying the application\. Otherwise an error will result\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
+If necessary, you must select the **I acknowledge this application creates custom IAM roles or resource polices** check box before deploying the application\. Otherwise, an error will result\. For more information about custom IAM roles and resource policies, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\. 
 
 1. On the **Deployment status** page, you can view the progress of your deployment\. While waiting for your deployment to complete, you can search and browse for other applications, and return to this page through the Lambda console\.
 
 After your application has been successfully deployed, you can review and manage the resources that have been created using existing AWS tools\. 
+
+## Application Deployment Permissions<a name="application-deployment-permissions"></a>
+
+To deploy an application in the AWS Serverless Application Repository, you must have permission to do so\. There are three categories of applications that you have permissions to deploy:
++ **Private** – Applications that were created with the same account, and haven't been shared with any other account\. You have permission to deploy applications that were created using your AWS account\.
++ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts\. You have permission to deploy applications that have been shared with your AWS account\.
++ **Publicly shared** – Applications that the publisher has shared with everyone\. You have permission to deploy any publicly shared application\.
+
+To learn more about publishers sharing applications, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+
+**Important**  
+Applications that contain nested applications inherit the nested applications' sharing restrictions\. For example, suppose an application is publicly shared, but it contains a nested application that's only privately shared with the AWS account that created the parent application\. In this case, if your AWS account doesn't have permission to deploy the nested application, then you aren't able to deploy the parent application\. For more information about nested applications, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\.
 
 ## Deleting Application Stacks<a name="delete-application-stack"></a>
 

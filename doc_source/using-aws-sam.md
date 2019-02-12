@@ -17,7 +17,7 @@ If your application template contains one of the following custom IAM roles or r
 The list of resources that this applies to are:  
 **IAM roles: **[AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\.
 **Resource policies: ** [AWS::Lambda::LayerVersionPermission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html), [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::Events::EventBusPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.
-If your application contains the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource, customers need to acknowledge the application contains a **nested application** before they can deploy the application\. For more information about nested applications, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\. For more information about acknowledging capabilities, see [ Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.
+If your application contains the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource, customers need to acknowledge the application contains a **nested application** before they can deploy the application\. For more information about nested applications, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\. For more information about acknowledging capabilities, see [Acknowledging Application Capabilities](acknowledging-application-capabilities.md)\.
 
 **Supported AWS resources:**
 + `AWS::ApiGateway::Account`
@@ -56,6 +56,7 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::CloudWatch::Alarm`
 + `AWS::CloudWatch::Dashboard`
 + `AWS::CodeBuild::Project`
++ `AWS::CodeCommit::Repository`
 + `AWS::CodePipeline::CustomActionType`
 + `AWS::CodePipeline::Pipeline`
 + `AWS::CodePipeline::Webhook`
@@ -904,7 +905,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
         ]
 ```
 
-## CodePipelineLambdaExecutionPolicy: Gives permission for a Lambda function invoked by AWS CodePipeline to report back status of the job<a name="code-pipeline-lambda-execution-policy"></a>
+## CodePipelineLambdaExecutionPolicy: Gives permission for a Lambda function invoked by CodePipeline to report back status of the job<a name="code-pipeline-lambda-execution-policy"></a>
 
 ```
         "Statement": [

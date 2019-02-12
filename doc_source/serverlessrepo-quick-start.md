@@ -167,8 +167,8 @@ Now that you've created the deployment package, you use it to publish the applic
 + Execute the following command to publish the new application in AWS Serverless Application Repository with the first version created as 0\.0\.1\.
 
   ```
-  sam-app> sam publish app \
-      --template-file packaged.yaml \
+  sam-app> sam publish \
+      --template packaged.yaml \
       --region us-east-1
   ```
 
