@@ -34,6 +34,7 @@ Creates an AWS CloudFormation change set for the given application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
@@ -162,6 +163,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ChangeSetDetails)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ChangeSetDetails)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ChangeSetDetails)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ChangeSetDetails)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ChangeSetDetails)
@@ -186,6 +188,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSetInput)
@@ -222,6 +225,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterValue)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ParameterValue)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterValue)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterValue)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterValue)
@@ -236,6 +240,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackConfiguration)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/RollbackConfiguration)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackConfiguration)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackConfiguration)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackConfiguration)
@@ -250,6 +255,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/RollbackTrigger)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/RollbackTrigger)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/RollbackTrigger)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/RollbackTrigger)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/RollbackTrigger)
@@ -264,6 +270,7 @@ Creates an AWS CloudFormation change set for the given application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Tag)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Tag)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Tag)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Tag)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Tag)

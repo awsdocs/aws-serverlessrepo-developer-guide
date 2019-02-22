@@ -35,6 +35,7 @@ Creates an AWS CloudFormation template\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateCloudFormationTemplate)
@@ -137,6 +138,7 @@ Creates an AWS CloudFormation template\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationTemplateInput)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateCloudFormationTemplateInput)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationTemplateInput)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationTemplateInput)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateCloudFormationTemplateInput)
@@ -189,6 +191,7 @@ Creates an AWS CloudFormation template\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/TemplateDetails)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/TemplateDetails)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/TemplateDetails)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/TemplateDetails)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TemplateDetails)

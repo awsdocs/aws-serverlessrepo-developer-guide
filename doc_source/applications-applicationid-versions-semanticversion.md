@@ -36,6 +36,7 @@ Creates an application version\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateApplicationVersion)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateApplicationVersion)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplicationVersion)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateApplicationVersion)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplicationVersion)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplicationVersion)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateApplicationVersion)
@@ -184,6 +185,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplicationVersionInput)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateApplicationVersionInput)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplicationVersionInput)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplicationVersionInput)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateApplicationVersionInput)
@@ -231,6 +233,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterDefinition)
@@ -262,6 +265,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Version)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Version)

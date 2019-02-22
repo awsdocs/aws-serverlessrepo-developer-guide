@@ -42,6 +42,7 @@ Gets the specified application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetApplication)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/GetApplication)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/GetApplication)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/GetApplication)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/GetApplication)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/GetApplication)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/GetApplication)
@@ -79,6 +80,7 @@ Deletes the specified application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/DeleteApplication)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/DeleteApplication)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/DeleteApplication)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/DeleteApplication)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/DeleteApplication)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/DeleteApplication)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/DeleteApplication)
@@ -116,6 +118,7 @@ Updates the specified application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/UpdateApplication)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/UpdateApplication)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/UpdateApplication)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/UpdateApplication)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/UpdateApplication)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/UpdateApplication)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/UpdateApplication)
@@ -270,6 +273,7 @@ Updates the specified application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Application)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Application)
@@ -358,6 +362,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterDefinition)
@@ -387,6 +392,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/UpdateApplicationInput)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/UpdateApplicationInput)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/UpdateApplicationInput)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/UpdateApplicationInput)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/UpdateApplicationInput)
@@ -407,6 +413,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Version)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Version)

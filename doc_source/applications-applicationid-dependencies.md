@@ -44,6 +44,7 @@ Retrieves the list of applications nested in the containing application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplicationDependencies)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/ListApplicationDependencies)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ListApplicationDependencies)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ListApplicationDependencies)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ListApplicationDependencies)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ListApplicationDependencies)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/ListApplicationDependencies)
@@ -126,6 +127,7 @@ Retrieves the list of applications nested in the containing application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationDependencyPage)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationDependencyPage)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationDependencyPage)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationDependencyPage)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationDependencyPage)
@@ -140,6 +142,7 @@ Retrieves the list of applications nested in the containing application\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationDependencySummary)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationDependencySummary)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationDependencySummary)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationDependencySummary)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationDependencySummary)

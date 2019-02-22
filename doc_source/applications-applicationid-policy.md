@@ -35,6 +35,7 @@ Retrieves the policy for the application\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetApplicationPolicy)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/GetApplicationPolicy)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/GetApplicationPolicy)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/GetApplicationPolicy)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/GetApplicationPolicy)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/GetApplicationPolicy)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/GetApplicationPolicy)
@@ -71,6 +72,7 @@ Sets the permission policy for an application\. For the list of actions supporte
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/PutApplicationPolicy)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/PutApplicationPolicy)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/PutApplicationPolicy)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/PutApplicationPolicy)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/PutApplicationPolicy)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/PutApplicationPolicy)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/PutApplicationPolicy)
@@ -176,6 +178,7 @@ Sets the permission policy for an application\. For the list of actions supporte
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationPolicy)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationPolicy)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationPolicy)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationPolicy)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationPolicy)
@@ -191,6 +194,7 @@ Sets the permission policy for an application\. For the list of actions supporte
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationPolicyStatement)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationPolicyStatement)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationPolicyStatement)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationPolicyStatement)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationPolicyStatement)

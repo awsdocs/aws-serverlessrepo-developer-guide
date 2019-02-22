@@ -39,6 +39,15 @@ If your application contains the [AWS::Serverless::Application](https://docs.aws
 + `AWS::ApiGateway::UsagePlan`
 + `AWS::ApiGateway::UsagePlanKey`
 + `AWS::ApiGateway::VpcLink`
++ `AWS::ApiGatewayV2::Api`
++ `AWS::ApiGatewayV2::Authorizer`
++ `AWS::ApiGatewayV2::Deployment`
++ `AWS::ApiGatewayV2::Integration`
++ `AWS::ApiGatewayV2::IntegrationResponse`
++ `AWS::ApiGatewayV2::Model`
++ `AWS::ApiGatewayV2::Route`
++ `AWS::ApiGatewayV2::RouteResponse`
++ `AWS::ApiGatewayV2::Stage`
 + `AWS::AppSync::ApiKey`
 + `AWS::AppSync::DataSource`
 + `AWS::AppSync::GraphQLApi`

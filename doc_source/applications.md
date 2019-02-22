@@ -35,6 +35,7 @@ Lists applications owned by the requester\.
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplications)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/ListApplications)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ListApplications)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ListApplications)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ListApplications)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ListApplications)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/ListApplications)
@@ -64,6 +65,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateApplication)
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateApplication)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplication)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateApplication)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplication)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplication)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateApplication)
@@ -248,6 +250,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Application)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Application)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Application)
@@ -262,6 +265,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationPage)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationPage)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationPage)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationPage)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationPage)
@@ -282,6 +286,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationSummary)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationSummary)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationSummary)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationSummary)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationSummary)
@@ -338,6 +343,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplicationInput)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/CreateApplicationInput)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateApplicationInput)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateApplicationInput)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/CreateApplicationInput)
@@ -396,6 +402,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ParameterDefinition)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ParameterDefinition)
@@ -427,6 +434,7 @@ Values that must be specified in order to deploy some applications\.
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/Version)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/Version)
 + [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/Version)
