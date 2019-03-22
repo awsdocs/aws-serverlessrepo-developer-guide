@@ -123,7 +123,7 @@ Lists versions for the specified application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-| versions | Array of type [VersionSummary](#applications-applicationid-versions-model-versionsummary) | True | An array of version summaries for the application\. | 
+| versions | array | True | An array of version summaries for the application\. | 
 | nextToken | string | False | The token to request the next page of results\. | 
 
 **See Also**
@@ -195,7 +195,7 @@ Lists versions for the specified application\.
 | --- |--- |--- |--- |
 | applicationId | string | True | The application Amazon Resource Name \(ARN\)\. | 
 | semanticVersion | string | True | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
-| sourceCodeUrl | string | False | A link to a public repository for the source code of your application\. | 
+| sourceCodeUrl | string | False | A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit\. | 
 | creationTime | string | True | The date and time this resource was created\. | 
 
 **See Also**

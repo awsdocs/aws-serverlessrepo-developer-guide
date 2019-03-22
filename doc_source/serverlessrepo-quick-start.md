@@ -2,7 +2,7 @@
 
 This guide walks you through the steps to download, build, test and publish an example serverless application to the AWS Serverless Application Repository using AWS SAM CLI\. You can use this example application as a starting point for developing and publishing your own serverless application\.
 
-## Steps for Publishing a Sample Application<a name="serverlessrepo-quick-start-steps"></a>
+## Overview<a name="serverlessrepo-quick-start-steps"></a>
 
 The following steps outline how to download, build and publish a sample serverless application:
 
@@ -18,24 +18,22 @@ The example [Hello World Application](#serverlessrepo-quick-start-hello-world) i
 
 ## Hello World Application<a name="serverlessrepo-quick-start-hello-world"></a>
 
-In this exercise, you download and test a sample Hello World serverless application\. The application represents a simple API backend\. It has an Amazon API Gateway endpoint that supports a GET operation and a Lambda function\. When a GET request is sent to the endpoint, API Gateway invokes the Lambda function\. Then, AWS Lambda executes the function\. The function returns a string that includes a `hello world` message, and the IP address that's returned by a call to the `http://checkip.amazonaws.com/` website\.
+In this exercise, you download and test a Hello World serverless application that represents a simple API backend\. It has an Amazon API Gateway endpoint that supports a GET operation and a Lambda function\. When a GET request is sent to the endpoint, API Gateway invokes the Lambda function\. Then, AWS Lambda executes the function, which simply returns a `hello world` message\.
 
 The application has the following components:
 + An AWS SAM template that defines two AWS resources for the Hello Word application: an API Gateway service with a GET operation, and a Lambda function\. The template also defines the mapping between the API Gateway GET operation and the Lambda function\. 
 + Application code that's written in Python\.
 
-In addition, there's a `requirements.txt` file that's needed to install dependencies for this sample application\. This file is used when you're initializing the application\.
-
-### Before You Begin<a name="serverlessrepo-quick-start-hello-world-prereq"></a>
+## Before You Begin<a name="serverlessrepo-quick-start-hello-world-prereq"></a>
 
 Make sure that you have the required setup for this exercise:
 + You must have an AWS account with an IAM user that has administrator permissions\. See [Set Up an AWS Account](https://docs.aws.amazon.com/lambda/latest/dg/setup.html)\.
 + You must have the AWS SAM CLI \(command line interface\) installed\. See [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\.
 + You must have version 1\.16\.77 or later of the AWS CLI installed\. See [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)\.
 
-### Initialize the Application<a name="serverlessrepo-quick-start-hello-world-setup-local-app"></a>
+## Step 1: Initialize the Application<a name="serverlessrepo-quick-start-hello-world-setup-local-app"></a>
 
-In this section, you download the sample application, which consists of an AWS SAM template and application code\. You also download the dependencies that are required to execute the application code, and copy everything that's needed to test and package the application into the required directory structure\.
+In this section, you download the sample application, which consists of an AWS SAM template and application code\.
 
 **To initialize the application**
 
@@ -45,32 +43,14 @@ In this section, you download the sample application, which consists of an AWS S
    sam init --runtime python3.6 
    ```
 
-1. Review the contents of the directory that the command created \(`/sam-app`\): 
+1. Review the contents of the directory that the command created \(`sam-app/`\): 
    + `template.yaml` – Defines two AWS resources that the Hello World application needs: a Lambda function and an API Gateway endpoint that supports a GET operation\. The template also defines mapping between the two resources\.
    + Content related to the Hello World application code:
-     + `/hello_world` directory – Contains the application code, which returns `hello world` when you run it\.
+     + `hello_world/` directory – Contains the application code, which returns `hello world` when you run it\.
 **Note**  
-For this exercise, the application code is written in Python, and you specify the runtime in the `init` command\. AWS Lambda supports additional languages for creating application code\. If you specify another supported runtime, the `init` command provides the Hello World code in the specified language\. If you choose a different runtime, you need to use different instructions in the next step to set up a directory and download dependencies\. The `init` command downloads a `ReadMe` file that provides this information\. For information about supported runtimes, see [Lambda Execution Environment and Available Libraries](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)\.
+For this exercise, the application code is written in Python, and you specify the runtime in the `init` command\. AWS Lambda supports additional languages for creating application code\. If you specify another supported runtime, the `init` command provides the Hello World code in the specified language, and a `README.md` file that you can follow along for that language\. For information about supported runtimes, see [Lambda Execution Environment and Available Libraries](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)\.
 
-1. Follow the steps below to create a subdirectory that contains the application code and dependencies\.
-
-   1. Switch to the directory that the `init` command created in the preceding step\.
-
-      ```
-      cd sam-app
-      ```
-
-   1. Install the dependencies by running the following `sam` command\. The dependencies for the Hello World application code are described in the `/hello_world/requirements.txt` file\. 
-
-      ```
-      sam-app> sam build --use-container
-      ```
-
-      Verify that the command created the `/.aws-sam/build/HelloWorld` directory and copied the dependencies to it\. 
-
-   The `/.aws-sam/build/HelloWorld` directory now has the application code and dependencies that are needed to execute the Lambda function\.
-
-### Test the Application Locally<a name="serverlessrepo-quick-start-hello-world-test-locally"></a>
+## Step 2: Test the Application Locally<a name="serverlessrepo-quick-start-hello-world-test-locally"></a>
 
 Now that you have the AWS SAM application on your local machine, follow the steps below to test it locally\.
 
@@ -90,22 +70,20 @@ Now that you have the AWS SAM application on your local machine, follow the step
 
 **Exercise: Change the message string**
 
-After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\. Note that the copy of the application code being executed is in the `/.aws-sam/build/HelloWorld` directory \(not the `/hello_world` directory\)\.
-
-1. Kill the process running `sam-app> sam local start-api`\.
+After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\.
 
 1. Edit the `/hello_world/app.py` file to change the message string from `'hello world'` to `'Hello World!'`\.
 
-1.  Re\-build your function by running `sam-app> sam build --use-container`\.
-
 1. Reload the test URL in your browser and observe the new string\.
 
-### Package the Application<a name="serverlessrepo-quick-start-hello-world-package-app"></a>
+You will notice that your new code is loaded dynamically, without your having restart the `sam local` process\.
+
+## Step 3: Package the Application<a name="serverlessrepo-quick-start-hello-world-package-app"></a>
 
 After testing your application locally, you use the AWS SAM CLI to create a deployment package and a packaged AWS SAM template\.
 
 **Note**  
-In the following steps, you create a \.zip file for the contents of the `/build` directory\. This directory contains the application code and dependencies\. This \.zip file is the **deployment package** for your serverless application\. For more information, see [Creating a Deployment Package \(Python\)]( https://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html) in the *AWS Lambda Developer Guide*\.
+In the following steps, you create a \.zip file for the contents of the `hello_world/` directory, which contains the application code\. This \.zip file is the **deployment package** for your serverless application\. For more information, see [Creating a Deployment Package \(Python\)]( https://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html) in the *AWS Lambda Developer Guide*\.
 
 **To create a Lambda deployment package**
 
@@ -128,7 +106,7 @@ In the following steps, you create a \.zip file for the contents of the `/build`
        SourceCodeUrl: https://github.com/user1/my-app-project
    ```
 
-   The `LicenseUrl` and `ReadmeUrl` properties can either be references to local files \(as in the exampe above\), or they can be links to Amazon S3 buckets that already host these artifacts\.
+   The `LicenseUrl` and `ReadmeUrl` properties can either be references to local files \(as in the example above\), or they can be links to Amazon S3 buckets that already host these artifacts\.
 
 1. Create an S3 bucket in the location where you want to save the packaged code\. If you want to use an existing S3 bucket, skip this step\.
 
@@ -146,7 +124,7 @@ In the following steps, you create a \.zip file for the contents of the `/build`
    ```
 
    The command does the following:
-   + Zips the contents of the `/.aws-sam/build/HelloWorld/` directory\. This directory was created by `sam build` and where your dependencies were installed\.
+   + Zips the contents of the `aws-sam/hello_world/` directory and uploads it to Amazon S3\.
    + Uploads the deployment package, README file, and LICENSE file to the Amazon S3 bucket specified by the `--s3-bucket` option\.
    + Outputs a new template file, called `packaged.yaml`, which you use in the next step to publish the application to AWS Serverless Application Repository\. The `packaged.yaml` template file is similar to the original template file \(`template.yaml`\), but has a key difference—the `CodeUri`, `LicenseUrl`, and `ReadmeUrl` properties point to the Amazon S3 bucket and objects that contains the respective artifacts\. The following snippet from an example `packaged.yaml` template file shows the `CodeUri` property: 
 
@@ -159,7 +137,7 @@ In the following steps, you create a \.zip file for the contents of the `/build`
      ...
      ```
 
-### Publish the Application<a name="serverlessrepo-quick-start-hello-world-publish-app"></a>
+## Step 4: Publish the Application<a name="serverlessrepo-quick-start-hello-world-publish-app"></a>
 
 Now that you've created the deployment package, you use it to publish the application to AWS Serverless Application Repository\.
 
@@ -179,7 +157,7 @@ The application will be created as private by default\. You must share the appli
 
 Now that you have published your sample application, following are a few things you might want to do with it\.
 + **View Your Application in AWS Serverless Application Repository** – The output of the `sam publish` command will include a link to the AWS Serverless Application Repository directly to the detail page of your application\. You can also go to the AWS Serverless Application Repository landing page and search for your application\.
-+ **Share Your Application** – Because your application is set to private by default, it is not visible to other AWS Accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS Accounts\. For information on sharing you rapplication using the AWS CLI see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For information on sharing your application using the console see [Sharing an Application Through the Console](serverless-app-publishing-applications.md#share-application)\.
++ **Share Your Application** – Because your application is set to private by default, it is not visible to other AWS Accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS Accounts\. For information on sharing your application using the AWS CLI see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For information on sharing your application using the console see [Sharing an Application Through the Console](serverless-app-publishing-applications.md#share-application)\.
 
 ## More Information<a name="serverlessrepo-quick-start-moreinfo"></a>
 

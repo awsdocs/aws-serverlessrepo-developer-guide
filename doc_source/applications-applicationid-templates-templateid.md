@@ -162,7 +162,7 @@ Gets the specified AWS CloudFormation template\.
 | templateUrl | string | True | A link to the template that can be used to deploy the application using AWS CloudFormation\. | 
 | applicationId | string | True | The application Amazon Resource Name \(ARN\)\. | 
 | semanticVersion | string | True | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
-| status | stringValues: `PREPARING \| ACTIVE \| EXPIRED` | True | Status of the template creation workflow\.Possible values: `PREPARING \| ACTIVE \| EXPIRED` | 
+| status | stringValues: `PREPARING \| ACTIVE \| EXPIRED` | True | Status of the template creation workflow\.Possible values: `PREPARING \| ACTIVE \| EXPIRED`  | 
 | creationTime | string | True | The date and time this resource was created\. | 
 | expirationTime | string | True | The date and time this template expires\. Templates expire 1 hour after creation\. | 
 

@@ -96,7 +96,8 @@ Creates an application, optionally including an AWS SAM file to create the first
   "semanticVersion": "string",
   "templateBody": "string",
   "templateUrl": "string",
-  "sourceCodeUrl": "string"
+  "sourceCodeUrl": "string",
+  "sourceCodeArchiveUrl": "string"
 }
 ```
 
@@ -144,6 +145,7 @@ Creates an application, optionally including an AWS SAM file to create the first
     "applicationId": "string",
     "semanticVersion": "string",
     "sourceCodeUrl": "string",
+    "sourceCodeArchiveUrl": "string",
     "templateUrl": "string",
     "creationTime": "string",
     "parameterDefinitions": [
@@ -243,7 +245,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 | spdxLicenseId | string | False | A valid identifier from https://spdx\.org/licenses/\. | 
 | licenseUrl | string | False | A link to a license file of the app that matches the spdxLicenseID value of your application\.Maximum size 5 MB | 
 | readmeUrl | string | False | A link to the readme file in Markdown language that contains a more detailed description of the application and how it works\.Maximum size 5 MB | 
-| labels | Array of type string | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
+| labels | array | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
 | creationTime | string | False | The date and time this resource was created\. | 
 | homePageUrl | string | False | A URL with more information about the application, for example the location of your GitHub repository for the application\. | 
 | version | [Version](#applications-model-version) | False | Version information about the application\. | 
@@ -260,7 +262,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-| applications | Array of type [ApplicationSummary](#applications-model-applicationsummary) | True | An array of application summaries\. | 
+| applications | array | True | An array of application summaries\. | 
 | nextToken | string | False | The token to request the next page of results\. | 
 
 **See Also**
@@ -280,7 +282,7 @@ Creates an application, optionally including an AWS SAM file to create the first
 | description | string | True | The description of the application\.Minimum length=1\. Maximum length=256 | 
 | author | string | True | The name of the author publishing the app\.Minimum length=1\. Maximum length=127\.Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]\|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$"; | 
 | spdxLicenseId | string | False | A valid identifier from [https://spdx\.org/licenses/](https://spdx.org/licenses/)\. | 
-| labels | Array of type string | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
+| labels | array | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
 | creationTime | string | False | The date and time this resource was created\. | 
 | homePageUrl | string | False | A URL with more information about the application, for example the location of your GitHub repository for the application\. | 
 
@@ -334,12 +336,13 @@ Values that must be specified in order to deploy some applications\.
 | licenseUrl | string | False | A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application\.Maximum size 5 MBYou can specify only one of `licenseBody` and `licenseUrl`; otherwise, an error results\. | 
 | readmeBody | string | False | A local text readme file in Markdown language that contains a more detailed description of the application and how it works\. The file has the format `file://<path>/<filename>`\.Maximum size 5 MBYou can specify only one of `readmeBody` and `readmeUrl`; otherwise, an error results\. | 
 | readmeUrl | string | False | A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works\.Maximum size 5 MBYou can specify only one of `readmeBody` and `readmeUrl`; otherwise, an error results\. | 
-| labels | Array of type string | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
+| labels | array | False | Labels to improve discovery of apps in search results\.Minimum length=1\. Maximum length=127\. Maximum number of labels: 10Pattern: "^\[a\-zA\-Z0\-9\+\\\\\-\_:\\\\/@\]\+$"; | 
 | homePageUrl | string | False | A URL with more information about the application, for example the location of your GitHub repository for the application\. | 
 | semanticVersion | string | False | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
 | templateBody | string | False | The local raw packaged AWS SAM template file of your application\. The file has the format `file://<path>/<filename>`\.You can specify only one of `templateBody` and `templateUrl`; otherwise an error results\. | 
 | templateUrl | string | False | A link to the S3 object containing the packaged AWS SAM template of your application\.You can specify only one of `templateBody` and `templateUrl`; otherwise an error results\. | 
-| sourceCodeUrl | string | False | A link to a public repository for the source code of your application\. | 
+| sourceCodeUrl | string | False | A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit\. | 
+| sourceCodeArchiveUrl | string | False | A link to the S3 object that contains the ZIP archive of the source code for this version of your application\.Maximum size 50 MB | 
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateApplicationInput)
@@ -397,8 +400,8 @@ Values that must be specified in order to deploy some applications\.
 | maxValue | integer | False | A numeric value that determines the largest numeric value that you want to allow for `Number` types\. | 
 | minLength | integer | False | An integer value that determines the smallest number of characters that you want to allow for `String` types\. | 
 | maxLength | integer | False | An integer value that determines the largest number of characters that you want to allow for `String` types\. | 
-| allowedValues | Array of type string | False | An array containing the list of values allowed for the parameter\. | 
-| referencedByResources | Array of type string | True | A list of AWS SAM resources that use this parameter\. | 
+| allowedValues | array | False | An array containing the list of values allowed for the parameter\. | 
+| referencedByResources | array | True | A list of AWS SAM resources that use this parameter\. | 
 
 **See Also**
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ParameterDefinition)
@@ -425,11 +428,12 @@ Values that must be specified in order to deploy some applications\.
 | --- |--- |--- |--- |
 | applicationId | string | True | The application Amazon Resource Name \(ARN\)\. | 
 | semanticVersion | string | True | The semantic version of the application: [https://semver\.org/](https://semver.org/)  | 
-| sourceCodeUrl | string | False | A link to a public repository for the source code of your application\. | 
+| sourceCodeUrl | string | False | A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit\. | 
+| sourceCodeArchiveUrl | string | False | A link to the S3 object that contains the ZIP archive of the source code for this version of your application\.Maximum size 50 MB | 
 | templateUrl | string | True | A link to the packaged AWS SAM template of your application\. | 
 | creationTime | string | True | The date and time this resource was created\. | 
-| parameterDefinitions | Array of type [ParameterDefinition](#applications-model-parameterdefinition) | True | An array of parameter types supported by the application\. | 
-| requiredCapabilities | Array of type [Capability](#applications-model-capability) | True | A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\.The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, and `CAPABILITY_AUTO_EXPAND`\.The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\.The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.Applications that contain one or more nested applications require you to specify `CAPABILITY_AUTO_EXPAND`\.If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. | 
+| parameterDefinitions | array | True | An array of parameter types supported by the application\. | 
+| requiredCapabilities | array | True | A list of values that you must specify before you can deploy certain applications\. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter\.The only valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, and `CAPABILITY_AUTO_EXPAND`\.The following resources require you to specify `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`: [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html), [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html), [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), and [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)\. If the application contains IAM resources, you can specify either `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM`\. If the application contains IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\.The following resources require you to specify `CAPABILITY_RESOURCE_POLICY`: [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html), [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html), [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html), [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html), [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html), and [AWS::SNS::TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html)\.Applications that contain one or more nested applications require you to specify `CAPABILITY_AUTO_EXPAND`\.If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying\. If you don't specify this parameter for an application that requires capabilities, the call will fail\. | 
 | resourcesSupported | boolean | True | Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved\. | 
 
 **See Also**

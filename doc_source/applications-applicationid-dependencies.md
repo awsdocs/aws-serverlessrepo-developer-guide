@@ -122,7 +122,7 @@ Retrieves the list of applications nested in the containing application\.
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-| dependencies | Array of type [ApplicationDependencySummary](#applications-applicationid-dependencies-model-applicationdependencysummary) | True | An array of application summaries nested in the application\. | 
+| dependencies | array | True | An array of application summaries nested in the application\. | 
 | nextToken | string | False | The token to request the next page of results\. | 
 
 **See Also**

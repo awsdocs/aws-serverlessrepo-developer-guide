@@ -294,18 +294,31 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "dynamodb:Query",
               "dynamodb:UpdateItem",
               "dynamodb:BatchWriteItem",
-              "dynamodb:BatchGetItem"
+              "dynamodb:BatchGetItem",
+              "dynamodb:DescribeTable"
             ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
                   }
-                }
-              ]
-            }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              }
+            ]
           }
         ]
 ```
@@ -320,7 +333,43 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "dynamodb:GetItem",
               "dynamodb:Scan",
               "dynamodb:Query",
-              "dynamodb:BatchGetItem"
+              "dynamodb:BatchGetItem",
+              "dynamodb:DescribeTable"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## DynamoDBReconfigurePolicy: Gives Access Reconfigure to a DynamoDB Table<a name="dynamo-db-reconfigure-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:UpdateTable"
             ],
             "Resource": {
               "Fn::Sub": [
@@ -433,6 +482,7 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
               "s3:GetBucketLocation",
               "s3:GetObjectVersion",
               "s3:PutObject",
+              "s3:PutObjectAcl",
               "s3:GetLifecycleConfiguration",
               "s3:PutLifecycleConfiguration",
               "s3:DeleteObject"
@@ -1278,6 +1328,152 @@ The following example contains the `CloudWatchPutMetricPolicy` policy template, 
                 {
                   "deliveryStreamName": {
                     "Ref": "DeliveryStreamName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## EKSDescribePolicy: Gives Permission to Describe or List Amazon EKS Clusters<a name="eks-describe-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "eks:DescribeCluster",
+              "eks:ListClusters"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## CostExplorerReadOnlyPolicy: Gives Access to the Readonly Cost Explorer APIs for Billing History<a name="cost-explorer-readonly-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "ce:GetCostAndUsage",
+            "ce:GetDimensionValues",
+            "ce:GetReservationCoverage",
+            "ce:GetReservationPurchaseRecommendation",
+            "ce:GetReservationUtilization",
+            "ce:GetTags"
+          ],
+          "Resource": "*"
+        }]
+```
+
+## OrganizationsListAccountsPolicy: Gives Readonly Permission to List Child Account Names and IDs<a name="organizations-list-accounts-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "organizations:ListAccounts"
+          ],
+          "Resource": "*"
+        }]
+```
+
+## SESBulkTemplatedCrudPolicy: Gives Permission to Send Email, Templated Email, Templated Bulk Emails and Verify Identity<a name="ses-bulk-templated-crud-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ses:GetIdentityVerificationAttributes",
+              "ses:SendEmail",
+              "ses:SendRawEmail",
+              "ses:SendTemplatedEmail",
+              "ses:SendBulkTemplatedEmail",
+              "ses:VerifyEmailIdentity"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
+                {
+                  "identityName": {
+                    "Ref": "IdentityName"
+                  }
+                }
+              ]
+            }
+          }
+       ]
+```
+
+## SESEmailTemplateCrudPolicy: Gives Permission to Create, Get, List, Update and Delete Amazon SES Email Templates<a name="ses-email-template-crud-policy"></a>
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "ses:CreateTemplate",
+            "ses:GetTemplate",
+            "ses:ListTemplates",
+            "ses:UpdateTemplate",
+            "ses:DeleteTemplate",
+            "ses:TestRenderTemplate"
+          ],
+          "Resource": "*"
+        }]
+```
+
+## FilterLogEventsPolicy: Gives Permission to Filter Log Events from a Specified Log Group<a name="filter-log-events-policy"></a>
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "logs:FilterLogEvents"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:${logGroupName}:log-stream:*",
+                {
+                  "logGroupName": {
+                    "Ref": "LogGroupName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## SSMParameterReadPolicy: Gives Access to a Parameter to Load Secrets in this account<a name="ssm-parameter-read-policy"></a>
+
+**Note**  
+If not using default key, `KMSDecryptPolicy` will also be needed\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ssm:DescribeParameters"
+            ],
+            "Resource": "*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ssm:GetParameters",
+              "ssm:GetParameter"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${parameterName}",
+                {
+                  "parameterName": {
+                    "Ref": "ParameterName"
                   }
                 }
               ]
