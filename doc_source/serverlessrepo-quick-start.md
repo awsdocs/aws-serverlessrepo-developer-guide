@@ -59,7 +59,7 @@ Now that you have the AWS SAM application on your local machine, follow the step
 1. Start the API Gateway endpoint locally\. You must run the following command from the directory that contains the `template.yaml` file\.
 
    ```
-   sam-app> sam local start-api
+   sam-app> sam local start-api --region us-east-1
    ```
 
    The command returns an API Gateway endpoint, which you can send requests to for local testing\.
@@ -157,7 +157,7 @@ The application will be created as private by default\. You must share the appli
 
 Now that you have published your sample application, following are a few things you might want to do with it\.
 + **View Your Application in AWS Serverless Application Repository** – The output of the `sam publish` command will include a link to the AWS Serverless Application Repository directly to the detail page of your application\. You can also go to the AWS Serverless Application Repository landing page and search for your application\.
-+ **Share Your Application** – Because your application is set to private by default, it is not visible to other AWS Accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS Accounts\. For information on sharing your application using the AWS CLI see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For information on sharing your application using the console see [Sharing an Application Through the Console](serverless-app-publishing-applications.md#share-application)\.
++ **Share Your Application** – Because your application is set to private by default, it is not visible to other AWS Accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS Accounts\. For information on sharing your application using the AWS CLI see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\. For information on sharing your application using the console see [Sharing an Application Through the Console](serverlessrepo-how-to-publish.md#share-application)\.
 
 ## More Information<a name="serverlessrepo-quick-start-moreinfo"></a>
 

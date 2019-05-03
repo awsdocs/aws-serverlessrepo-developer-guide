@@ -24,7 +24,7 @@ This table contains the list of supported actions for setting permissions for AW
 | SearchApplications | Grants permission for the application to be searched for\. | 
 | Deploy |  This action enables all actions listed above, that is, it grants permission for the application to be viewed, deployed, versions to be listed, and to be searched for\.  | 
 
-The examples below show how to grant permissions using the AWS CLI\. For information on how to grant permissions using the AWS Management Console see [Sharing an Application Through the Console](serverless-app-publishing-applications.md#share-application)\.
+The examples below show how to grant permissions using the AWS CLI\. For information on how to grant permissions using the AWS Management Console see [Sharing an Application Through the Console](serverlessrepo-how-to-publish.md#share-application)\.
 
  AWS Serverless Application Repository provides the following AWS CLI commands to manage a permissions policy associated with an AWS Serverless Application Repository application:
 + [put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)
