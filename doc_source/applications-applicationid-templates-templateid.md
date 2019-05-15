@@ -32,18 +32,6 @@ Gets the specified AWS CloudFormation template\.
 | 429 | [TooManyRequestsException](#applications-applicationid-templates-templateid-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
 | 500 | [InternalServerErrorException](#applications-applicationid-templates-templateid-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
 
-**See Also**
-+ [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-+ [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
-
 ## Schemas<a name="applications-applicationid-templates-templateid-schemas"></a>
 
 ### Response Bodies<a name="applications-applicationid-templates-templateid-response-examples"></a>
@@ -109,52 +97,50 @@ Gets the specified AWS CloudFormation template\.
 
 ## Properties<a name="applications-applicationid-templates-templateid-properties"></a>
 
+### BadRequestException<a name="applications-applicationid-templates-templateid-model-badrequestexception"></a>
 
-**BadRequestException**  
+One of the parameters in the request is invalid\.
+
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | One of the parameters in the request is invalid\. | 
 | errorCode | string | False | 400 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException)
+### ForbiddenException<a name="applications-applicationid-templates-templateid-model-forbiddenexception"></a>
 
+The client is not authenticated\.
 
-**ForbiddenException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The client is not authenticated\. | 
 | errorCode | string | False | 403 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException)
+### InternalServerErrorException<a name="applications-applicationid-templates-templateid-model-internalservererrorexception"></a>
 
+The AWS Serverless Application Repository service encountered an internal error\.
 
-**InternalServerErrorException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The AWS Serverless Application Repository service encountered an internal error\. | 
 | errorCode | string | False | 500 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException)
+### NotFoundException<a name="applications-applicationid-templates-templateid-model-notfoundexception"></a>
 
+The resource \(for example, an access policy statement\) specified in the request doesn't exist\.
 
-**NotFoundException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
 | errorCode | string | False | 404 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/NotFoundException)
+### TemplateDetails<a name="applications-applicationid-templates-templateid-model-templatedetails"></a>
 
+Details of the template\.
 
-**TemplateDetails**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
@@ -166,20 +152,28 @@ Gets the specified AWS CloudFormation template\.
 | creationTime | string | True | The date and time this resource was created\. | 
 | expirationTime | string | True | The date and time this template expires\. Templates expire 1 hour after creation\. | 
 
-**See Also**
-+ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/TemplateDetails)
-+ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/TemplateDetails)
-+ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/TemplateDetails)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/TemplateDetails)
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TemplateDetails)
+### TooManyRequestsException<a name="applications-applicationid-templates-templateid-model-toomanyrequestsexception"></a>
 
+The client is sending more than the allowed number of requests per unit of time\.
 
-**TooManyRequestsException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The client is sending more than the allowed number of requests per unit of time\. | 
 | errorCode | string | False | 429 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException)
+## See Also<a name="applications-applicationid-templates-templateid-see-also"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs and references, see the following:
+
+### GetCloudFormationTemplate<a name="GetCloudFormationTemplate-see-also"></a>
++ [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/GetCloudFormationTemplate)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/GetCloudFormationTemplate)

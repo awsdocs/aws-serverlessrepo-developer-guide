@@ -56,7 +56,7 @@ aws serverlessrepo put-application-policy \
 ```
 
 **Note**  
-In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, and 2\) It must have the `SemanticVersion` property set\. 
+In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, 2\) It must have the `SemanticVersion` property set, and 3\) It must have the `LicenseUrl` property set\.
 
 ## Example 3: Make an Application Private<a name="access-control-resource-based-example-make-private"></a>
 

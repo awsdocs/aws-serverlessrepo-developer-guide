@@ -88,7 +88,7 @@ Make your application publicly available by using the following procedure\.
 1. In the **Application Details** section, move the **Visibility** slider to **Application is public**\.
 
 **Note**  
-Using the console, you can only set applications to *private* or *publicly shared*\. If you want to set your application to *privately shared* so it's available only to a specific list of AWS accounts, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, 2\) It must have the `SemanticVersion` property set, and 3\) It must have the `LicenseUrl` property set\.
 
 ### Publishing a New Version of an Existing Application Through the Console<a name="publish-new-version-of-application"></a>
 

@@ -39,18 +39,6 @@ Lists versions for the specified application\.
 | 429 | [TooManyRequestsException](#applications-applicationid-versions-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
 | 500 | [InternalServerErrorException](#applications-applicationid-versions-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
 
-**See Also**
-+ [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/ListApplicationVersions)
-+ [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/ListApplicationVersions)
-
 ## Schemas<a name="applications-applicationid-versions-schemas"></a>
 
 ### Response Bodies<a name="applications-applicationid-versions-response-examples"></a>
@@ -118,78 +106,70 @@ Lists versions for the specified application\.
 
 ## Properties<a name="applications-applicationid-versions-properties"></a>
 
+### ApplicationVersionPage<a name="applications-applicationid-versions-model-applicationversionpage"></a>
 
-**ApplicationVersionPage**  
+A list of version summaries for the application\.
+
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
-| versions | array | True | An array of version summaries for the application\. | 
+| versions | Array of type [VersionSummary](#applications-applicationid-versions-model-versionsummary) | True | An array of version summaries for the application\. | 
 | nextToken | string | False | The token to request the next page of results\. | 
 
-**See Also**
-+ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ApplicationVersionPage)
-+ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ApplicationVersionPage)
-+ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ApplicationVersionPage)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ApplicationVersionPage)
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ApplicationVersionPage)
+### BadRequestException<a name="applications-applicationid-versions-model-badrequestexception"></a>
 
+One of the parameters in the request is invalid\.
 
-**BadRequestException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | One of the parameters in the request is invalid\. | 
 | errorCode | string | False | 400 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/BadRequestException)
+### ForbiddenException<a name="applications-applicationid-versions-model-forbiddenexception"></a>
 
+The client is not authenticated\.
 
-**ForbiddenException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The client is not authenticated\. | 
 | errorCode | string | False | 403 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ForbiddenException)
+### InternalServerErrorException<a name="applications-applicationid-versions-model-internalservererrorexception"></a>
 
+The AWS Serverless Application Repository service encountered an internal error\.
 
-**InternalServerErrorException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The AWS Serverless Application Repository service encountered an internal error\. | 
 | errorCode | string | False | 500 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/InternalServerErrorException)
+### NotFoundException<a name="applications-applicationid-versions-model-notfoundexception"></a>
 
+The resource \(for example, an access policy statement\) specified in the request doesn't exist\.
 
-**NotFoundException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
 | errorCode | string | False | 404 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/NotFoundException)
+### TooManyRequestsException<a name="applications-applicationid-versions-model-toomanyrequestsexception"></a>
 
+The client is sending more than the allowed number of requests per unit of time\.
 
-**TooManyRequestsException**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | message | string | False | The client is sending more than the allowed number of requests per unit of time\. | 
 | errorCode | string | False | 429 | 
 
-**See Also**
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/TooManyRequestsException)
+### VersionSummary<a name="applications-applicationid-versions-model-versionsummary"></a>
 
+An application version summary\.
 
-**VersionSummary**  
 
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
@@ -198,9 +178,18 @@ Lists versions for the specified application\.
 | sourceCodeUrl | string | False | A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit\. | 
 | creationTime | string | True | The date and time this resource was created\. | 
 
-**See Also**
-+ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/VersionSummary)
-+ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/VersionSummary)
-+ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/VersionSummary)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/VersionSummary)
-+ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/VersionSummary)
+## See Also<a name="applications-applicationid-versions-see-also"></a>
+
+For more information about using this API in one of the language\-specific AWS SDKs and references, see the following:
+
+### ListApplicationVersions<a name="ListApplicationVersions-see-also"></a>
++ [AWS Command Line Interface](/goto/aws-cli/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for Go \- Pilot](/goto/SdkForGoPilot/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/ListApplicationVersions)
++ [AWS SDK for Ruby V2](/goto/SdkForRubyV2/serverlessrepo-2017-09-08/ListApplicationVersions)
