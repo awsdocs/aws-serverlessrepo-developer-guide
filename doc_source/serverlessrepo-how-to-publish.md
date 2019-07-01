@@ -1,9 +1,9 @@
 # How to Publish Applications<a name="serverlessrepo-how-to-publish"></a>
 
-This section provides you with procedures for publishing your serverless application to the AWS Serverless Application Repository using the AWS SAM CLI or the AWS Management Console\.
+This section provides you with procedures for publishing your serverless application to the AWS Serverless Application Repository by using the AWS SAM CLI or the AWS Management Console\.
 
 **Important**  
-The information that you enter when you publish an application isn't encrypted\. This information includes such data as the author name\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
+The information that you enter when you publish an application isn't encrypted\. This information includes data such as the author name\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
 
 ## Publishing an Application Through the AWS SAM CLI<a name="publishing-application-through-cli"></a>
 
@@ -17,22 +17,22 @@ This section shows you how to use the AWS Management Console to publish an appli
 
 Before you publish an application to the AWS Serverless Application Repository, you need the following:
 + A valid AWS account\.
-+ A valid AWS Serverless Application Model \(AWS SAM\) template that defines the AWS resources used\. For more information about AWS SAM templates, see the [AWS SAM Template Basics](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html)\. 
-+ A package for your application that you created using the AWS CloudFormation `package` command for the AWS CLI\. This command packages the local artifacts \(local paths\) that your AWS SAM template references\. For more details, see [package](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) in the AWS CloudFormation documentation\. 
-+ A URL pointing to your application's source code, in case you want to publish your application publicly\.
++ A valid AWS Serverless Application Model \(AWS SAM\) template that defines the AWS resources that are used\. For more information about AWS SAM templates, see [AWS SAM Template Basics](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html)\. 
++ A package for your application that you created by using the AWS CloudFormation `package` command for the AWS CLI\. This command packages the local artifacts \(local paths\) that your AWS SAM template references\. For more details, see [package](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) in the AWS CloudFormation documentation\. 
++ A URL that points to your application's source code, in case you want to publish your application publicly\.
 + A readme\.txt file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
-+ A license\.txt file\.
++ A license\.txt file or a valid license identifier from the [SPDX website](https://spdx.org/licenses/)\. Note that a license is only required if you want to share your application publicly\. If you're going to keep your application private or only share it privately, you don't need specify a license\.
 + A valid Amazon S3 bucket policy that grants the service read permissions for artifacts that were uploaded to Amazon S3 when you packaged your application\. To set this policy, follow these steps:
 
   1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
 
-  1. Choose the Amazon S3 bucket you used to package your application\.
+  1. Choose the Amazon S3 bucket that you used to package your application\.
 
   1. Choose the **Permissions** tab\.
 
   1. Choose the **Bucket Policy** button\.
 
-  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the Resource property value\.
+  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the `Resource` property value\.
 
      ```
       1. {
@@ -44,7 +44,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
       7.                 "Service":  "serverlessrepo.amazonaws.com"
       8.             },
       9.             "Action": "s3:GetObject",
-     10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
+     10.             "Resource": "arn:aws:s3:::bucketname/*"
      11.         }
      12.     ]
      13. }
@@ -60,18 +60,8 @@ Create a new application in the AWS Serverless Application Repository by using t
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home) and choose **Publish applications**\.
 
-1. On the **Publish an application** page, enter the indicated application information in the following boxes:
-   + **Application Name**
-   + **Author**
-   + **Description**
-   + **Search labels \(space delimited\)**
-   + **SPDX license**
-   + **Readme\.txt file**
-   + **Semantic version** \(required only for publicly shared applications\)
-   + **Source code URL**
-   + **AWS SAM template file**
-
-1. Choose **Publish application**\.
+1. On the **Publish an application** page, enter the indicated application information in the following boxes, and then choose **Publish application**:    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-how-to-publish.html)
 
 ### Sharing an Application Through the Console<a name="share-application"></a>
 
