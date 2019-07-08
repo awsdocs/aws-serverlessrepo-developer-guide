@@ -10,6 +10,7 @@ Applications in the AWS Serverless Application Repository are deployed by using 
 + [A Limit Was Exceeded](#issue-limit-exceeded)
 + [An Updated Readme File Doesn't Appear Immediately](#issue-updating-readme-delay)
 + [You Can't Deploy an Application Due to Insufficient IAM Permissions](#issue-cant-deploy-app-due-to-insufficient-iam-permissions)
++ [You Can't Deploy an Application Because of an Amazon S3 Permission Error When You Execute a Changeset](#issue-cant-deploy-app-due-to-internal-failure-execute)
 + [You Can't Deploy the Same Application Twice](#issue-cant-deploy-same-app-twice)
 + [Why Is My Application Not Publicly Available](#issue-why-not-publicly-available)
 + [Contacting Support](#issue-contacting-support)
@@ -35,6 +36,33 @@ When you make your application public, the contents of your application can take
 To deploy an AWS Serverless Application Repository application, you need permissions to AWS Serverless Application Repository resources and AWS CloudFormation stacks\. You might also need permission to use the underlying services described in the application\. For example, if you're creating an Amazon S3 bucket or an Amazon DynamoDB table, you need permissions to Amazon S3 or DynamoDB\. 
 
 If you run into this type of issue, review your AWS Identity and Access Management \(IAM\) policy and verify that you have the necessary permissions\. For more information, see [Controlling Access with AWS Identity and Access Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)\. 
+
+## You Can't Deploy an Application Because of an Amazon S3 Permission Error When You Execute a Changeset<a name="issue-cant-deploy-app-due-to-internal-failure-execute"></a>
+
+**Example Amazon S3 Permission Error Message**  
+
+```
+Your access has been denied by S3, please make sure your request credentials have permission to GetObject for awsserverlessrepo-changesets-123456789/*. 
+	   S3 Error Code: AccessDenied. S3 Error Message: Access Denied (Service: AWSLambdaInternal; Status Code: 403; Error Code: AccessDeniedException; Request ID: 12a3b14c-50d4-11e9-a005-9d36a3dd5e04)
+```
+
+Deploying an application from the AWS Serverless Application Repository requires API calls to two services: 
++ **Creating a changeset** – Requires a call to the AWS Serverless Application Repository API to create a changeset with either `[CreateCloudFormationChangeSet](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-changesets.html)`, or `[CreateCloudFormationTemplate](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-templates.html#applications-applicationid-templatespost)` followed by `CreateCloudFormationChangeSet`\.
++ **Executing the changeset** – Requires a call to the AWS CloudFormation API to execute the stack updates with `[ExecuteChangeSet](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html)`\.
+
+If you receive an error message that indicates that access has been denied by Amazon Simple Storage Service \(Amazon S3\) when you are calling the AWS CloudFormation `ExecuteChangeSet` API operation, the `aws:userid` might not be the same `aws:userid` that was used to create the changeset\.
+
+An example case for this issue is when you are using assumed roles\. There are factors that can cause the `aws:userid` to change between API calls to different services, even when you are using the same role\. To learn more about the value that's assigned to `aws:userid` with assumed roles, see [more information about `aws:userid`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#policy-vars-infotouse)\.
+
+A potential programmatic solution to ensure a unified `aws:userid` in Python is to create a session, and then make calls to create and execute within that session\.
+
+**Example Session with Python Boto3**  
+
+```
+session = boto3.session.Session()
+serverlessrepo = session.client('servelessrepo')
+cloudformation = session.resource('cloudformation')
+```
 
 ## You Can't Deploy the Same Application Twice<a name="issue-cant-deploy-same-app-twice"></a>
 

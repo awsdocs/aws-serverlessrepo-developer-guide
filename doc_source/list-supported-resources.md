@@ -38,6 +38,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Athena::NamedQuery`
 + `AWS::CertificateManager::Certificate`
 + `AWS::CloudFormation::CustomResource`
++ `AWS::CloudFormation::Macro`
 + `AWS::CloudFormation::WaitConditionHandle`
 + `AWS::CloudFront::CloudFrontOriginAccessIdentity`
 + `AWS::CloudFront::Distribution`
