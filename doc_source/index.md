@@ -31,6 +31,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Logging AWS Serverless Application Repository API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
 + [AWS Serverless Application Repository Limits](limits.md)
 + [Troubleshooting the AWS Serverless Application Repository](troubleshooting.md)
++ [Operations](operations.md)
 + [Resources](resources.md)
    + [Applications](applications.md)
    + [Applications applicationId](applications-applicationid.md)
