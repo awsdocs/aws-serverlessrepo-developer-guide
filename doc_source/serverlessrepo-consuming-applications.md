@@ -8,7 +8,7 @@ Find, configure, and deploy an application in the AWS Serverless Application Rep
 
 **To find and configure an application in the AWS Serverless Application Repository**
 
-1. Open the [AWS Serverless Application Repository public home page](https://aws.amazon.com/serverless/serverlessrepo), or open the [AWS Lambda console](https://console.aws.amazon.com/lambda/) and choose **Serverless Application Repository**\.
+1. Open the [AWS Serverless Application Repository public home page](https://aws.amazon.com/serverless/serverlessrepo), or open the [AWS Lambda console](https://console.aws.amazon.com/lambda/), choose **Create function**, then choose **Browse serverless app repository**\.
 
 1. Browse or search for an application\.
 **Note**  

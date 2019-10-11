@@ -207,7 +207,7 @@ For customers to deploy applications, you must grant them permissions to perform
             "Action": [
                 "serverlessrepo:CreateCloudFormationChangeSet",
                 "cloudformation:CreateChangeSet",
-                "cloudformation:ExecuteChangeSet"
+                "cloudformation:ExecuteChangeSet",
                 "cloudformation:DescribeStacks"
 
             ],
