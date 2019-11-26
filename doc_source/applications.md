@@ -109,6 +109,8 @@ Creates an application, optionally including an AWS SAM file to create the first
   "name": "string",
   "description": "string",
   "author": "string",
+  "isVerifiedAuthor": boolean,
+  "verifiedAuthorUrl": "string",
   "spdxLicenseId": "string",
   "licenseUrl": "string",
   "readmeUrl": "string",
@@ -220,6 +222,8 @@ Details about the application\.
 | name | string | True | The name of the application\.Minimum length=1\. Maximum length=140Pattern: "\[a\-zA\-Z0\-9\\\\\-\]\+"; | 
 | description | string | True | The description of the application\.Minimum length=1\. Maximum length=256 | 
 | author | string | True | The name of the author publishing the app\.Minimum length=1\. Maximum length=127\.Pattern "^\[a\-z0\-9\]\(\(\[a\-z0\-9\]\|\-\(?\!\-\)\)\*\[a\-z0\-9\]\)?$"; | 
+| isVerifiedAuthor | boolean | False | Specifies whether the author of this application has been verified\. This means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed\. | 
+| verifiedAuthorUrl | string | False | The URL to the public profile of a verified author\. This URL is submitted by the author\. | 
 | spdxLicenseId | string | False | A valid identifier from https://spdx\.org/licenses/\. | 
 | licenseUrl | string | False | A link to a license file of the app that matches the spdxLicenseID value of your application\.Maximum size 5 MB | 
 | readmeUrl | string | False | A link to the readme file in Markdown language that contains a more detailed description of the application and how it works\.Maximum size 5 MB | 

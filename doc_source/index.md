@@ -20,6 +20,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Using AWS SAM with the AWS Serverless Application Repository](using-aws-sam.md)
       + [List of Supported AWS Resources](list-supported-resources.md)
    + [How to Publish Applications](serverlessrepo-how-to-publish.md)
+   + [Verified Author Badge](serverlessrepo-verified-author.md)
    + [Sharing Lambda Layers](sharing-lambda-layers.md)
 + [Consuming Applications](serverlessrepo-consuming-applications.md)
    + [Acknowledging IAM Roles, Resource Policies, and Nested Applications When You Deploy Applications](acknowledging-application-capabilities.md)

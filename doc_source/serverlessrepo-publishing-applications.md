@@ -16,4 +16,5 @@ When you publish an application to the AWS Serverless Application Repository and
 **Topics**
 + [Using AWS SAM with the AWS Serverless Application Repository](using-aws-sam.md)
 + [How to Publish Applications](serverlessrepo-how-to-publish.md)
++ [Verified Author Badge](serverlessrepo-verified-author.md)
 + [Sharing Lambda Layers](sharing-lambda-layers.md)
