@@ -41,7 +41,7 @@ To deploy an application in the AWS Serverless Application Repository, you must 
 + **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts\. You have permission to deploy applications that have been shared with your AWS account\.
 + **Publicly shared** – Applications that the publisher has shared with everyone\. You have permission to deploy any publicly shared application\.
 
-To learn more about publishers sharing applications, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+To learn more about publishers sharing applications, see [AWS Serverless Application Repository Resource\-Based Policy Examples](security_iam_resource-based-policy-examples.md)\.
 
 **Important**  
 Applications that contain nested applications inherit the nested applications' sharing restrictions\. For example, suppose an application is publicly shared, but it contains a nested application that's only privately shared with the AWS account that created the parent application\. In this case, if your AWS account doesn't have permission to deploy the nested application, then you aren't able to deploy the parent application\. For more information about nested applications, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) in the *AWS Serverless Application Model Developer Guide*\.

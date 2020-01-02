@@ -1,6 +1,6 @@
 # AWS Serverless Application Repository API Permissions: Actions and Resources Reference<a name="serverlessrepo-api-permissions-ref"></a>
 
-When you set up [access control](serverlessrepo-auth-and-access-control.md#access-control) and write permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The each AWS Serverless Application Repository API operation, the corresponding actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\. You specify the actions in the policy's `Action` field, and the resource value in the policy's `Resource` field\. 
+When you set up [access control](security-iam.md#security_iam_access-manage) and write permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The each AWS Serverless Application Repository API operation, the corresponding actions that you can grant permissions to perform the action, and the AWS resource that you can grant the permissions\. You specify the actions in the policy's `Action` field, and you specify the resource value in the policy's `Resource` field\. 
 
 To specify an action, use the `serverlessrepo:` prefix followed by the API operation name \(for example, `serverlessrepo:ListApplications`\)\.
 

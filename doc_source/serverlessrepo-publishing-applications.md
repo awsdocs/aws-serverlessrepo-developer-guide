@@ -11,7 +11,7 @@ When you publish your application, it's initially set to *private*, which means 
 When you publish an application to the AWS Serverless Application Repository and set it to public, the service makes the application available to consumers in all Regions\. When a consumer deploys a public application to a Region other than the Region in which the application was first published, the AWS Serverless Application Repository copies the application’s deployment artifacts to an Amazon S3 bucket in the destination Region\. It updates any resources in the AWS SAM template that use those artifacts to instead reference the files in the Amazon S3 bucket for the destination Region\. Deployment artifacts can include Lambda function code, API definition files, and so on\.
 
 **Note**  
-*Private* and *privately shared* applications are only available in the AWS Region that they're created in\. *Publicly shared* applications are available in all AWS Regions\. To learn more about sharing applications, see [Using Resource\-Based Policies for AWS Serverless Application Repository \(Application Policies\)](access-control-resource-based.md)\.
+*Private* and *privately shared* applications are only available in the AWS Region that they're created in\. *Publicly shared* applications are available in all AWS Regions\. To learn more about sharing applications, see [AWS Serverless Application Repository Resource\-Based Policy Examples](security_iam_resource-based-policy-examples.md)\.
 
 **Topics**
 + [Using AWS SAM with the AWS Serverless Application Repository](using-aws-sam.md)

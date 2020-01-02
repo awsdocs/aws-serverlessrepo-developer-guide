@@ -65,9 +65,7 @@ Create a new application in the AWS Serverless Application Repository by using t
 
 ### Sharing an Application Through the Console<a name="share-application"></a>
 
-Make your application publicly available by using the following procedure\.
-
-**To make your application publicly available**
+You can use the AWS Management Console to share your application privately to users of specific AWS accounts, or publicly with all users of all AWS accounts\. To share your application privately or publicly, follow these steps:
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
 
@@ -75,7 +73,9 @@ Make your application publicly available by using the following procedure\.
 
 1. Choose the application that you want to share\.
 
-1. In the **Application Details** section, move the **Visibility** slider to **Application is public**\.
+1. In the **Share with AWS Accounts** section, do one of the following:
+   + To share the application publicly, enable the slider labeled **This application is private**\. The label will change to **This application is public and anyone can view it**\.
+   + To share the application privately, choose **Add**, and enter the AWS account numbers you would like to share privately with\. If you would like to share with more than one AWS account, you must add them one at a time\.
 
 **Note**  
 In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, 2\) It must have the `SemanticVersion` property set, and 3\) It must have the `LicenseUrl` property set\.
