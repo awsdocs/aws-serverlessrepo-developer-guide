@@ -12,7 +12,7 @@ Publishers can set application permissions to the following three categories:
 **Note**  
 For **privately shared applications**, the AWS Serverless Application Repository only supports *AWS accounts* as principals\. Publishers can grant or deny all users within an AWS account as a single group to an AWS Serverless Application Repository application\. Publishers cannot grant or deny individual users within an AWS account to an AWS Serverless Application Repository application\.
 
-For instructions on setting application permissions using the AWS Management Console, see [Sharing an Application Through the Console](serverlessrepo-how-to-publish.md#share-application)\.
+For instructions on setting application permissions using the AWS Management Console, see [Sharing an Application \(Console\)](serverlessrepo-how-to-publish.md#share-application)\.
 
 For instructions on setting application permissions using the AWS CLI and examples, see the following sections\.
 
@@ -35,7 +35,7 @@ When you're using the AWS CLI or the AWS SDKs to set permissions for an AWS Serv
 
 ## Resource\-Based Policy Examples<a name="access-control-resource-based-examples"></a>
 
-The following examples show how to grant permissions by using the AWS CLI\. For information on how to grant permissions using the AWS Management Console, see [Sharing an Application Through the Console](serverlessrepo-how-to-publish.md#share-application)\.
+The following examples show how to grant permissions by using the AWS CLI\. For information on how to grant permissions using the AWS Management Console, see [Sharing an Application \(Console\)](serverlessrepo-how-to-publish.md#share-application)\.
 
 All of the examples in this section use these AWS CLI commands to manage permissions policies associated with AWS Serverless Application Repository applications:
 + [put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)

@@ -10,6 +10,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::ApiGateway::DocumentationVersion`
 + `AWS::ApiGateway::DomainName`
 + `AWS::ApiGateway::GatewayResponse`
++ `AWS::EC2::SecurityGroup`
 + `AWS::ApiGateway::Method`
 + `AWS::ApiGateway::Model`
 + `AWS::ApiGateway::RequestValidator`

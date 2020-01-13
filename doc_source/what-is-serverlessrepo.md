@@ -8,4 +8,4 @@ The AWS Serverless Application Repository is deeply integrated with the AWS Lamb
 
 In this guide, you can learn about the two ways to work with the AWS Serverless Application Repository: 
 + [Publishing Applications](serverlessrepo-publishing-applications.md) – Configure and upload applications to make them available to other developers, and publish new versions of applications\.
-+ [Consuming Applications](serverlessrepo-consuming-applications.md) – Browse for applications and view information about them, including source code and readme files\. Also install, configure, and deploy applications of your choosing\.
++ [Deploying Applications](serverlessrepo-consuming-applications.md) – Browse for applications and view information about them, including source code and readme files\. Also install, configure, and deploy applications of your choosing\.

@@ -5,13 +5,13 @@ This section provides you with procedures for publishing your serverless applica
 **Important**  
 The information that you enter when you publish an application isn't encrypted\. This information includes data such as the author name\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
 
-## Publishing an Application Through the AWS SAM CLI<a name="publishing-application-through-cli"></a>
+## Publishing an Application \(AWS CLI\)<a name="publishing-application-through-cli"></a>
 
 The easiest way to publish and share an application to the AWS Serverless Application Repository is to use a set of AWS SAM CLI commands\. For more information, see [Publishing an Application Using the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications.html) in the *AWS Serverless Application Model \(AWS SAM\) Developer Guide*\.
 
-## Publishing an Application Through the AWS Management Console<a name="publishing-application-through-aws-console"></a>
+## Publishing a New Application \(Console\)<a name="publishing-application-through-aws-console"></a>
 
-This section shows you how to use the AWS Management Console to publish an application to the AWS Serverless Application Repository\.
+This section shows you how to use the AWS Management Console to publish a new application to the AWS Serverless Application Repository\. For instructions on publishing a new version of an existing application, see [Publishing a New Version of an Existing Application](serverlessrepo-how-to-publish-new-version.md)\.
 
 ### Prerequisites<a name="publishing-application-prerequisites"></a>
 
@@ -52,7 +52,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
 
   1. Choose the **Save** button\.
 
-### Creating a New Application Through the AWS Management Console<a name="create-new-application"></a>
+### Procedure<a name="create-new-application"></a>
 
 Create a new application in the AWS Serverless Application Repository by using the following procedure\.
 
@@ -60,10 +60,10 @@ Create a new application in the AWS Serverless Application Repository by using t
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home) and choose **Publish applications**\.
 
-1. On the **Publish an application** page, enter the indicated application information in the following boxes, and then choose **Publish application**:    
+1. On the **Publish an application** page, enter the following application information, and then choose **Publish application**:    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-how-to-publish.html)
 
-### Sharing an Application Through the Console<a name="share-application"></a>
+### Sharing an Application \(Console\)<a name="share-application"></a>
 
 You can use the AWS Management Console to share your application privately to users of specific AWS accounts, or publicly with all users of all AWS accounts\. To share your application privately or publicly, follow these steps:
 
@@ -74,35 +74,17 @@ You can use the AWS Management Console to share your application privately to us
 1. Choose the application that you want to share\.
 
 1. In the **Share with AWS Accounts** section, do one of the following:
-   + To share the application publicly, enable the slider labeled **This application is private**\. The label will change to **This application is public and anyone can view it**\.
-   + To share the application privately, choose **Add**, and enter the AWS account numbers you would like to share privately with\. If you would like to share with more than one AWS account, you must add them one at a time\.
+   + To share the application publicly, enable the slider labeled **This application is private**\. The label changes to **This application is public and anyone can view it**\.
+   + To share the application privately, choose **Add**, and enter the AWS account numbers for the accounts that you want to share privately with\. If you want to share with more than one AWS account, you must add them one at a time\.
 
 **Note**  
-In order to share an application publicly, it must meet the following requirements: 1\) It must be created in either us\-east\-1 or us\-east\-2, 2\) It must have the `SemanticVersion` property set, and 3\) It must have the `LicenseUrl` property set\.
-
-### Publishing a New Version of an Existing Application Through the Console<a name="publish-new-version-of-application"></a>
-
-Publish a new version of an application that you already created by using the following procedure\.
-
-**To publish a new version of an application**
-
-1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
-
-1. On the navigation pane, choose **My Applications** to bring up the list of applications that you've created\.
-
-1. Choose the application that you want to publish a new version for\.
-
-1. Choose **Publish new version**\.
-
-1. For **AWS SAM template file**, enter the name of the new AWS SAM template file for this version\.
-
-1. Choose **Publish**\.
+In order to share an application publicly, it must be created in either us\-east\-1 or us\-east\-2, it must have the `SemanticVersion` property set, and it must have the `LicenseUrl` property set\.
 
 ## Deleting an Application<a name="deleting-applications"></a>
 
 You can delete applications from the AWS Serverless Application Repository by using either the AWS Management Console or the AWS SAM CLI\.
 
-### Deleting an Application Through the AWS Management Console<a name="deleting-application-through-aws-console"></a>
+### Deleting an Application \(Console\)<a name="deleting-application-through-aws-console"></a>
 
 To delete a published application through the AWS Management Console, do the following\.
 
@@ -114,9 +96,9 @@ To delete a published application through the AWS Management Console, do the fol
 
 1. Choose **Delete application** to complete the deletion\.
 
-### Deleting an Application Through the AWS CLI<a name="deleting-application-through-cli"></a>
+### Deleting an Application \(AWS CLI\)<a name="deleting-application-through-cli"></a>
 
-To delete a published application using the AWS CLI, you run the `[aws serverlessrepo delete\-application](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\. In the command, specify the application ID of the application that you want to delete\.
+To delete a published application using the AWS CLI, run the `[aws serverlessrepo delete\-application](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\. In the command, specify the application ID of the application that you want to delete\.
 
 The following command deletes an application, where `<value>` is the application ID:
 
