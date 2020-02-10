@@ -41,7 +41,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Compliance Validation for the AWS Serverless Application Repository](SAR-compliance.md)
    + [Resilience in the AWS Serverless Application Repository](disaster-recovery-resiliency.md)
    + [Infrastructure Security in the AWS Serverless Application Repository](infrastructure-security.md)
-+ [AWS Serverless Application Repository Limits](limits.md)
++ [AWS Serverless Application Repository Quotas](quotas.md)
 + [Troubleshooting the AWS Serverless Application Repository](troubleshooting.md)
 + [Operations](operations.md)
 + [Resources](resources.md)

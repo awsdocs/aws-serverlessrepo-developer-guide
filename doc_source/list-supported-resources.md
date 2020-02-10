@@ -1,6 +1,7 @@
 # List of Supported AWS Resources<a name="list-supported-resources"></a>
 
 This is the complete list of AWS resources that are supported by the AWS Serverless Application Repository\.
++ `AWS::AccessAnalyzer::Analyzer`
 + `AWS::ApiGateway::ApiKey`
 + `AWS::ApiGateway::Authorizer`
 + `AWS::ApiGateway::BasePathMapping`
@@ -21,7 +22,9 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::ApiGateway::UsagePlanKey`
 + `AWS::ApiGateway::VpcLink`
 + `AWS::ApiGatewayV2::Api`
++ `AWS::ApiGatewayV2::ApiMapping`
 + `AWS::ApiGatewayV2::Authorizer`
++ `AWS::ApiGatewayV2::DomainName`
 + `AWS::ApiGatewayV2::Deployment`
 + `AWS::ApiGatewayV2::Integration`
 + `AWS::ApiGatewayV2::IntegrationResponse`
@@ -44,8 +47,11 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::CloudFront::CloudFrontOriginAccessIdentity`
 + `AWS::CloudFront::Distribution`
 + `AWS::CloudFront::StreamingDistribution`
++ `AWS::CloudTrail::Trail`
 + `AWS::CloudWatch::Alarm`
++ `AWS::CloudWatch::AnomalyDetector`
 + `AWS::CloudWatch::Dashboard`
++ `AWS::CloudWatch::InsightRule`
 + `AWS::CodeBuild::Project`
 + `AWS::CodeCommit::Repository`
 + `AWS::CodePipeline::CustomActionType`
@@ -55,6 +61,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Cognito::IdentityPoolRoleAttachment`
 + `AWS::Cognito::UserPool`
 + `AWS::Cognito::UserPoolClient`
++ `AWS::Cognito::UserPoolDomain`
 + `AWS::Cognito::UserPoolGroup`
 + `AWS::Cognito::UserPoolUser`
 + `AWS::Cognito::UserPoolUserToGroupAttachment`
@@ -69,6 +76,9 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Elasticsearch::Domain`
 + `AWS::Events::EventBusPolicy`
 + `AWS::Events::Rule`
++ `AWS::EventSchemas::Discoverer`
++ `AWS::EventSchemas::Registry`
++ `AWS::EventSchemas::Schema`
 + `AWS::Glue::Classifier`
 + `AWS::Glue::Connection`
 + `AWS::Glue::Crawler`
@@ -98,6 +108,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::KinesisAnalytics::ApplicationOutput`
 + `AWS::KinesisFirehose::DeliveryStream`
 + `AWS::Lambda::Alias`
++ `AWS::Lambda::EventInvokeConfig`
 + `AWS::Lambda::EventSourceMapping`
 + `AWS::Lambda::Function`
 + `AWS::Lambda::LayerVersion`
@@ -129,6 +140,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Serverless::Api`
 + `AWS::Serverless::Application`
 + `AWS::Serverless::Function`
++ `AWS::Serverless::HttpApi`
 + `AWS::Serverless::LayerVersion`
 + `AWS::Serverless::SimpleTable`
 + `AWS::StepFunctions::Activity`

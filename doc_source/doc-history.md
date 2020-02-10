@@ -1,11 +1,13 @@
 # Document History<a name="doc-history"></a>
 + **API version: latest**
-+ **Latest documentation update: **January 2, 2020
++ **Latest documentation update: **January 17, 2020
 
 The following table describes the important changes in each release of the *AWS Serverless Application Repository Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [New supported resources](#doc-history) | Added support for a number of additional resources\. For the complete list of supported resources, see [List of Supported AWS Resources](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/list-supported-resources.html)\. | January 17, 2020 | 
+| [China Regions](#doc-history) | The AWS Serverless Application Repository is now available in the China Regions, Beijing and Ningxia\. For more information about AWS Serverless Application Repository regions and endpoints, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference*\. | January 15, 2020 | 
 | [Updated Security section for consistency with other AWS services\.](#doc-history) | For more information, see [Security](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/security.html)\. | January 2, 2020 | 
 | [Simplified process for publishing applications](#doc-history) | The new `sam publish` command in the AWS SAM CLI simplifies the process for publishing serverless applications in the AWS Serverless Application Repository\. For an end\-to\-end tutorial on downloading and publishing a sample application, see [Quick Start: Publishing Applications](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-quick-start.html)\. For instructions on publishing an application that you have already developed and tested in the AWS Cloud, see [Publishing an Application through the AWS SAM CLI](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-publishing-applications.html#publishing-application-through-cli)\. | December 21, 2018 | 
 | [Nested Application and Layers support](#doc-history) | Added support for Nested Applications and Layers\. This includes updates to [Supported AWS Resources](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/using-aws-sam.html#supported-resources-for-serverlessrepo) and [Acknowledging Application Capabilities](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/acknowledging-application-capabilities.html)\. | November 29, 2018 | 

@@ -1,13 +1,13 @@
 # Troubleshooting the AWS Serverless Application Repository<a name="troubleshooting"></a>
 
-When you use the AWS Serverless Application Repository, you might encounter issues when you create, update, or delete your applications\. Use this section to help troubleshoot common issues that you might encounter\. You can also search for answers and post questions in the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com//forum.jspa?forumID=287)\.
+When you use the AWS Serverless Application Repository, you might encounter issues when you create, update, or delete your applications\. Use this section to help troubleshoot common issues that you might encounter\. You can also search for answers and post questions in the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com/forum.jspa?forumID=287)\.
 
 **Note**  
 Applications in the AWS Serverless Application Repository are deployed by using AWS CloudFormation\. For information on troubleshooting AWS CloudFormation issues, see the* [AWS CloudFormation Troubleshooting Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html)\.*
 
 **Topics**
 + [You Can't Make an Application Public](#issue-cant-make-app-public)
-+ [A Limit Was Exceeded](#issue-limit-exceeded)
++ [A Quota Was Exceeded](#issue-limit-exceeded)
 + [An Updated Readme File Doesn't Appear Immediately](#issue-updating-readme-delay)
 + [You Can't Deploy an Application Due to Insufficient IAM Permissions](#issue-cant-deploy-app-due-to-insufficient-iam-permissions)
 + [You Can't Deploy an Application Because of an Amazon S3 Permission Error When You Execute a Changeset](#issue-cant-deploy-app-due-to-internal-failure-execute)
@@ -23,9 +23,9 @@ To make your application public, you need an OSI\-approved license file, and als
 
 If you can't make your application public because you are missing a license file, delete the application and create a new one with the same name\. Make sure that you provide it with one or more open\-source licenses approved by the Open Source Initiative \(OSI\) organization\.
 
-## A Limit Was Exceeded<a name="issue-limit-exceeded"></a>
+## A Quota Was Exceeded<a name="issue-limit-exceeded"></a>
 
-If you receive an error message indicating that a limit was exceeded, check to see if you reached a resource limit\. For AWS Serverless Application Repository limits, see [AWS Serverless Application Repository Limits](limits.md)\.
+If you receive an error message that indicates that a quota was exceeded, check to see if you reached a resource quota\. For AWS Serverless Application Repository quotas, see [AWS Serverless Application Repository Quotas](quotas.md)\.
 
 ## An Updated Readme File Doesn't Appear Immediately<a name="issue-updating-readme-delay"></a>
 
@@ -74,6 +74,6 @@ Applications are private by default\. In order to make your application public, 
 
 ## Contacting Support<a name="issue-contacting-support"></a>
 
-In some cases, you might not be able to find troubleshooting solutions in this section or through the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com//forum.jspa?forumID=287)\. If you have AWS Premium Support, you can create a technical support case at [AWS Support](https://console.aws.amazon.com/support/home#/)\. 
+In some cases, you might not be able to find troubleshooting solutions in this section or through the [AWS Serverless Application Repository forums](https://forums.aws.amazon.com/forum.jspa?forumID=287)\. If you have AWS Premium Support, you can create a technical support case at [AWS Support](https://console.aws.amazon.com/support/home#/)\. 
 
-Before you contact AWS Support, make sure to get the Amazon Resource Name \(ARN\) for the application that you have questions about\. You can find the application ARN in the [AWS Serverless Application Repository console](https://console.aws.amazon.com//serverlessrepo/)\.
+Before you contact AWS Support, make sure to get the Amazon Resource Name \(ARN\) for the application that you have questions about\. You can find the application ARN in the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/)\.
