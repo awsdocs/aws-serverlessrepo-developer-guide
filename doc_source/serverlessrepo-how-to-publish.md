@@ -21,7 +21,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
 + A package for your application that you created by using the AWS CloudFormation `package` command for the AWS CLI\. This command packages the local artifacts \(local paths\) that your AWS SAM template references\. For more details, see [package](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) in the AWS CloudFormation documentation\. 
 + A URL that points to your application's source code, in case you want to publish your application publicly\.
 + A readme\.txt file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
-+ A license\.txt file or a valid license identifier from the [SPDX website](https://spdx.org/licenses/)\. Note that a license is only required if you want to share your application publicly\. If you're going to keep your application private or only share it privately, you don't need specify a license\.
++ A license\.txt file or a valid license identifier from the [SPDX website](https://spdx.org/licenses/)\. Note that a license is only required if you want to share your application publicly\. If you're going to keep your application private or only share it privately, you don't need to specify a license\.
 + A valid Amazon S3 bucket policy that grants the service read permissions for artifacts that were uploaded to Amazon S3 when you packaged your application\. To set this policy, follow these steps:
 
   1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
@@ -78,7 +78,7 @@ You can use the AWS Management Console to share your application privately to us
    + To share the application privately, choose **Add**, and enter the AWS account numbers for the accounts that you want to share privately with\. If you want to share with more than one AWS account, you must add them one at a time\.
 
 **Note**  
-In order to share an application publicly, it must be created in either us\-east\-1 or us\-east\-2, it must have the `SemanticVersion` property set, and it must have the `LicenseUrl` property set\.
+In order to share an application publicly, it must have both the `SemanticVersion` and `LicenseUrl` properties set\.
 
 ## Deleting an Application<a name="deleting-applications"></a>
 

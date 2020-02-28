@@ -78,6 +78,7 @@ The examples in this section provide a group of sample policies that you can att
 + [Consumer Example 1: Allow a Consumer to Search for Applications](#security_iam_id-example-consumer-search-apps)
 + [Consumer Example 2: Allow a Consumer to View Details of an Application](#security_iam_id-example-consumer-view-app-details)
 + [Consumer Example 3: Allow a Consumer to Deploy an Application](#security_iam_id-example-consumer-deploy-apps)
++ [Consumer Example 4: Deny Access to Deployment Assets](#security_iam_id-example-consumer-deny-deployment-assets)
 
 ### Publisher Example 1: Allow a Publisher to List Applications<a name="security_iam_id-example-publisher-list-apps"></a>
 
@@ -243,3 +244,25 @@ For customers to deploy applications, you must grant them permissions to perform
 
 **Note**  
 Deploying an application might require permissions to use additional AWS resources\. Because the AWS Serverless Application Repository uses the same underlying deployment mechanism as AWS CloudFormation, see [Controlling Access with AWS Identity and Access Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html) for more information\. For help with deployment issues related to permissions, see [ Troubleshooting: Insufficient IAM Permissions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-insufficient-iam-permissions)\.
+
+### Consumer Example 4: Deny Access to Deployment Assets<a name="security_iam_id-example-consumer-deny-deployment-assets"></a>
+
+When an application is privately shared with an AWS account, by default, all users in that account can access the deployment assets of all other users in the same account\. The following policy prevents users in an account from accessing deployment assets, which are stored in the Amazon S3 bucket for the AWS Serverless Application Repository\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyDeploymentAssetAccess",
+            "Effect": "Deny",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::awsserverlessrepo-changesets*/*"
+            ]
+        }
+    ]
+}
+```
