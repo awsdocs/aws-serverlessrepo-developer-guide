@@ -79,6 +79,7 @@ The examples in this section provide a group of sample policies that you can att
 + [Consumer Example 2: Allow a Consumer to View Details of an Application](#security_iam_id-example-consumer-view-app-details)
 + [Consumer Example 3: Allow a Consumer to Deploy an Application](#security_iam_id-example-consumer-deploy-apps)
 + [Consumer Example 4: Deny Access to Deployment Assets](#security_iam_id-example-consumer-deny-deployment-assets)
++ [Consumer Example 5: Prevent a Consumer Searching and Deploying Public Applications](#access-control-identity-based-example-consumer-deny-public-apps)
 
 ### Publisher Example 1: Allow a Publisher to List Applications<a name="security_iam_id-example-publisher-list-apps"></a>
 
@@ -266,3 +267,37 @@ When an application is privately shared with an AWS account, by default, all use
     ]
 }
 ```
+
+### Consumer Example 5: Prevent a Consumer Searching and Deploying Public Applications<a name="access-control-identity-based-example-consumer-deny-public-apps"></a>
+
+You can prevent users from performing certain actions on applications\.
+
+The following policy applies to public applications by specifying `serverlessrepo:applicationType` to be `public`\. It prevents users from performing a number of actions by specifying `Effect` to be `Deny`\. For more information about condition keys available for AWS Serverless Application Repository, see [Actions, Resources, and Condition Keys for AWS Serverless Application Repository](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html;)\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Condition": {
+                "StringEquals": {
+                    "serverlessrepo:applicationType": "public"
+                }
+            },
+            "Action": [
+                "serverlessrepo:SearchApplications",
+                "serverlessrepo:GetApplication",
+                "serverlessrepo:CreateCloudFormationTemplate",
+                "serverlessrepo:CreateCloudFormationChangeSet",
+                "serverlessrepo:ListApplicationVersions",
+                "serverlessrepo:ListApplicationDependencies"
+            ],
+            "Resource": "*",
+            "Effect": "Deny"
+        }
+    ]
+}
+```
+
+**Note**  
+This policy statement can also be used as a Service Control Policy and applied to AWS Organizations\. For more information about Service Control Policies, see [Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) in the *AWS Organizations User Guide*\.

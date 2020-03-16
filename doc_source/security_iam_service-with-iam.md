@@ -127,7 +127,7 @@ An AWS Serverless Application Repository *application* is the primary AWS resour
 
 AWS Serverless Application Repository application policies are primarily used by publishers to grant permission to consumers to deploy their applications, and related operations such as to search for and view details of those applications\. Publishers can set application permissions to the following three categories:
 + **Private** – Applications that were created with the same account, and haven't been shared with any other account\. You have permission to deploy applications that were created using your AWS account\.
-+ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts\. You have permission to deploy applications that have been shared with your AWS account\.
++ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts or AWS Organizations\. You have permission to deploy applications that have been shared with your AWS account or AWS Organization\.
 + **Publicly shared** – Applications that the publisher has shared with everyone\. You have permission to deploy any publicly shared application\.
 
 You can grant permissions by using the AWS CLI, the AWS SDKs, or the AWS Management Console\.

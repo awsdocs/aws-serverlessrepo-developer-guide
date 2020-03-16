@@ -1,11 +1,12 @@
 # Document History<a name="doc-history"></a>
 + **API version: latest**
-+ **Latest documentation update: **January 17, 2020
++ **Latest documentation update: **March 10, 2020
 
 The following table describes the important changes in each release of the *AWS Serverless Application Repository Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Updates to sharing and restricting access to applications](#doc-history) | Added support for sharing applications to accounts in an AWS Organization, and restricting access to public applications for AWS accounts and AWS Organizations\. For more examples for sharing applications to users in an organization, see [AWS Serverless Application Repository Resource\-Based Policy Examples](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/security_iam_resource-based-policy-examples.html)\. For examples for restricting access to public applications, see [AWS Serverless Application Repository Identity\-Based Policy Examples](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/security_iam_id-based-policy-examples.html)\. | March 10, 2020 | 
 | [New supported resources](#doc-history) | Added support for a number of additional resources\. For the complete list of supported resources, see [List of Supported AWS Resources](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/list-supported-resources.html)\. | January 17, 2020 | 
 | [China Regions](#doc-history) | The AWS Serverless Application Repository is now available in the China Regions, Beijing and Ningxia\. For more information about AWS Serverless Application Repository regions and endpoints, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference*\. | January 15, 2020 | 
 | [Updated Security section for consistency with other AWS services\.](#doc-history) | For more information, see [Security](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/security.html)\. | January 2, 2020 | 

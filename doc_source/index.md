@@ -52,6 +52,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Applications applicationId Policy](applications-applicationid-policy.md)
    + [Applications applicationId Templates](applications-applicationid-templates.md)
    + [Applications applicationId Templates templateId](applications-applicationid-templates-templateid.md)
+   + [Applications applicationId Unshare](applications-applicationid-unshare.md)
    + [Applications applicationId Versions](applications-applicationid-versions.md)
    + [Applications applicationId Versions semanticVersion](applications-applicationid-versions-semanticversion.md)
 + [Document History](doc-history.md)

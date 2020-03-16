@@ -1,13 +1,13 @@
 # How to Publish Applications<a name="serverlessrepo-how-to-publish"></a>
 
-This section provides you with procedures for publishing your serverless application to the AWS Serverless Application Repository by using the AWS SAM CLI or the AWS Management Console\.
+This section provides you with procedures for publishing your serverless application to the AWS Serverless Application Repository by using the AWS SAM CLI or the AWS Management Console\. It also shows you how to share your application to allow others to deploy it, and deleting your application from the AWS Serverless Application Repository\.
 
 **Important**  
 The information that you enter when you publish an application isn't encrypted\. This information includes data such as the author name\. If you have personally identifiable information that you don't want to be stored or made public, we recommend that you don't enter this information when publishing your application\.
 
 ## Publishing an Application \(AWS CLI\)<a name="publishing-application-through-cli"></a>
 
-The easiest way to publish and share an application to the AWS Serverless Application Repository is to use a set of AWS SAM CLI commands\. For more information, see [Publishing an Application Using the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications.html) in the *AWS Serverless Application Model \(AWS SAM\) Developer Guide*\.
+The easiest way to publish an application to the AWS Serverless Application Repository is to use a set of AWS SAM CLI commands\. For more information, see [Publishing an Application Using the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications.html) in the *AWS Serverless Application Model \(AWS SAM\) Developer Guide*\.
 
 ## Publishing a New Application \(Console\)<a name="publishing-application-through-aws-console"></a>
 
@@ -63,22 +63,124 @@ Create a new application in the AWS Serverless Application Repository by using t
 1. On the **Publish an application** page, enter the following application information, and then choose **Publish application**:    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-how-to-publish.html)
 
-### Sharing an Application \(Console\)<a name="share-application"></a>
+## Sharing an Application<a name="share-application"></a>
 
-You can use the AWS Management Console to share your application privately to users of specific AWS accounts, or publicly with all users of all AWS accounts\. To share your application privately or publicly, follow these steps:
+Published applications can have permissions set in one of the three following categories:
++ **Private \(default\)** – Applications that were created with the same account, and haven't been shared with any other AWS account\. Only consumers that share your AWS account have permission to deploy private applications\.
++ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts, or with AWS accounts in an AWS Organization\. Consumers have permission to deploy applications that have been shared with their AWS account or AWS Organization\. For more information about AWS Organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
++ **Publicly shared** – Applications that the publisher has shared with everyone\. All consumers have permission to deploy any publicly shared application\.
+
+After you have published an application to the AWS Serverless Application Repository, by default it is set to **private**\. This section shows you how to share an application privately with specific AWS accounts or an AWS Organization, or share it publicly with everyone\.
+
+### Sharing an Application Through the Console<a name="share-application-console"></a>
+
+You have two options for sharing your application with others: 1\) Share it with specific AWS accounts or the AWS accounts within your AWS organization, or 2\) Share it publicly with everyone\. For more information about AWS Organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
+
+**Option 1: To share your application with specific AWS account\(s\) or accounts within your AWS organization**
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
 
-1. On the navigation pane, choose **My Applications** to bring up the list of applications that you've created\.
+1. On the navigation pane, choose **Published Applications** to bring up the list of applications that you've created\.
 
 1. Choose the application that you want to share\.
 
-1. In the **Share with AWS Accounts** section, do one of the following:
-   + To share the application publicly, enable the slider labeled **This application is private**\. The label changes to **This application is public and anyone can view it**\.
-   + To share the application privately, choose **Add**, and enter the AWS account numbers for the accounts that you want to share privately with\. If you want to share with more than one AWS account, you must add them one at a time\.
+1. Choose the **Sharing** tab\.
+
+1. In the **Application policy statements** section, choose the **Create Statement** button\.
+
+1. In the **Statement Configuration** window fill out the fields based on how you want to share your application\.
+**Note**  
+If you are sharing with an organization, you can only specify the organization that your AWS account is a member of\. If you try to specify an AWS Organization that you are not a member of, an error will result\.  
+To share your application with your AWS Organization, you must acknowledge that the `UnshareApplication` action will be added to your policy statement, in case the sharing needs to be revoked in the future\.
+
+1. Choose the **Save** button\.
+
+**Option 2: To share your application publicly with everyone**
+
+1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
+
+1. On the navigation pane, choose **Published Applications** to bring up the list of applications that you've created\.
+
+1. Choose the application that you want to share\.
+
+1. Choose the **Sharing** tab\.
+
+1. In the **Public Sharing** section, choose the **Edit** button\.
+
+1. Under **Public sharing** choose the **Enabled** radio button\.
+
+1. In the text box type the name of your application, then choose the **Save** button\.
 
 **Note**  
 In order to share an application publicly, it must have both the `SemanticVersion` and `LicenseUrl` properties set\.
+
+### Sharing an Application Through the AWS CLI<a name="share-application-cli"></a>
+
+To share an application using the AWS CLI you grant permissions using the `[put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)` command to specify the AWS account\(s\) you want to share with as principals\.
+
+For more information about sharing your application by using the AWS CLI, see [AWS Serverless Application Repository Resource\-Based Policy Examples](security_iam_resource-based-policy-examples.md)\.
+
+## Unsharing an Application<a name="unshare-applications"></a>
+
+There are two options for unsharing an application from an AWS Organization:
+
+1. The publisher of the application can remove permissions using the `[put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)` command\.
+
+1. A user from the *master account* of an AWS Organization can perform an [unshare application](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-unshare.html) operation on any application shared with the organization, even if the application was published by a user from a different account\.
+**Note**  
+When an application is unshared from an AWS Organization with the "unshare application" operation, it cannot be shared with AWS Organization again\.
+
+   For more information about AWS Organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
+
+### Publisher Removing Permissions<a name="unshare-applications-publisher"></a>
+
+#### Publisher Removing Permissions Through the Console<a name="unshare-application-publisher-console"></a>
+
+To unshare an application through the AWS Management Console, you remove the policy statement that shares it with other AWS accounts\. To do this, follow these steps:
+
+1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
+
+1. Choose **Available Applications** in the left navigation pane\.
+
+1. Choose the application that you want to unshare\.
+
+1. Choose the **Sharing** tab\.
+
+1. In the **Application policy statements** section, select the policy statement that is sharing the application with the accounts that you want to unshare from\.
+
+1. Choose **Delete**\.
+
+1. A confirmation message will appear\. Choose **Delete** again\.
+
+#### Publisher Removing Permissions Through the AWS CLI<a name="unshare-application-publisher-cli"></a>
+
+To unshare an application through the AWS CLI, the publisher can remove or otherwise change permissions using the `[put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)` command to make the application private, or share with a different set of AWS accounts\.
+
+For more information about changing permissions using the AWS CLI, see [AWS Serverless Application Repository Resource\-Based Policy Examples](security_iam_resource-based-policy-examples.md)\.
+
+### Master Account Unsharing an Application<a name="unshare-applications-master"></a>
+
+#### Master Account Unsharing an Application from an AWS Organization Through the Console<a name="unshare-application-master-console"></a>
+
+To unshare an application from an AWS Organization through the AWS Management Console, a user from the *master account* can do the following:
+
+1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
+
+1. Choose **Available Applications** in the left navigation pane\.
+
+1. In the application's tile, choose **Unshare**\.
+
+1. In the unshare message box, confirm you want to unshare the application by entering the Organization ID and application name, then choosing **Save**\.
+
+#### Master Account Unsharing an Application from an AWS Organization Through the AWS CLI<a name="unshare-application-master-cli"></a>
+
+To unshare an application from an AWS Organization, a user from the *master account* can run the `aws serverlessrepo unshare-application` command\.
+
+The following command unshares an application from an AWS Organization, where *application\-id* is the Amazon Resource Name \(ARN\) of the application, and *organization\-id* is the AWS Organization ID:
+
+```
+1. aws serverlessrepo unshare-application --application-id application-id --organization-id organization-id
+```
 
 ## Deleting an Application<a name="deleting-applications"></a>
 
@@ -98,10 +200,10 @@ To delete a published application through the AWS Management Console, do the fol
 
 ### Deleting an Application \(AWS CLI\)<a name="deleting-application-through-cli"></a>
 
-To delete a published application using the AWS CLI, run the `[aws serverlessrepo delete\-application](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\. In the command, specify the application ID of the application that you want to delete\.
+To delete a published application using the AWS CLI, run the `[aws serverlessrepo delete\-application](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/delete-application.html)` command\.
 
-The following command deletes an application, where `<value>` is the application ID:
+The following command deletes an application, where `application-id` is the Amazon Resource Name \(ARN\) of the application:
 
 ```
-1. PROMPT> aws serverlessrepo delete-application --application-id <value>
+1. aws serverlessrepo delete-application --application-id application-id
 ```

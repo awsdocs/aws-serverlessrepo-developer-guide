@@ -72,6 +72,9 @@ Sets the permission policy for an application\. For the list of actions supporte
       ],
       "actions": [
         "string"
+      ],
+      "principalOrgIDs": [
+        "string"
       ]
     }
   ]
@@ -91,6 +94,9 @@ Sets the permission policy for an application\. For the list of actions supporte
         "string"
       ],
       "actions": [
+        "string"
+      ],
+      "principalOrgIDs": [
         "string"
       ]
     }
@@ -162,8 +168,9 @@ Policy statement applied to the application\.
 | Property | Type | Required | Description | 
 | --- |--- |--- |--- |
 | statementId | string | False | A unique ID for the statement\. | 
-| principals | Array of type string | True | An array of AWS account IDs, or \* to make the application public\. | 
+| principals | Array of type string | True | An array of AWS account IDs to share the application with, or \* to make the application public\. | 
 | actions | Array of type string | True | For the list of actions supported for this operation, see [Application Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions)\. | 
+| principalOrgIDs | Array of type string | False | The AWS Organization ID to share the application with\. | 
 
 ### BadRequestException<a name="applications-applicationid-policy-model-badrequestexception"></a>
 

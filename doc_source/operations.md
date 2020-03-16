@@ -37,6 +37,11 @@ The AWS Serverless Application Repository REST API includes the following operat
 + [PutApplicationPolicy](applications-applicationid-policy.md#PutApplicationPolicy)
 
   Sets the permission policy for an application\. For the list of actions supported for this operation, see [Application Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions) \.
++ [UnshareApplication](applications-applicationid-unshare.md#UnshareApplication)
+
+  Unshares an application from an AWS Organization\.
+
+  This operation can be called only from the organization's master account\.
 + [UpdateApplication](applications-applicationid.md#UpdateApplication)
 
   Updates the specified application\.
