@@ -143,5 +143,6 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Serverless::HttpApi`
 + `AWS::Serverless::LayerVersion`
 + `AWS::Serverless::SimpleTable`
++ `AWS::Serverless::StateMachine`
 + `AWS::StepFunctions::Activity`
 + `AWS::StepFunctions::StateMachine`

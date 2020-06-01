@@ -29,39 +29,37 @@ This example shows how you might create a policy that allows IAM users to view t
 
 ```
 {
-       "Version": "2012-10-17",
-       "Statement": [
-           {
-               "Sid": "ViewOwnUserInfo",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:GetUserPolicy",
-                   "iam:ListGroupsForUser",
-                   "iam:ListAttachedUserPolicies",
-                   "iam:ListUserPolicies",
-                   "iam:GetUser"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:user/${aws:username}"
-               ]
-           },
-           {
-               "Sid": "NavigateInConsole",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:GetGroupPolicy",
-                   "iam:GetPolicyVersion",
-                   "iam:GetPolicy",
-                   "iam:ListAttachedGroupPolicies",
-                   "iam:ListGroupPolicies",
-                   "iam:ListPolicyVersions",
-                   "iam:ListPolicies",
-                   "iam:ListUsers"
-               ],
-               "Resource": "*"
-           }
-       ]
-   }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ViewOwnUserInfo",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetUserPolicy",
+                "iam:ListGroupsForUser",
+                  "iam:ListAttachedUserPolicies",
+                "iam:ListUserPolicies",
+                "iam:GetUser"
+            ],
+            "Resource": ["arn:aws:iam::*:user/${aws:username}"]
+        },
+        {
+            "Sid": "NavigateInConsole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetGroupPolicy",
+                "iam:GetPolicyVersion",
+                "iam:GetPolicy",
+                "iam:ListAttachedGroupPolicies",
+                "iam:ListGroupPolicies",
+                "iam:ListPolicyVersions",
+                "iam:ListPolicies",
+                "iam:ListUsers"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 ```
 
 ## Customer Managed Policy Examples<a name="security_iam_id-examples"></a>
@@ -272,7 +270,7 @@ When an application is privately shared with an AWS account, by default, all use
 
 You can prevent users from performing certain actions on applications\.
 
-The following policy applies to public applications by specifying `serverlessrepo:applicationType` to be `public`\. It prevents users from performing a number of actions by specifying `Effect` to be `Deny`\. For more information about condition keys available for AWS Serverless Application Repository, see [Actions, Resources, and Condition Keys for AWS Serverless Application Repository](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html;)\.
+The following policy applies to public applications by specifying `serverlessrepo:applicationType` to be `public`\. It prevents users from performing a number of actions by specifying `Effect` to be `Deny`\. For more information about condition keys available for AWS Serverless Application Repository, see [Actions, Resources, and Condition Keys for AWS Serverless Application Repository](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html)\.
 
 ```
 {
@@ -300,4 +298,4 @@ The following policy applies to public applications by specifying `serverlessrep
 ```
 
 **Note**  
-This policy statement can also be used as a Service Control Policy and applied to AWS Organizations\. For more information about Service Control Policies, see [Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) in the *AWS Organizations User Guide*\.
+This policy statement can also be used as a Service Control Policy and applied to an AWS organization\. For more information about Service Control Policies, see [Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) in the *AWS Organizations User Guide*\.

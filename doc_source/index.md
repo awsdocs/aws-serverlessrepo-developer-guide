@@ -1,7 +1,7 @@
 # AWS Serverless Application Repository Developer Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -56,4 +56,4 @@ Amazon's trademarks and trade dress may not be used in
    + [Applications applicationId Versions](applications-applicationid-versions.md)
    + [Applications applicationId Versions semanticVersion](applications-applicationid-versions-semanticversion.md)
 + [Document History](doc-history.md)
-+ [AWS Glossary](glossary.md)
++ [AWS glossary](glossary.md)

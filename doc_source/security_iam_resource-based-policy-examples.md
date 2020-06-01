@@ -6,7 +6,7 @@ An AWS Serverless Application Repository *application* is the primary AWS resour
 
 Publishers can set application permissions to the following three categories:
 + **Private** – Applications that were created with the same account, and haven't been shared with any other account\. Only consumers that share your AWS account have permission to deploy private applications\.
-+ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts, or with AWS accounts in an AWS Organization\. Consumers have permission to deploy applications that have been shared with their AWS account or AWS Organization\. For more information about AWS Organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
++ **Privately shared** – Applications that the publisher has explicitly shared with a specific set of AWS accounts, or with AWS accounts in an AWS organization\. Consumers have permission to deploy applications that have been shared with their AWS account or AWS organization\. For more information about AWS organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
 + **Publicly shared** – Applications that the publisher has shared with everyone\. All consumers have permission to deploy any publicly shared application\.
 
 **Note**  
@@ -81,7 +81,7 @@ In order to share an application publicly, it must have both the `SemanticVersio
 
 ### Example 3: Make an Application Private<a name="access-control-resource-based-example-make-private"></a>
 
-You can make an application private, so it's not shared with anyone and can only be deployed by the AWS account that owns it\. To do so, you clear out the principals and actions from the policy, which also removes permissions from other accounts within your AWS Organization from deploying your application\.
+You can make an application private, so it's not shared with anyone and can only be deployed by the AWS account that owns it\. To do so, you clear out the principals and actions from the policy, which also removes permissions from other accounts within your AWS organization from deploying your application\.
 
 ```
 aws serverlessrepo put-application-policy \
@@ -106,7 +106,7 @@ aws serverlessrepo put-application-policy \
 
 ### Example 5: Share an Application with All Accounts in an AWS Organization<a name="access-control-resource-based-example-share-organization"></a>
 
-Permissions can be granted to all users within an AWS Organization\. You do this by specifying your organization ID, as in the following example\.
+Permissions can be granted to all users within an AWS organization\. You do this by specifying your organization ID, as in the following example\.
 
 ```
 aws serverlessrepo put-application-policy \
@@ -115,15 +115,15 @@ aws serverlessrepo put-application-policy \
 --statements Principals=*,PrincipalOrgIDs=org-id,Actions=Deploy,UnshareApplication
 ```
 
-For more informaton about AWS Organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
+For more informaton about AWS organizations, see the *[AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/)*\.
 
 **Note**  
-You can only specify the AWS Organization that your AWS account is a member of\. If you try to specify an AWS Organization that you are not a member of, an error will result\.  
-To share your application with your AWS Organization, you must include permission for the `UnshareApplication` action, in case the sharing needs to be revoked in the future\.
+You can only specify the AWS organization that your AWS account is a member of\. If you try to specify an AWS organization that you are not a member of, an error will result\.  
+To share your application with your AWS organization, you must include permission for the `UnshareApplication` action, in case the sharing needs to be revoked in the future\.
 
 ### Example 6: Sharing an Application with Some Accounts in an AWS Organization<a name="access-control-resource-based-example-accounts-in-organization"></a>
 
-Permissions can be granted to specific accounts within an AWS Organization\. You do this by specifying a list of AWS accounts as the principal, and your organization ID, as in the following example\.
+Permissions can be granted to specific accounts within an AWS organization\. You do this by specifying a list of AWS accounts as the principal, and your organization ID, as in the following example\.
 
 ```
 aws serverlessrepo put-application-policy \
@@ -133,8 +133,8 @@ aws serverlessrepo put-application-policy \
 ```
 
 **Note**  
-You can only specify the AWS Organization that your AWS account is a member of\. If you try to specify an AWS Organization that you are not a member of, an error will result\.  
-To share your application with your AWS Organization, you must include permission for the `UnshareApplication` action, in case the sharing needs to be revoked in the future\.
+You can only specify the AWS organization that your AWS account is a member of\. If you try to specify an AWS organization that you are not a member of, an error will result\.  
+To share your application with your AWS organization, you must include permission for the `UnshareApplication` action, in case the sharing needs to be revoked in the future\.
 
 ### Example 7: Retrieve an Application Policy<a name="access-control-resource-based-example-retrieve-app-policy"></a>
 
