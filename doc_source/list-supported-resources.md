@@ -70,6 +70,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Config::ConfigurationAggregator`
 + `AWS::Config::ConfigurationRecorder`
 + `AWS::Config::DeliveryChannel`
++ `AWS::Config::RemediationConfiguration`
 + `AWS::DataPipeline::Pipeline`
 + `AWS::DynamoDB::Table`
 + `AWS::ECR::Repository`
