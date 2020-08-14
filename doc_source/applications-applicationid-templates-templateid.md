@@ -25,12 +25,12 @@ Gets the specified AWS CloudFormation template\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 | [TemplateDetails](#applications-applicationid-templates-templateid-response-body-templatedetails-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-templates-templateid-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-templates-templateid-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-templates-templateid-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-templates-templateid-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-templates-templateid-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-templates-templateid-schemas"></a>
 

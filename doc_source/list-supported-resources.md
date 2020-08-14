@@ -42,6 +42,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Athena::NamedQuery`
 + `AWS::CertificateManager::Certificate`
 + `AWS::CloudFormation::CustomResource`
++ `AWS::CloudFormation::Interface`
 + `AWS::CloudFormation::Macro`
 + `AWS::CloudFormation::WaitConditionHandle`
 + `AWS::CloudFront::CloudFrontOriginAccessIdentity`
@@ -63,6 +64,7 @@ This is the complete list of AWS resources that are supported by the AWS Serverl
 + `AWS::Cognito::UserPoolClient`
 + `AWS::Cognito::UserPoolDomain`
 + `AWS::Cognito::UserPoolGroup`
++ `AWS::Cognito::UserPoolResourceServer`
 + `AWS::Cognito::UserPoolUser`
 + `AWS::Cognito::UserPoolUserToGroupAttachment`
 + `AWS::Config::AggregationAuthorization`

@@ -25,12 +25,12 @@ Creates an application version\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 201 | [Version](#applications-applicationid-versions-semanticversion-response-body-version-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-versions-semanticversion-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-versions-semanticversion-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 409 | [ConflictException](#applications-applicationid-versions-semanticversion-response-body-conflictexception-example) | The resource already exists\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-versions-semanticversion-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-versions-semanticversion-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 201 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 409 |  | The resource already exists\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-versions-semanticversion-schemas"></a>
 

@@ -8,7 +8,7 @@ For more information about Lambda layers, see [AWS Lambda Layers](https://docs.a
 
 The following are the steps for sharing your layer using the AWS Serverless Application Repository\. This allows a copy of your layer to be created in the user's AWS account\.
 
-1. Define a serverless application with an AWS SAM template that includes your layer as a resource— that is, either an [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-layerversion](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-layerversion) or an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html) resource\.
+1. Define a serverless application with an AWS SAM template that includes your layer as a resource— that is, either an [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-layerversion.html](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-layerversion.html) or an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html) resource\.
 
 1. Publish your application to the AWS Serverless Application Repository, and share it \(either publicly or privately\)\.
 
@@ -29,7 +29,7 @@ Resources:
         - python3.7
 Outputs:
   LayerArn:
-    Value: !Ref MySharedLayer
+    Value: !Ref SharedLayer
 ```
 
 When a customer deploys your application from the AWS Serverless Application Repository, a layer is created in their AWS account\. The ARN of the layer looks something like the following:

@@ -31,12 +31,12 @@ Gets the specified application\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 | [Application](#applications-applicationid-response-body-application-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ### DELETE<a name="applications-applicationiddelete"></a>
 
@@ -57,12 +57,12 @@ Deletes the specified application\.
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
 | 204 | None | Success | 
-| 400 | [BadRequestException](#applications-applicationid-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 409 | [ConflictException](#applications-applicationid-response-body-conflictexception-example) | The resource already exists\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 409 |  | The resource already exists\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ### PATCH<a name="applications-applicationidpatch"></a>
 
@@ -82,13 +82,13 @@ Updates the specified application\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 | [Application](#applications-applicationid-response-body-application-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 409 | [ConflictException](#applications-applicationid-response-body-conflictexception-example) | The resource already exists\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 409 |  | The resource already exists\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-schemas"></a>
 

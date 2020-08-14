@@ -24,12 +24,12 @@ Retrieves the policy for the application\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 | [ApplicationPolicy](#applications-applicationid-policy-response-body-applicationpolicy-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ### PUT<a name="applications-applicationid-policyput"></a>
 
@@ -49,12 +49,12 @@ Sets the permission policy for an application\. For the list of actions supporte
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 | [ApplicationPolicy](#applications-applicationid-policy-response-body-applicationpolicy-example) | Success | 
-| 400 | [BadRequestException](#applications-applicationid-policy-response-body-badrequestexception-example) | One of the parameters in the request is invalid\. | 
-| 403 | [ForbiddenException](#applications-applicationid-policy-response-body-forbiddenexception-example) | The client is not authenticated\. | 
-| 404 | [NotFoundException](#applications-applicationid-policy-response-body-notfoundexception-example) | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 429 | [TooManyRequestsException](#applications-applicationid-policy-response-body-toomanyrequestsexception-example) | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 | [InternalServerErrorException](#applications-applicationid-policy-response-body-internalservererrorexception-example) | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 |  | Success | 
+| 400 |  | One of the parameters in the request is invalid\. | 
+| 403 |  | The client is not authenticated\. | 
+| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-policy-schemas"></a>
 
