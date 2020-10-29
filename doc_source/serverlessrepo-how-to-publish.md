@@ -126,7 +126,7 @@ There are two options for unsharing an application from an AWS Organization:
 
 1. The publisher of the application can remove permissions using the `[put\-application\-policy](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/put-application-policy.html)` command\.
 
-1. A user from the *master account* of an AWS Organization can perform an [unshare application](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-unshare.html) operation on any application shared with the organization, even if the application was published by a user from a different account\.
+1. A user from the *management account* of an AWS Organization can perform an [unshare application](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid-unshare.html) operation on any application shared with the organization, even if the application was published by a user from a different account\.
 **Note**  
 When an application is unshared from an AWS Organization with the "unshare application" operation, it cannot be shared with AWS Organization again\.
 
@@ -158,11 +158,11 @@ To unshare an application through the AWS CLI, the publisher can remove or other
 
 For more information about changing permissions using the AWS CLI, see [AWS Serverless Application Repository Resource\-Based Policy Examples](security_iam_resource-based-policy-examples.md)\.
 
-### Master Account Unsharing an Application<a name="unshare-applications-master"></a>
+### Management account unsharing an application<a name="unshare-applications-management"></a>
 
-#### Master Account Unsharing an Application from an AWS Organization Through the Console<a name="unshare-application-master-console"></a>
+#### Management account unsharing an application from an AWS Organization through the console<a name="unshare-application-management-console"></a>
 
-To unshare an application from an AWS Organization through the AWS Management Console, a user from the *master account* can do the following:
+To unshare an application from an AWS Organization through the AWS Management Console, a user from the *management account* can do the following:
 
 1. Open the [AWS Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home)\.
 
@@ -172,9 +172,9 @@ To unshare an application from an AWS Organization through the AWS Management Co
 
 1. In the unshare message box, confirm you want to unshare the application by entering the Organization ID and application name, then choosing **Save**\.
 
-#### Master Account Unsharing an Application from an AWS Organization Through the AWS CLI<a name="unshare-application-master-cli"></a>
+#### Management account unsharing an application from an AWS Organization Through the AWS CLI<a name="unshare-application-management-cli"></a>
 
-To unshare an application from an AWS Organization, a user from the *master account* can run the `aws serverlessrepo unshare-application` command\.
+To unshare an application from an AWS Organization, a user from the *management account* can run the `aws serverlessrepo unshare-application` command\.
 
 The following command unshares an application from an AWS Organization, where *application\-id* is the Amazon Resource Name \(ARN\) of the application, and *organization\-id* is the AWS Organization ID:
 

@@ -24,11 +24,11 @@ Creates an AWS CloudFormation change set for the given application\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 201 |  | Success | 
-| 400 |  | One of the parameters in the request is invalid\. | 
-| 403 |  | The client is not authenticated\. | 
-| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 201 | ChangeSetDetails | Success | 
+| 400 | BadRequestException | One of the parameters in the request is invalid\. | 
+| 403 | ForbiddenException | The client is not authenticated\. | 
+| 429 | TooManyRequestsException | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 | InternalServerErrorException | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-changesets-schemas"></a>
 

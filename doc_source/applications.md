@@ -25,11 +25,11 @@ Lists applications owned by the requester\.
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 200 |  | Success | 
-| 400 |  | One of the parameters in the request is invalid\. | 
-| 403 |  | The client is not authenticated\. | 
-| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 200 | ApplicationPage | Success | 
+| 400 | BadRequestException | One of the parameters in the request is invalid\. | 
+| 403 | ForbiddenException | The client is not authenticated\. | 
+| 404 | NotFoundException | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 500 | InternalServerErrorException | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ### POST<a name="applicationspost"></a>
 
@@ -42,12 +42,12 @@ Creates an application, optionally including an AWS SAM file to create the first
 
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
-| 201 |  | Success | 
-| 400 |  | One of the parameters in the request is invalid\. | 
-| 403 |  | The client is not authenticated\. | 
-| 409 |  | The resource already exists\. | 
-| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 201 | Application | Success | 
+| 400 | BadRequestException | One of the parameters in the request is invalid\. | 
+| 403 | ForbiddenException | The client is not authenticated\. | 
+| 409 | ConflictException | The resource already exists\. | 
+| 429 | TooManyRequestsException | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 | InternalServerErrorException | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-schemas"></a>
 

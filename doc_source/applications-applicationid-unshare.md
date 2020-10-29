@@ -27,11 +27,11 @@ This operation can be called only from the organization's master account\.
 | Status Code | Response Model | Description | 
 | --- |--- |--- |
 | 204 | None | Success | 
-| 400 |  | One of the parameters in the request is invalid\. | 
-| 403 |  | The client is not authenticated\. | 
-| 404 |  | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
-| 429 |  | The client is sending more than the allowed number of requests per unit of time\. | 
-| 500 |  | The AWS Serverless Application Repository service encountered an internal error\. | 
+| 400 | BadRequestException | One of the parameters in the request is invalid\. | 
+| 403 | ForbiddenException | The client is not authenticated\. | 
+| 404 | NotFoundException | The resource \(for example, an access policy statement\) specified in the request doesn't exist\. | 
+| 429 | TooManyRequestsException | The client is sending more than the allowed number of requests per unit of time\. | 
+| 500 | InternalServerErrorException | The AWS Serverless Application Repository service encountered an internal error\. | 
 
 ## Schemas<a name="applications-applicationid-unshare-schemas"></a>
 
