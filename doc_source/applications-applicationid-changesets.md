@@ -249,7 +249,7 @@ For more information about using this API in one of the language\-specific AWS S
 + [AWS SDK for \.NET](/goto/DotNetSDKV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for C\+\+](/goto/SdkForCpp/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for Go](/goto/SdkForGoV1/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
-+ [AWS SDK for Java](/goto/SdkForJava/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
++ [AWS SDK for Java V2](/goto/SdkForJavaV2/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for JavaScript](/goto/AWSJavaScriptSDK/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for PHP V3](/goto/SdkForPHPV3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)
 + [AWS SDK for Python](/goto/boto3/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet)

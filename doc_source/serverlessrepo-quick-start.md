@@ -50,9 +50,13 @@ In this section, you download the sample application, which consists of an AWS S
 **Note**  
 For this exercise, the application code is written in Python, and you specify the runtime in the `init` command\. AWS Lambda supports additional languages for creating application code\. If you specify another supported runtime, the `init` command provides the Hello World code in the specified language, and a `README.md` file that you can follow along for that language\. For information about supported runtimes, see [Lambda Execution Environment and Available Libraries](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)\.
 
+    
+
 ## Step 2: Test the Application Locally<a name="serverlessrepo-quick-start-hello-world-test-locally"></a>
 
 Now that you have the AWS SAM application on your local machine, follow the steps below to test it locally\.
+
+
 
 **To test the application locally**
 

@@ -28,3 +28,4 @@ aws serverlessrepo get-application \
 ```
 
 The [ requiredCapabilities](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html#applications-applicationid-prop-version-requiredcapabilities) response property contains the list of application capabilities that you need to acknowledge before you can deploy the application\. Note that if the [requiredCapabilities](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/applications-applicationid.html#applications-applicationid-prop-version-requiredcapabilities) property is empty, the application has no required capabilities\.
+
